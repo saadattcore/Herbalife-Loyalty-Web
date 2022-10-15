@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Loyalty";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="custHome">
+    <!-- Enroll Now -->
+    <section class="enroll">
+
+        <article>
+            @Html.Raw(this.Localize("Header.Section"))
+        </article>
+        <aside>
+            <a href="/Spa" class="btn-continue">@this.Localize("EnrollNow.Text")</a>
+        </aside>
+
+    </section>
+    <!-- /Enroll Now -->
+    <!-- List of Rewards -->
+    <section class="rewards">
+        <div>
+            <h3>@this.Localize("HighValue.Title")</h3>
+            <!-- Slick Responsive Carousel -->
+            <div class="product-carousel" data-bind="source: rewardsSource" data-template="rewards-template"></div>
+            <!-- /Slick Responsive Carousel -->
+        </div>
+    </section>
+    <!-- /List of Rewards -->
+    <!-- Program Rewards Information -->
+    <section class="rewards-info">
+        <div>
+            <article class="shopping">
+                <aside><i class="icon-shopping-bag-ln-3"></i></aside>
+                <div class="info">
+                    <h4>Product Rewards</h4>
+                    <p>You earn these when for purchases of our nutritional products over consecutive months.</p>
+                    <ul class="disc">
+                        <li>Purchase $100 or more worth of products for 2 consecutive months for your first gift!</li>
+                        <li>Purchase $100+ for 3 months and get another reward!!</li>
+                        <li>Purchase $100+ for 4 months for a third gift!!!</li>
+                    </ul>
+                    <sub>Value based on product volume points, generally equivalent to retail cost of products. Does not include shipping, tax and other charges.</sub>
+                </div>
+            </article>
+            <article class="activity">
+                <aside><i class="icon-connection-ln-3"></i></aside>
+                <div class="info">
+                    <h4>Activity Rewards</h4>
+                    <p>Ask your Distributor about rewards offered for activities around special themes:</p>
+                    <ul class="disc">
+                        <li>Getting started on a healthy, active lifestyle</li>
+                        <li>Paying it forward</li>
+                        <li>Becoming part of the community</li>
+                    </ul>
+                </div>
+            </article>
+            <a href="/Spa" class="btn-continue">@this.Localize("EnrollNow.Text")</a>
+        </div>
+    </section>
+    <!-- /Program Rewards Information -->
+</main>
+
+<script>
+    $(window).ready(function () {
+        makeSlick();
+    });
+</script>

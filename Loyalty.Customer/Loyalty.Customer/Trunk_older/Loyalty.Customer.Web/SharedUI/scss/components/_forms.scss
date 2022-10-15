@@ -1,0 +1,415 @@
+    
+    /* Forms
+    ================================================== */
+
+    form {} 
+    fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    } 
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="file"],
+    textarea, 
+    select {
+        width: 100%;
+        margin: 0;
+        padding: 6px 7px;
+        outline: none;
+        color: $charcoalgrey;
+        background: $lightgrey;
+        border: 1px solid $lightgrey;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        &.no-label {
+            margin-top: 0;
+        }
+    }
+
+    select { 
+        padding: 4px 20px 4px 7px;          //adjusted to match input field height
+        &::-ms-expand { display: none; }
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    select .default { display: none; }
+
+    // Removes dropdown arrow for IE8 & IE9
+    .k-ie9, .k-ie8 {
+        select {
+          background-image: none;
+          padding: 4px 7px;
+        }
+    }
+
+    input[type="text"]:hover,
+    input[type="password"]:hover,
+    input[type="email"]:hover,
+    input[type="tel"]:hover,
+    input[type="number"]:hover,
+    textarea:hover,
+    select:hover {
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    }
+    input[type="text"][disabled],
+    input[type="password"][disabled],
+    input[type="email"][disabled],
+    input[type="tel"][disabled],
+    input[type="number"][disabled],
+    textarea[disabled] {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    textarea:focus,
+    select:focus {
+        border: 1px solid lighten($lightgrey, 2);
+        color: $charcoalgrey;
+        background: lighten($lightgrey, 2);
+    }
+    select:focus {
+    	background: $lightgrey url(#{$images_path}/dropdown-arrow.png) no-repeat right -31px;
+    }
+    textarea {
+        min-height: 90px;
+        overflow: auto;
+        vertical-align: top;
+        resize: vertical;
+    }
+    label,
+    legend {
+        color: $darkgrey;
+        font-size: 14px;
+    }
+
+    label.side-label {
+        float: left;
+        margin-top: 10px; 
+    }
+
+    legend { margin-bottom: 3px; }
+    select {
+        background: $lightgrey url(#{$images_path}/dropdown-arrow.png) no-repeat right 9px;
+        -webkit-appearance: none;
+        -moz-appearance:none;
+    }
+    select:hover {
+        background: $lightgrey url(#{$images_path}/dropdown-arrow.png) no-repeat right -31px;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        margin: 0 5px 0 0;
+    }
+
+    fieldset { 
+        margin-top: 5px;
+        > div {
+            margin-bottom: 10px;
+            line-height: 14px;
+            @include clearfix;
+            input[type="checkbox"], input[type="radio"] { 
+                float: left; 
+                margin: 0; 
+                &.other { margin-top: 8px; }
+            }
+            label { 
+                display: block;
+                margin-left: $gutter;
+            }
+        }
+    }
+
+    label span,
+    legend span {
+        font-weight: normal;
+        font-size: 14px;
+        color: $charcoalgrey;
+    }
+    label.requiredField:before {
+        content: "*";
+        color: red;
+    }
+
+
+    // Default placeholder color
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea, 
+    select {
+        @include placeholder-color(#7d7d7d);
+    }
+
+
+    // Form error styles
+    input.error {
+        border: 1px solid $lightred !important;
+        background: $lightred !important;
+        margin-bottom: 2px !important;
+        @include placeholder-color($charcoalgrey);
+    }
+    span.error, div.error, p.error {
+        color: $red !important;
+        font-size: 11px !important;
+        margin-top: 5px !important;
+        line-height: 14px !important;
+    }
+    span.success, p.success {
+        font-weight: bold;
+        color: $green !important;
+        font-size: 11px !important;
+        margin-top: 5px !important;
+        line-height: 14px !important;
+    }
+
+  
+
+
+	// Herbalife Form Layouts
+
+    // 1 column of fields
+    @mixin form-1 {
+        ul li { width: 100%; }
+    }
+
+    // 2 column of fields
+    @mixin form-2 {
+        ul li { 
+            width: 45%;
+            width: calc(50% - 10px); 
+            &:nth-child(2n) { margin-right: 0; }
+        }
+    }
+
+    // 3 column of fields
+    @mixin form-3 {
+        ul li { 
+            width: 28%;
+            width: calc(33% - 13px); 
+            &:nth-child(2n) { margin-right: $gutter - 4px; }
+            &:nth-child(3n) { margin-right: 0; }
+        }
+    }
+
+    // 4 column of fields
+    @mixin form-4 {
+        ul li { 
+            width: 20%;
+            width: calc(25% - 15px); 
+            &:nth-child(2n), &:nth-child(3n) { margin-right: $gutter - 4px; }
+            &:nth-child(4n) { margin-right: 0; }
+        }
+    }
+
+    // Herbalife Form Components
+
+    // Date of Birth
+    @mixin date-of-birth {
+        select {
+            display: inline-block; 
+            margin-right: 10px; 
+            &:first-child { width: span(2); }
+            &:nth-child(2) { width: span(1); }
+            &:last-child { width: span(1); margin-right: 0; }
+        }
+    }
+	
+
+    // Herbalife Form Styles
+    .hl-form {
+
+		ul {
+			list-style: none;
+			margin:0;
+			padding: 0;
+            &:after {
+                visibility: hidden;
+                display: block;
+                content: "";
+                clear: both;
+                height: 0;
+                font-size: 0;
+            }
+
+            > div { 
+                width: 100%; 
+                vertical-align: top;
+                margin-bottom: 15px;
+                margin-right: 0;
+            } 
+
+			li {	
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: 15px;
+                margin-right: $gutter - 4px;
+
+                .read-only { 
+                    font-size: 16px;
+                    font-weight: bold; 
+                    margin-top: 5px;
+                    a { font-weight: normal; font-size: 14px; }
+                }
+
+                &.hidden { 
+                    visibility: hidden;
+                    display: none;
+                    @include breakpoint($tablet) { display: inline-block; }
+                }
+
+                &.full { 
+                    width: 100% !important; 
+                    margin-right: 0;
+                }
+
+                &.with-button {
+                    width: 100%;
+                    > span {
+                        display: block;
+                        overflow: hidden;
+                        padding-right:10px;
+                    }
+                    a, button {
+                        float: right;
+                        //margin-top: 5px;
+                        //&.btn-small { margin-top: 9px; }
+                    }
+                    &.small {
+                        a, button { margin-top: 5px; }
+                    }
+                }
+
+                &.dob { @include date-of-birth; }
+
+				input, select {
+					&.increment {
+            			width: 75%;
+						margin-right: 0;
+						margin-top: 6px !important;
+						text-align: center;
+                        display: inline-block;
+                        vertical-align: bottom;
+                        padding: 6px;
+					}
+					&.with-icon {
+						width: calc(100% - 30px);
+						margin-right: 6px;
+					}
+                    &.with-button {
+                        width: auto;
+                        padding-right: 30px;
+                        margin-right: 8px; 
+                    }
+					&.one, &.two, &.three { 
+                        display: inline-block; 
+                        margin-right: 8px; 
+                    }
+                    &.one { width: span(1); }
+					&.two { width: span(2); }
+					&.three { width: span(3); }
+					&.last { margin-right: 0 !important; }
+				}
+				a { 
+					vertical-align: middle;
+					&.plus, &.minus, &.go { 
+						padding: 7px 10px !important;
+						margin: 0;
+						border-radius: 2px;
+						i { font-size: 13px; }
+					}
+				}
+				.agree {
+                    input[type="checkbox"], input[type="radio"] { 
+                        float: left; 
+                        margin: 0; 
+                    }
+                    label { 
+                        display: block;
+                        margin-left: $gutter;
+                    }
+                }
+
+                ul li {
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-bottom: 0;
+                    margin-right: 10px;
+                    &.half { 
+                        width: span(2) !important;
+                        &:nth-child(2n) { margin-right: 0 !important; }
+                    }
+                    &.one { width: span(1) !important; }
+                    &.three { width: span(3) !important; }
+                    &.last { margin-right: 0; }
+                    input[type="radio"], input[type="checkbox"] { margin: 0 10px 8px 0; }
+                } 
+
+				ul.toggles {
+					margin: 5px 0;
+					padding: 0;
+					list-style: none;
+					li {
+						margin-bottom: 20px;
+						background-color: $lightgrey;
+						border: 1px solid $grey;
+						padding: 10px 0;
+						text-align: center;
+						cursor: pointer;
+
+						&.icon { 
+							padding: 10px 0 0 0;
+							span { font-size: 12px; } 
+							i {
+								font-size: 24px;
+							}
+						}
+						&.half { 
+							@include gallery(2 of 4); 
+						}
+						&.full { 
+							@include span(4 last);
+							margin-right: 0; 
+						}
+						&:hover { background-color: $offwhite; }
+						&:active, &.active {
+							background-color: $lightblue;
+							border: 1px solid $blue;
+							color: $blue;
+							font-weight: bold;
+						} 
+					}
+				}
+			}
+		}
+    	
+		h4 {
+            margin: 10px 0; 
+        	@include breakpoint($tablet) { display: block; }
+		}
+		button.counter {
+			margin: 5px 10px 0 0;
+			float: none;
+			i { font-size: 16px; }
+		}
+	}
+

@@ -1,0 +1,34 @@
+
+	/* Custom Checkbox
+	================================================== */
+
+	@mixin checkbox($size: 16px, $padding: 26px, $indent: -13px) {
+		display:none;
+
+		& + label {
+		    display: block;
+		    padding-left: $padding;
+    		text-indent: $indent;
+		}
+
+		& + label:before {
+		  font-family: $myherbalife;
+		  display: inline-block;
+		  vertical-align: top;
+		  font-size: $size;
+		  cursor: pointer;
+		}
+
+		& + label:before { 
+			content: "\e1d2"; 
+			color: $dimgrey;
+			letter-spacing: 10px; 
+		}
+
+		&:checked {
+			& + label:before { 
+				content: "\e5b3"; 
+				color: $blue;
+			}
+		} 
+	}

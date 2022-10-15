@@ -1,0 +1,6 @@
+﻿wwwroot/loyalty/Scripts/vendors/kendo/widgets/kendo.view.min.js
+wwwroot/loyalty/Scripts/vendors/kendo/widgets/kendo.router.min.js
+wwwroot/loyalty/Scripts/vendors/kendo/widgets/kendo.validator.min.js
+wwwroot/loyalty/Scripts/vendors/slick.min.js
+wwwroot/loyalty/Scripts/app/helpers/kendo-custom-bindings.js
+wwwroot/loyalty/Scripts/app/home.js

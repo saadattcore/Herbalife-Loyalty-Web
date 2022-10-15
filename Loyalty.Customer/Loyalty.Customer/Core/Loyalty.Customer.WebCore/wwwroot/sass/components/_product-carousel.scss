@@ -1,0 +1,73 @@
+﻿
+    /* Product Carousel
+    ================================================== */
+
+
+
+    .product-carousel {
+        padding-top: 30px; 
+        overflow: hidden;
+        position: relative;
+
+            img {
+                display: block;
+                margin: 0 auto 5px;
+                width: 140px;
+                height: 140px;
+            }
+
+            .product-item {
+                text-align: center;
+                float: left;
+            }
+            span {
+                font-size: 14px;
+                display: inline-block;
+                width: auto;
+                position: relative;
+                padding-left: 50px;
+                text-align: left;
+                line-height: 18px;
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -19px;
+                    padding: 10px;
+                    vertical-align: middle;
+                    font-family: $myherbalife;
+                    color: $white;
+                    font-size: 18px;
+                    margin-right: 10px;
+                    @include border-radius(50%);
+                }
+                &.Product { 
+                    &:before { 
+                        background-color: $teal;
+                        content: "\e070"; 
+                    } 
+                }
+                &.Activity { 
+                    &:before { 
+                        background-color: $pink;
+                        content: "\e03a"; 
+                    } 
+                }
+            }
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1357 @@
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.7.0 
+*/
+
+.container { max-width: 960px; }
+
+fieldset, img {
+	border:0;
+    margin: 0;
+}
+address, caption, cite, code, dfn, em, th, var, optgroup {
+	font-style:inherit;
+	font-weight:inherit;
+}
+del, ins {
+	text-decoration:none;
+}
+li {
+	list-style: none outside none;
+	
+}
+caption, th {
+	text-align:left;
+}
+q:before, q:after {
+	content:'';
+}
+abbr, acronym {
+	border:0;
+	font-variant:normal;
+}
+sup {
+	vertical-align:baseline;
+}
+sub {
+	vertical-align:baseline;
+}
+legend {
+	color:#000;
+}
+input, button, textarea, select, optgroup, option {
+	font-family:inherit;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+}
+
+/*********************** GLOBAL.CSS ****************/
+/*GMYHL STYLES 10++*/ 
+html
+{
+	background-color: #fff;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #555;
+	font-size: 11px;
+}
+
+body
+{
+	padding: 0;
+	text-align: left;
+	background-color: #fff;
+	margin: 0 auto auto 15px;
+}
+
+p
+{
+	font: normal 11px Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 1.2em;
+	color: #555;
+}
+/*////INTRODUCED PER DEFECT 43224 - GDO V____*/
+.listBullets {list-style-type: disc;}
+.listBullets li {margin: 3px 0;}
+table
+{
+	width: 100%;
+}
+select, option
+{
+	font-size: 11px;
+}
+/* default green links */
+a
+{
+	text-decoration: underline;
+	color: #090;
+}
+
+.radmenu .horizontal .item a
+{
+	width:99%;
+}
+
+/* global style for site headers, sections, and pages */
+h1, h2, h3, h4, h5, h6
+{
+	margin: 0;
+	padding: 5px 0;
+}
+
+h1
+{
+	font-size: 23px;
+	font-weight: 400;
+}
+
+h2
+{
+	font-size: 14px;
+}
+
+h3
+{
+	font-size: 12px;
+}
+
+h4
+{
+	font-size: 11px;
+}
+
+h5
+{
+	font-size: 10px;
+}
+
+/*generic colors*/
+.green
+{
+	color: #167c14;
+}
+
+.orange
+{
+	color: #dc810c;
+}
+
+.Red, .red { 
+	color: #F00;
+}
+
+.yellow{ 
+	color:#FF0
+}
+
+.blue
+{
+	color: #1667C3;
+}
+.purple
+{
+	color: #333399;
+}
+
+.FontBlack
+{
+	color: #000000;
+}
+.lightGreen{
+	color: #faa635;
+}
+.darkGreen{
+	color: #6cab3a;
+}
+
+/* General Classes */
+.upper{
+	text-transform:uppercase;
+}
+.capitalize{
+	text-transform: capitalize;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.hide, .myhl2Hide {
+    display: none;
+}
+.positionRelative{
+	position: relative;
+}
+
+.underline {
+    text-decoration: underline;
+}
+.block {
+    display: block;
+}
+.inline {
+    display: inline;
+}
+.clear {
+    clear: both;
+}
+
+.Bold, .bold { font-weight: bold; }
+
+.ovrFlwH{
+	overflow: hidden;
+}
+
+/* even & odd rows (for tables) */
+.oddRow
+{
+	height: 32px;
+	padding: 4px 0 0 13px;
+	background: #f3f3f3;
+}
+
+.oddRow div
+{
+	font-size: 10px;
+	color: #333;
+}
+
+.evenRow
+{
+	height: 32px;
+	padding: 4px 0 0 13px;
+	background: #fbfbfb;
+}
+
+.evenRow div
+{
+	font-size: 10px;
+	color: #333;
+}
+
+/* dotted divider */
+.td-dotted-btm, .td-dotted-top
+{
+	background-image: url(/Content/Global/img/Layout/bkg/hdivider.gif);
+}
+
+.td-dotted-lt, .td-dotted-rt
+{
+	background-image: url(/Content/Global/img/Layout/bkg/divider.gif);
+}
+
+
+.td-dotted-btm, .td-dotted-top
+{
+	background-repeat: repeat-x;
+}
+.td-dotted-lt, .td-dotted-rt
+{
+	background-attachment: scroll;
+	background-repeat: repeat-y;
+}
+.td-dotted-btm
+{
+	background-position: bottom left;
+}
+.td-dotted-top
+{
+	background-position: top left;
+}
+.td-dotted-lt
+{
+	background-position: left top;
+}
+.td-dotted-rt
+{
+	background-position: right top;
+}
+
+/*List with Arrow image Bullets*/
+.arrow_list
+{
+	list-style-image: url(/Content/Global/img/buttons/arrow-bullet.gif);
+	display: list-item;
+	padding: 0;
+}
+label
+{
+	font-size: 11px;
+}
+
+input
+{
+	border-top: 1px solid #137485;
+	border-bottom: 1px solid #95B1B5;
+	border-right: 1px solid #0A3B42;
+	border-left: 1px solid #9CAFB5;
+	font-size: 11px;
+	padding: 1px 5px;
+}
+
+input.image
+{
+	border: none;
+	background: none;
+}
+
+form image, img, image
+{
+	border: none;
+	background: none;
+}
+
+hr
+{
+	border: none;
+	border-top: 1px solid #CBCDCA;
+}
+
+.reqField
+{
+	font-size: 11px;
+	display: inline;
+}
+
+img, .imgForm
+{
+	border: none;
+	background: none;
+}
+
+
+@media print
+{
+	div.noindex, #ctl00_ctl00__LeftNavMenu_RadPanelbar1, #ctl00_ctl00_PageHeaderArea__PageHeader, td.LeftNavMenuCell
+	{
+		display: none;
+		width: 0px;
+		height: 0px;
+	}
+}
+
+
+/* BOX (blue box replacement) */
+/******TOP CAP STYLES FOR BLUEBOX******/
+.box_cap_top_left
+{
+	width: 7px;
+	height: 15px;
+	background: url( '/Content/Global/img/layout/box/blue/box_cap_top_left.png' ) no-repeat top left;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src= '/Content/Global/img/layout/box/blue/box_cap_top_left.png' );
+}
+
+.box_cap_top_left_curve
+{
+	width: 7px;
+	height: 13px;
+	background: url( '/Content/Global/img/layout/box/blue/box_cap_top_left_curve.png' ) no-repeat top left;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src= '/Content/Global/img/layout/box/blue/box_cap_top_left_curve.png' );
+
+}
+
+.box_cap_top_middle
+{
+	height: 15px;
+	background: url( '/Content/Global/img/layout/box/blue/box_cap_top_middle.png' );
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src= '/Content/Global/img/layout/box/blue/box_cap_top_middle.png' );
+
+}
+
+.box_cap_top_right_curve
+{
+	width: 13px;
+	height: 15px;
+	background: url( '/Content/Global/img/layout/box/blue/box_cap_top_right_curve.png' ) no-repeat top left;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src= '/Content/Global/img/layout/box/blue/box_cap_top_right_curve.png' );
+
+}
+
+.box_cap_top_right
+{
+	width: 7px;
+	height: 15px;
+	background: url( '/Content/Global/img/layout/box/blue/box_cap_top_right.png' ) no-repeat top left;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src= '/Content/Global/img/layout/box/blue/box_cap_top_right.png' );
+
+}
+/******Content STYLES FOR BLUEBOX******/
+.box_left_shadow
+{
+	width: 7px;
+	background: url( '/Content/Global/img/layout/box/blue/box_left_shadow2.png' );
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src= '/Content/Global/img/layout/box/blue/box_left_shadow.png' );
+
+}
+
+.box_header_bkg
+{
+	background: url( '/Content/Global/img/layout/box/blue/box_header_bkg.png' );
+	overflow: hidden;
+	font-weight: bold;
+	padding-bottom: 5px;
+	color: #2572BB;
+	font-size: 15px;
+}
+
+/*USE CONTENT_TEXT WHEN CONTENT NEED PADDING*/
+.content_text
+{
+   background-color: #FFFFFF;
+   padding: 2px;
+}
+
+.large_link
+{
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+/*USE CONTENT WHEN BODY DOES NOT REQUIRE PADDING*/
+.content
+{
+	background-color: #FFFFFF;
+}
+
+.box_right_shadow
+{
+	width: 7px;
+	background: url( '/Content/Global/img/layout/box/blue/box_right_shadow.png' );
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src= '/Content/Global/img/layout/box/blue/box_right_shadow.png' );
+
+}
+
+/******FOOTER STYLES FOR BLUEBOX******/
+.box_footer_bot_left
+{
+	width: 7px;
+	height: 17px;
+	background: url( '/Content/Global/img/layout/box/blue/box_footer_bot_left.png' ) no-repeat top left;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src= '/Content/Global/img/layout/box/blue/box_footer_bot_left.png' );
+
+}
+
+.box_footer_bot_left_curve
+{
+	width: 13px;
+	height: 17px;
+	background: url( '/Content/Global/img/layout/box/blue/box_footer_bot_left_curve.png' ) no-repeat top left;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src= '/Content/Global/img/layout/box/blue/box_footer_bot_left_curve.png' );
+
+}
+
+.box_footer_bot_middle
+{
+	height: 17px;
+	background: url( '/Content/Global/img/layout/box/blue/box_footer_bot_middle.png' );
+	background-repeat: repeat-x;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src= '/Content/Global/img/layout/box/blue/box_footer_bot_middle.png' );
+
+}
+
+.box_footer_bot_right_curve
+{
+	width: 13px;
+	height: 17px;
+	background: url( '/Content/Global/img/layout/box/blue/box_footer_bot_right_curve.png' ) no-repeat top left;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src= '/Content/Global/img/layout/box/blue/box_footer_bot_right_curve.png' );
+
+}
+
+.box_footer_bot_right
+{
+	width: 7px;
+	height: 17px;
+	background: url( '/Content/Global/img/layout/box/blue/box_footer_bot_right.png' ) no-repeat top left;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src= '/Content/Global/img/layout/box/blue/box_footer_bot_right.png' );
+
+}
+
+
+
+/* STYLES ADDED BY ANDRES 01/09/08 FOR THE CONTENT PAGES HTML */
+/* ANY EXISTING STYLE ON THIS SHEET THAT I HAVE MODIFIED, HAS BEEN MOVED UNDER THIS SECTION AS WELL */
+/* default page level title - GLOBAL STYLES EXCEPT FOR COLOR WHICH IS SECTION-LEVEL STYLE */
+.pageHeading  { margin: 0 0 10px 0; padding: 0px 0 4px 0px; font-size: 18px; }
+
+
+/* Content Page Styles */
+.contpg_img {
+	border: 1px solid #CCCCCC;
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+
+.uc10-img {
+   /*commented per Sheila border: 1px solid #999999;*/
+   margin:0 0px 0 0; width:70px;
+}
+
+
+#ContentBlock
+{
+margin:5px 0 15px 0;
+overflow:hidden;
+/*background-color:#99CC33;*/
+}
+
+
+
+/* Already existing styles that I have tweaked - moved under this section */
+img.assetRightArrow
+{
+	margin-left: 4px;
+	text-decoration: none;
+	vertical-align: bottom;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-image: none;
+	margin-top: 5px;
+}
+
+
+.myhltpl-left-td
+{
+	background-image: url(/Content/Global/img/Layout/bkg/divider.gif);
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	background-position: right top;
+}
+
+.myhltpl-hz-td
+{
+	background-image: url(/Content/Global/img/Layout/bkg/hdivider.gif);
+	background-repeat: repeat-x;
+	background-attachment: scroll;
+	background-position: right top;
+}
+
+.myhltpl-left-td-nobg
+{
+	padding: 0 15px 10px 10px;
+}
+
+
+/* common text styles */
+.txt_regular {
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #555;
+	}
+	
+
+
+
+/* DISCLAIMER BOX */
+.disclaimer {margin-top: 10px; color: #999;}
+	.disclaimer .border-wrap {
+	margin: 10px 0px 0px 0px;
+	padding: 1px 3px;
+	border: 1px solid #ccc;
+	}
+
+	.disclaimer .noborder-wrap {
+	margin: 0px;
+	padding: 1px 3px;
+	}
+
+	/* P.SMALL */
+	.disclaimer p.small {
+	font-size: 9px;
+	color: #999;
+	margin: 0px 0px;
+	padding: 0px 0px;
+	}
+/* DISCLAIMER BOX */
+
+/************ Row Style (GridView, DataList.. etc) ***********/
+.RowStyle
+{
+	background-color: #FFFFFF;
+}
+.AlternateRowStyle
+{
+	background-color: #e5ebd4;
+}
+.GridHeader
+{
+	background-color: #54a254;
+	color: White;
+}
+
+.gray_background
+{
+	background: url('/Content/Global/img/GrayBackground.gif') repeat-x;
+	
+}
+
+.GrayBorder
+{
+	border-right: #a8a8a8 1px solid;
+	border-left: #a8a8a8 1px solid;
+	border-top: #a8a8a8 1px solid;
+	border-bottom: #a8a8a8 1px solid;
+}
+
+.RegVertSpacing
+{
+	height: 12px;
+}
+/****** Main Fonts ******/
+.OverrideSubEvent
+{
+	margin-left: 5px;
+}
+.FormText
+{
+	font-family: Arial, Tahoma, Verdana;
+	font-size: 12px;
+}
+
+.SmallFormText
+{
+	font-family: Arial, Tahoma, Verdana;
+	font-size: 10px;
+}
+
+#tblOverrideSubEvent span
+{
+	font-family: Arial, Tahoma, Verdana;
+	font-size: 12px;
+}
+/****** Font Style ******/
+.Bold
+{
+	font-weight: bold;
+}
+
+.Title
+{
+	font-weight: bold;
+	font-size: 15px;
+	color: #535353;
+}
+
+.Error
+{
+	color: Red;
+}
+
+.LightGray
+{
+	color: #BDBDBD;
+}
+
+.modalBackground
+{
+	filter: Alpha(Opacity=40);
+	-moz-opacity: 0.4;
+	opacity: 0.4;
+	width: 100%;
+	height: 100%;
+	background-color: #696969;
+	position: absolute;
+	z-index: 500;
+	top: 0px;
+	left: 0px;
+}
+
+
+#newContactAddButton{
+	margin-top:-6px;
+	}
+	
+/** STYLES FOR SKIN OF BASIC CONTENT COMPONENT */
+.basic_content_container {
+    border: 1px solid #B5B9B9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    float: left;
+    margin: 10px;
+    min-height: 150px;
+    width: 330px;
+}
+
+.basic_content_header {
+    border-bottom: 1px solid #B5B9B9;
+    border-top: 6px solid #7BC142;
+}
+
+.basic_content_header span {
+    color: #646464;
+    display: inline-block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 14px;
+    padding-top: 10px;
+}
+
+.basic_content_header span a {
+	text-decoration: none;
+	color: #646464;
+}
+
+.basic_content_container .basic_content_text, .basic_content_container .basic_content_img {
+    border: medium none;
+    float: left;
+    margin: 10px;
+}
+
+.basic_content_text {
+	line-height: 18px;
+	width: 175px;
+}
+
+.basic_content_img {
+    height: 98px;
+    overflow: hidden;
+    width: 98px;
+}
+
+.basic_content_button   a.repeatablelinks2  {
+    background: url("/content/Global/img/slidedeck/btn-green-mid.png") repeat-x scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-size: 10px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+/*////INTRODUCED PER DEFECT 43224 - GDO V____*/
+.listBullets {list-style-type: disc;}
+.listBullets li {margin: 3px 0;}
+
+
+/*********************** GENERAL.CSS ****************/
+
+/* home splash page specific */
+#DefaultAspx {
+	background-image: url( '/Content/Global/img/Layout/bkg/bkg_page_green.jpg' );
+	background-repeat : no-repeat;
+    border-top: 3px solid #407304;
+}
+#ctl00_ctl00__MainMenu_RadMenu1 {
+	position: absolute;
+	top: 61px;
+}
+/* Header elements */
+
+#HeaderArea {
+	/*background-image: url(   '/Content/Global/img/Layout/bkg/bkg_hdrlogo_green.jpg' );*/
+	background-image: none; /* no background-image for the rebranded header */
+	padding: 6px 0 0 0;
+	height: 88px;  /* Changed from 96 to remove gap btween green bar and BKG */
+	width: 955px;
+}
+#HeaderArea > table {
+	background-image: none !important; /* keeps the header leaf green across all sections */
+}
+#Logo {
+	margin: 0px;
+	padding: 0px;
+	vertical-align: top;
+	border-style: none;
+	height: 67px;
+	width: 25%;
+}
+#LoginView {
+	width: 65%;
+	vertical-align: top;
+}
+div.radmenu span.text {
+	line-height: 12px !important;
+	padding-top: 2px !important;
+}
+#Search {
+	padding-top: 6px;
+    text-align: right;
+	width: 10%;
+}
+.salutation{
+    float: right;
+    max-width: 85%;
+}
+/* Footer elements */
+#FooterArea {
+	padding: 20px 0 5px;
+	width: 955px;
+	text-align: center;
+	font: 9px Arial, Helvetica, sans-serif;
+	color: #555; /* height:80px; */
+}
+#FooterArea p {
+	margin: 2px;
+	padding: 1px;
+	font-size: 9px;
+	color: #333;
+}
+#FooterArea a:link, #FooterArea a:visited, #FooterArea a:hover, #FooterArea a:active {
+	font-size: 10px;
+	margin-right: 8px;
+	margin-left: 8px;
+	text-decoration: underline;
+	color: #999999;
+}
+#FooterRibbon {
+	/*height: 35px;*/
+	margin: 0pt;
+	/*padding: 8px 0pt 0pt 10px;*/
+	font-size: 10px;
+	color: #ffffff;
+	/*background-image: url(   '/Content/Global/img/Layout/bkg/bottom_footer.jpg' );
+    background-repeat: repeat-x;
+    background-position: center top;*/
+    /* width: 945px; */
+	/* added for rebrand */
+	width: 934px;
+	height: 18px;
+	padding: 5px 0pt 0pt 22px;
+	background-color: #7CC04A !important; /* new footer color for rebrand */
+}
+#FooterText {
+	font-size: 9px;
+	color: #515151;
+	text-align: center;
+	width: 955px;
+}
+/* DisplayStatusMessage area */
+#StatusDisplay {
+	font-size: large;
+	font-style: italic;
+	border: dotted 1px;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+#StatusDisplay.Error {
+	background: #CC0000;
+	color: #FFFFFF;
+}
+#StatusDisplay.Success {
+	background: #CCFF66;
+	color: #606060;
+}
+#StatusDisplay.Warning {
+	background: #FFFF99;
+	color: #606060;
+}
+#LeftNavMenuCell {
+	padding: 0 10px 10px;
+	width: 175px;
+	vertical-align: top;
+	text-align: left;
+}
+
+#ContentCell {
+    border-left: 1px dotted #CCCCCC;
+    min-height: 450px;
+    width: 765px;
+    max-width: 965px;
+}
+
+/* site map page styling*/
+#SiteMap {
+	margin: 2em;
+	background-image: url('/Content/Global/img/layout/bkg/bkg_page_map.jpg');
+	background-repeat: no-repeat;
+    width: 910px;
+}
+#SiteMap div {
+	max-width: 200px;
+}
+#SiteMap div.Level1, #SiteMap div.Level1 a {
+	color: #555;
+	font-size: 14px;
+	font-weight: bolder;
+}
+#SiteMap div.Level2, #SiteMap div.Level2 a {
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+#SiteMap div.Level3, #SiteMap div.Level3 a {
+	font-size: 12px;
+	text-decoration: none;
+}
+/* green round corner top row of a table */
+#GreenRoundTH {
+	width: 688px;
+	border: 0;
+}
+#GreenRoundTHRight {
+	background: url(/Content/Global/img/layout/bkg/uc10_midedge_right.gif) no-repeat;
+	height: 24px;
+	text-align: right;
+	width: 9px;
+	min-width: 9px;
+}
+#GreenRoundTHLeft {
+	background: url("/Content/Global/img/layout/bkg/uc10_midedge_left.gif") no-repeat;
+	height: 24px;
+	text-align: left;
+	width: 9px;
+	min-width: 9px;
+}
+#GreenRoundTHMiddle {
+	width: 800px;
+	height: 24px;
+	vertical-align: middle;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: Left;
+	color: White;
+	background-image: url("/Content/Global/img/layout/bkg/uc10_mid.gif"); 
+	background-repeat: repeat-x;
+}
+#LoginFlash {
+	width: 443px;
+	vertical-align: top;
+    float: left;
+}
+#ProductTeaser {
+	width: 243px;
+	vertical-align: top;
+    float: left;
+}
+#HomePageColumn2 {
+	width: 438px;
+}
+#HomePageColumn3 {
+	width: 265px;
+}
+
+/* Content display page (full content ECM )*/
+#ContentDisplay {
+	padding: 1em;
+	width: 755px;
+}
+/* Viwer/Double Viewer Styles */
+#Viewer {
+	vertical-align: top;
+	width: 100%; /*	margin-top: 0; 	margin-left: 0; */
+}
+#Viewer .ViewerTitle {
+	margin-top: -3px;
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	color: #333399;
+}
+#Viewer .BasicBannerBox {
+	border: #a2a7a1 1px solid;
+	padding: 5px;
+	margin: 0px 3px 0px 4px;
+	position: relative;
+	background-color: #fff;
+	width: 504px;
+}
+#Viewer .LinkDiv {
+	vertical-align: top;
+	height: 600px;
+	overflow: auto;
+	width: 100%;
+}
+#Viewer td.BlueSquareTop {
+	background-position: left top;
+	background-image: url(    '/Content/Global/controls/Viewer/img/blue-square-top.png' );
+	vertical-align: top;
+	background-repeat: no-repeat;
+	height: 14px;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+ _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src= '/Content/Global/controls/Viewer/img/blue-square-top.png' );
+
+}
+#Viewer td.BlueSquareBackground {
+	background-image: url('/Content/Global/controls/Viewer/img/blue-square-bg.png' );
+	vertical-align: top;
+	background-repeat: repeat-y;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+ _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src= '/Content/Global/controls/Viewer/img/blue-square-bg.png' );
+
+}
+#Viewer TD.BlueSquareBottom {
+	background-image: url(    '/Content/Global/controls/Viewer/img/blue-square-btm.png' );
+	vertical-align: top;
+	background-repeat: no-repeat;
+	height: 14px;
+	overflow: hidden; /* FOR IE 6 PNG BUG */
+ _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src= '/Content/Global/controls/Viewer/img/blue-square-btm.png' );
+
+}
+#Viewer .ViewerBodyBox {
+	width: 96%;
+	margin: 0px 10px 0px 10px;
+	position: relative;
+}
+#Viewer TD.LinkMenu {
+	height: 25px;
+	background-color: #ffffff;
+	vertical-align: middle;
+}
+#Viewer TD.LinkMenu:hover {
+	background-color: #d8e4f0;
+}
+#Viewer TD.strong {
+	font-weight: bold;
+}
+#Viewer .LeftFrame {
+	vertical-align: top;
+	width: 233px;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+#Viewer HR {
+	color: #d9d9d9;
+}
+#Viewer TD {
+	vertical-align: top;
+}
+/* Events section event controls*/
+/* Events Detail popup*/
+#EventsDetail.popup_bkg {
+	background: url(     '/Content/Global/Events/img/pop_bg.gif' ) repeat-x;
+}
+/* EventsSearch */
+#EventsSearch .grid_view_header {
+	height: 35px;
+	background-color: #e9e5f6;
+}
+#EventsSearch .grid_view_header_short {
+	height: 25px;
+	background-color: #e9e5f6;
+}
+#EventsSearch .alternating_grid_row {
+	height: 25px;
+	background-color: #f2f1f4;
+}
+#EventsSearch .grid_row {
+	height: 25px;
+}
+#EventsSearch .grid_view_title {
+	font-weight: bold;
+	font-size: 15px;
+	color: #333399;
+}
+#EventsSearch .error_message {
+	color: red;
+}
+#EventsSearch .column_label {
+	width: 86px;
+	text-align: right;
+}
+#EventsSearch .column_keyword {
+	width: 165px;
+}
+#EventTitle .event_title {
+	font-weight: bold;
+	color: #333399;
+	text-indent: 0.3in;
+}
+#EventSchedule TD {
+	width: 222px;
+}
+/* Page Not Found styles*/
+#PageNotFound {
+	margin: 1em;
+}
+div#PageNotFound {
+	min-height: 400px;
+}
+.Calendar .ajax__calendar_container {
+	border: 1px solid #646464;
+	background-color: #e9e5f6;
+	color: black;
+	z-index : 500;
+}
+/*Print */
+#Print {
+	position: relative;
+	display: inline;
+}
+/* search box*/
+#SearchBox {
+	width: 100%;
+	float: right;
+	padding-bottom: 8px;
+}
+#SearchBox input{ padding: 2px 10px; }
+#SearchBox [id$="GoButton"]{ 
+    color: #FFFFFF;
+    padding: 0 10px;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: 18px;
+}
+
+/* Fix for NAM left nav */
+.rpItem {
+	border: none !important;
+}
+#GoldButton .ButtonCapRt-plus {
+	background-image: url(/Content/Global/img/layout/buttons/btn_ylw_rt.gif);
+}
+/** STYLES FOR SKIN OF BASIC CONTENT COMPONENT */
+.basic_content_container {
+	border: 1px solid #B5B9B9;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	float: left;
+	margin: 10px;
+	min-height: 150px;
+	width: 330px;
+}
+.basic_content_header {
+	border-bottom: 1px solid #B5B9B9;
+	border-top: 6px solid #7BC142;
+}
+.basic_content_header span {
+	color: #646464;
+	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	padding-left: 14px;
+	padding-top: 10px;
+}
+.basic_content_header span a:link {
+	text-decoration: none;
+	color: #646464;
+}
+.basic_content_container .basic_content_text, .basic_content_container .basic_content_img {
+	border: medium none;
+	float: left;
+	margin: 10px;
+}
+.basic_content_text {
+	line-height: 18px;
+	width: 175px;
+}
+.basic_content_img {
+	height: 98px;
+	overflow: hidden;
+	width: 98px;
+}
+.basic_content_button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.basic_content_button a.repeatablelinks2 {
+	background: url("/content/Global/img/slidedeck/btn-green-mid.png") repeat-x scroll 0 0 transparent;
+	color: #FFFFFF;
+	font-size: 10px;
+	padding: 5px;
+	text-decoration: none;
+}
+/** END OF STYLES FOR SKIN OF BASIC CONTENT COMPONENT */
+
+/** STYLES FOR ADD THIS PLUGIN */
+.add_this_container {
+	display: block;
+	float: left;
+	margin-left: 14px;
+	margin-top: 9px;
+	width: 118px;
+}
+.print_container {
+	float: right;
+	margin-right: 25px;
+}
+.icon2_modify {
+	padding: 0 30px 0 0;
+	position: relative;
+	width: 100%;
+}
+/** END STYLES FOR ADD THIS PLUGIN */
+
+
+/*********************** LOGONSTATUSVIEW.CSS ****************/
+#DistributorInfoTable{ word-spacing: -0.25em; }
+#DistributorInfoTable .FullName,
+#DistributorInfoTable .Volume{ font-weight:bold; }
+#DistributorInfoTable > div{
+    border-left: 1px solid #AAAAAA;
+    display: inline-block;
+    padding-left: 2%;
+    text-align: left;
+    vertical-align: top;
+    width: 45%;
+    height: 80px;
+    word-spacing: normal;
+}
+#DistributorInfoTable > div:first-child{
+    text-align: right;
+    padding: 0 2% 0 0;
+    border: none;
+}
+
+#DistributorInfoTable > div > span {
+	margin: 2px 0 6px 0;
+	width: 100%;
+    display: inline-block;
+}
+
+
+/*FOR CR 015*/
+.bwSubscriber{
+font-weight: bold; 
+padding: 5px; 
+padding-bottom:10px; 
+padding-top:7px;
+}
+
+.bwSubscriber span{
+position: relative; 
+top: 1px;
+}
+
+/*DS ALerts inbox*/
+#alertIcon {
+    height: 29px;
+    text-decoration: none;
+    width: 47px;
+    display: block;
+}
+.dsInboxEmpt { background: url("/Content/Global/img/icons/inbox_empty.png") no-repeat scroll 6% center transparent; }
+.dsInboxBubble { background: url("/Content/Global/img/icons/inbox_bubble.png") no-repeat scroll 6% center transparent; }
+
+#DistributorInfoTable .dsIcon {
+	color: #FFFFFF;
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 2px 22px;
+	text-align: center;
+	width: 20px;
+}
+#alertNumber{ display: block; height: 100%; }
+
+/*********************** LOGONSBOX.CSS ****************/
+#WrapperBox
+{
+	width: 266px;
+}
+
+#LogonBox .td-dotted-btm
+{
+	padding-bottom: 6px;
+	padding-top: 6px;
+}
+
+
+span.imgForm input
+{
+	border-color: #FFFFFF;
+	background-color: #FFFFFF;
+}
+
+.login label {
+    display: inline-block;
+    padding: 5px;
+    text-align: right;
+    vertical-align: middle;
+    width: 40%;
+}
+
+.login label + input { display: inline-block; margin: 5px; width: 110px; }
+#loginForm > span {
+    border-bottom: 1px dotted #BBBBBB;
+    color: #A54E24;
+    display: block;
+    font-size: 10px;
+    margin-bottom: 2px;
+    padding: 2px 5px;
+    text-align: center;
+}
+
+#loginForm > div{ text-align: right; padding: 0 15px; }
+#loginForm a{ display: block; text-align: center; }
+.login .content_text{ 
+    background: url("/SharedUI/Images/worldmap.gif") no-repeat scroll center top #FFFFFF; 
+    padding-top: 80px; 
+    text-align: center
+}
+
+.login > div { float: left; }
+.login ul{ padding:0 20px; }
+.login > div:first-child + div{ width: 688px; }
+
+/* Fix for pages in Content Cell*/
+.contentCellDivs{ width: 755px; padding: 10px; }
+
+footer{ overflow: hidden; clear: both; }
+
+/*============================================================================ 				
+$ BASE GRID
+*/
+.col1                    { width: 8.33%;  }
+.col2                    { width: 16.66%; }
+.col3, .quarter          { width: 25%; }
+.col4, .third            { width: 33.33%; }
+.col5                    { width: 41.66%; }
+.col6, .half             { width: 50%; }
+.col7                    { width: 58.33%; }
+.col8, .two-thirds       { width: 66.66%; }
+.col9                    { width: 75%; }
+.col10                   { width: 83.33%; }
+.col11                   { width: 91.66%; }
+.col12                   { width: 100%; }
+
+body .twoColumns, 
+body .threeColumns, 
+body .fourColumns, 
+body .columnCont{ letter-spacing: -0.36em; }
+
+.columnCont > *{ letter-spacing: normal; }
+
+.twoColumns > *,
+.threeColumns > *,
+.fourColumns > *,
+.col1, .col2, .col3, .col4, 
+.col5, .col6, .col7, .col8, 
+.col9, .col10, .col11, .col12,
+.quarter, .third, .half, .two-thirds {
+    display: inline-block;
+    letter-spacing: normal;
+    vertical-align: top;
+    padding: 0 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.twoColumns > *{ width: 50%; }
+.threeColumns > *{ width: 33.33%; }
+.fourColumns > *{ width: 25%; }
+
+.twoColumns .twoColumns {
+    padding: 0;
+}

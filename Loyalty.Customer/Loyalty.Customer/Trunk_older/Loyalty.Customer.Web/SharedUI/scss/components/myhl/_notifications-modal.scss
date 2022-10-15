@@ -1,0 +1,82 @@
+﻿#modalNotif{
+    @include m4-t6-d10;
+    max-width: span(10);
+
+    img{
+        width: 100%;
+    }
+
+    h3{
+        font-weight: bold;
+        margin: 20px 0;
+        line-height: 1.1;
+    }
+
+    table { 
+        width: 100%;
+        margin-bottom: $gutter;
+
+        @include breakpoint($mobile $desktop) { 
+            @include row-table-headers;
+            tbody tr:first-child{ display: none }             
+            a.phone { margin-left: 15px; }
+            td{ text-align: left; }
+        }   
+        @include breakpoint($desktop) { 
+            th,td {
+                text-align: left;
+                a.phone { display: none; } 
+            }  
+            td {
+                &:nth-child(6), &:nth-child(7), &:last-child { font-size: 16px; }  
+                &:nth-child(6) { color: $green; }
+                &:nth-child(7) { color: $red; }
+            }
+        } 
+    }
+
+    .not-show-again-button{
+        float: left;
+    }
+
+    p{
+        text-align: left;
+    }
+
+    .container-3-7{
+        overflow: hidden;
+
+        div{
+            width: 100%;
+
+            @include breakpoint($desktop){
+                @include span(30%);
+                margin: 0;
+                border-right: 1px solid $lightgrey;
+            }
+
+
+            + div{
+                @include breakpoint($desktop){
+                    @include span(70% last);
+                    padding-left: $gutter;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .bottomActBtns a{
+        width: 100%;
+        margin-bottom: $gutter;
+
+        @include breakpoint($desktop){
+            width: auto;
+            max-width: 32%;
+        }
+    }
+
+    .two-columns-logos img{
+        width: auto;
+    }
+}

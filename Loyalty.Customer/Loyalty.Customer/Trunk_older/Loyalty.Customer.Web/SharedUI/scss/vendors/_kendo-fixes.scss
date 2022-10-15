@@ -1,0 +1,501 @@
+﻿// =============
+// Kendo Fixes
+// -----
+// Need to fix something Kendo? This is where you add kendo fixes
+//
+//==============
+
+//Global changes
+.k-animation-container, 
+.k-widget, .k-widget *, 
+.k-animation-container *, 
+.k-widget *:before, 
+.k-animation-container *:after, 
+.k-block .k-header, 
+.k-list-container {
+    @include box-sizing(inherit);
+}
+
+/*Override kendo icons*/
+.k-edit, .k-delete, .k-update, .k-add {
+    display: none;
+}
+
+/* Hover dropdown */
+.k-dropdown:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+
+.k-dropdown:focus {
+    border: 1px solid #f3f3f3;
+    color: #555;
+    background: #f3f3f3;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+}
+
+/*============================================================================
+$ KENDO WINDOW
+*/
+.k-window{
+    padding: $gutter !important;
+    background-color: #fff;
+    margin-left: -20px;
+    max-width: 100%;
+    @extend .wrap-normal;
+    @include box-sizing(border-box);
+
+    .k-window-titlebar {
+        height: auto;
+        position: static;
+        white-space: normal;
+        background-color: #fff;
+        color: inherit;
+        padding: 0;
+        margin: 0px !important;
+
+        .k-window-action {
+            margin: 5px 2px 0 0;
+            opacity: 1;
+            color: $grey;
+
+            [class^="icon-"], [class*=" icon-"] {
+                background-image: none;
+                display: block;
+                font-size: 18px;
+                text-indent: 0;
+                opacity: 1;
+                width: auto;
+                height: auto;
+            }
+
+        }
+
+        .k-window-title{
+            color: #515151;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 20px;
+            position: static;
+            display: inline-block;
+            margin-bottom: 20px;
+            height: auto;
+        }
+
+    }
+
+    .k-window-content {
+        padding: 0;
+        overflow: inherit;
+
+        .k-edit-form-container {
+            width: auto;
+        }
+
+    }
+
+}
+
+/*============================================================================
+$ HRBL TABS
+*/
+.k-tabstrip {
+    border: 0 none;
+
+    &.dsAlertTabs.k-widget.k-header {
+        border: medium none;
+        margin-left: 15px;
+        width: 750px;
+    }
+
+    .k-loading {
+        border: none;
+    }
+}
+
+
+/*=========================================================================================
+                                MANUAL OVERRIDES FOR HRBL SKIN
+  =========================================================================================*/
+
+/* ISAAC */
+.k-calendar .k-content .k-link{
+color: #515151
+}
+.k-calendar .k-footer .k-link{
+color: #515151
+}
+.k-grid-filter.k-state-active {
+background-color: transparent;
+}
+
+
+/*******************hrbl Panel Bar************************/
+.hrblPanelBar.k-panelbar {
+border: 0;
+}
+
+.hrblPanelBar.k-panelbar .k-header {
+background-color: transparent;
+height: 35px;
+padding-top: 15px;
+border-bottom: 1px dotted #eee;
+}
+
+.hrblPanelBar.k-panelbar .k-header > h4, .hrblPanelBar.k-panelbar .k-content span.icon-help-circle {
+color: #08f;
+}
+
+.hrblPanelBar.k-panelbar .k-content{ border: none; }
+
+.hrblPanelBar.k-panelbar .k-content > div.documentItem {
+padding: 10px;
+}
+
+.hrblPanelBar.k-panelbar .k-content > div.documentItem a  {
+display: inline-block;
+margin-right: 10px;
+width: auto;
+vertical-align: top;
+}
+
+.hrblPanelBar.k-panelbar .k-content > div.documentItem:hover, .hrblPanelBar.k-panelbar .k-content > div.documentItem:hover a,
+.hrblPanelBar.k-panelbar .k-content > div.documentItem:hover span.icon-help-circle    {
+background-color: #6db6ff;
+color: #fff;
+}
+
+.hrblPanelBar.k-panelbar .k-content span.icon-help-circle {
+display: inline-block;
+cursor: pointer;
+margin-top: 7px;
+}
+    
+.hrblPanelBar.k-panelbar .k-content > div.documentItem i {
+font-size: 1.3em;
+font-style: normal !important;
+margin-right: 10px;
+line-height: 1.7em;
+}
+
+.hrblPanelBar.k-panelbar .k-content > a > i.icon-document:before {
+padding-right: 10px;
+}
+
+.hrblPanelBar.k-panelbar .k-icon {
+background-image: none;
+font-size: 1.3em;
+color: #08f;
+width: auto;
+height: auto;
+line-height: 1.5em;
+text-indent: 0;
+overflow: visible;
+}
+
+.hrblPanelBar.k-panelbar .k-icon.k-i-arrow-n {
+background-position: initial;
+}
+
+.hrblPanelBar.k-panelbar .k-panelbar-collapse, .hrblPanelBar.k-panelbar .k-panelbar-expand  {
+top: 15px;
+}
+
+/*RTL support for HRBL PANEL BAR*/
+
+div.hrblPanelBarContainer.k-rtl .hrblPanelBar.k-panelbar .k-content>div.documentItem i {
+margin-right: 0;
+margin-left: 10px;
+float: right;
+line-height: normal;
+}
+
+div.hrblPanelBarContainer.k-rtl .hrblPanelBar.k-panelbar .k-content>div.documentItem a{
+line-height: 1.7em;
+}
+
+div.hrblPanelBarContainer.k-rtl .hrblPanelBar.k-panelbar .k-content span.icon-help-circle {
+margin-top:3px;
+}
+
+/*FIX FOR DEFECT 79747*/
+
+.k-numerictextbox .k-icon {
+    min-width: 15px;
+}
+
+/*Form field overrides*/
+/*update to add spacing being imposed by border*/
+.k-numeric-wrap {border-width: initial;}
+
+/*remove box shadows of inputs in numeric fields*/
+span.k-widget input {box-shadow:none;}
+
+.k-autocomplete.k-header {background-color: #eee;padding: 5px;}
+
+    .k-autocomplete.k-header:hover {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .k-autocomplete > .k-input:hover {box-shadow: none;}
+
+/*============================================================================ 				
+$ KENDO TABLE
+*/
+.k-grid {
+    color: #4D4D4D;
+    border: none;
+    margin-bottom: 100px;
+}
+
+.k-grid-header{ background-color: transparent; }
+
+.k-grid-header th.k-header {
+    border-bottom: 1px solid #7AC143;
+    border-left: medium none;
+    color: #4D4D4D;
+    font-weight: bold;
+    white-space: normal;
+}
+
+.k-grid th {
+    border-bottom: 1px solid #7AC143;
+}
+
+.k-grid-header .k-header,
+.k-grid td {
+    padding: 8px 0 8px 8px;
+    line-height: 1.3em;
+    border: none;
+}
+
+.k-grid tbody tr {
+    border-bottom: 1px solid #EEE;
+    background-color: #F3F3F3;
+}
+
+.k-grid tbody .k-alt{
+    background-color: $white;
+}
+
+.k-grid .k-link:link, .k-grid .k-link:visited {
+    color: inherit;
+}
+
+.k-grid-pager {
+    /*background-color:#EEE;*/
+    background-color: white;
+    float: right;
+    width: 180px;
+}
+
+.k-grid .k-pager-numbers li {
+    line-height: inherit;
+    margin: 0;
+    width: auto;
+}
+
+.k-grid .k-pager-numbers .k-state-selected {
+    background-color: #7AC123;
+    border-color: #7AC143;
+    min-width: 7px;
+    text-align: center;
+}
+
+.k-grid .k-link:hover > .k-i-arrow-n {
+    background-position: 0 0;
+}
+
+.k-grid .k-link:hover > .k-i-arrow-w {
+    background-position: 0 -48px;
+}
+
+.k-grid .k-link:hover > .k-i-seek-w {
+    background-position: 0 -112px;
+}
+
+.k-grid .k-link:hover > .k-i-arrow-e {
+    background-position: 0 -16px;
+}
+
+.k-grid .k-link:hover > .k-i-seek-e {
+    background-position: 0 -80px;
+}
+
+.k-grid .k-link .k-i-arrow-n:hover {
+    background-position: 0 0;
+}
+
+.k-grid tbody > tr.k-state-selected a{ color: $white; }
+
+//table details
+.k-grid .k-detail-row { 
+    
+    table tr{background-color: transparent;}
+
+    .k-detail-cell{ 
+        text-align: left; 
+        padding: 0;
+    }    
+}
+
+
+
+/*******************hrbl Table************************/
+
+.hrblTable .k-grid table {
+    border: none;
+}
+
+.hrblTable .k-grid .k-grid-header, .hrblTable .k-grid .k-header {
+    background-color: transparent !important;
+}
+
+.hrblTable .k-grid table > tbody tr:hover {
+    background-color: #DBF5C8;
+}
+
+.hrblTable .k-grid-header th.k-header {
+    border: none;
+}
+
+/*////hrbl Progress Bar*/
+.hrblProgressBar .k-progressbar {
+    border: 1px solid #c5c5c5;
+    width: inherit;
+}
+
+.hrblProgressBar .k-state-selected {
+    background-color: rgb(25, 132, 200);
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.2) 100%);
+}
+
+/*////hrbl Notifications*/
+.k-notification { border-radius: 2px; padding: 10px; cursor: pointer;}
+
+        .k-notification.k-notification-info {
+            background-color:#2e2e2e;
+            color:#fff;
+            border-color:#2e2e2e;
+        }
+
+        .k-notification.k-notification-success {
+            background-color:#dbf5c8;
+            color:#666666;
+            border-color:#7ac143;
+        }
+
+        .k-notification.k-notification-warning {
+            background-color:#fff2de;
+            color:#666666;
+            border-color:#f7d67f;
+        }
+
+        .k-notification.k-notification-error {
+            background-color:#ffd8d8;
+            color:#666666;
+            border-color:#ffacac
+        }
+        .k-notification-wrap { 
+            padding: 8px;
+            cursor:default;
+            position:relative;
+            white-space:nowrap;
+        }
+
+        .k-notification-wrap>.k-icon { display:none; }
+
+        .k-notification .hrblNotice {min-width: 320px;text-align: center; position:relative;}
+
+.k-notification .hrblNotice i {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.k-notification .hrblNotice .text {
+    font-weight: bold;
+}
+
+.k-notification .hrblNotice .k-icon.k-i-close {position:absolute;top:3px; right: 3px;}
+
+/*remove icon from default kendo validations per design comp: http://design.hrbl.net/nc-gauge/add-sr.html */
+.k-tooltip-validation .k-warning {display: none;}
+
+
+/*overrides for kendo numeric text box*/
+
+.hrblNumericTextBox .k-numeric-wrap {background-color: transparent;}
+.hrblNumericTextBox .k-numeric-wrap .k-input {width: 80%;padding: 6px;
+line-height: normal;height: auto;}
+
+.hrblNumericTextBox .k-numerictextbox .k-link {
+display: inline-block;
+height: auto;
+padding: 3px;
+line-height: 24px;
+border-radius: 2px;
+margin-right: 5px;
+}
+
+.hrblNumericTextBox .k-numerictextbox .k-select .k-link.k-state-selected span[class] {color:#fff}
+
+.hrblNumericTextBox .k-numerictextbox .k-select {width: auto;}
+
+.hrblNumericTextBox .k-numerictextbox .k-select .k-link span[class] {
+background-image: none;
+font-size: 18px;
+color: #08f;
+width: 18px;
+height: 26px;
+line-height: 24px;
+text-indent: 0;
+overflow: hidden;
+background-position: initial;
+opacity: 1;
+}
+
+/* ======================================== $KENDO HRBL FONT OVERRIDES =============================================== */
+
+/*$HRBL PANDEL BAR ICONS*/
+/*TAKEN FROM CLASS - .icon-arrow-circle-fl-9:before */
+.hrblPanelBar.k-panelbar .k-i-arrow-n:before { @extend .icon-arrow-circle-fl-9:before; }
+/*TAKEN FROM CLASS - .icon-arrow-circle-fl-4:before */
+.hrblPanelBar.k-panelbar .k-i-arrow-s:before { @extend .icon-arrow-circle-fl-4:before; }
+
+/*$HRBL NUMERIC TEXT BOX ICONS*/
+/*TAKEN FROM CLASS - .icon-add-ln-3:before, .icon-plus-circle:before */
+.hrblNumericTextBox .k-numerictextbox .k-select .k-link span.k-i-arrow-n:before { @extend .icon-plus-circle:before;}
+/*TAKEN FROM CLASS - .icon-minus-ln-3:before, .icon-minus-circle:before */
+.hrblNumericTextBox .k-numerictextbox .k-select .k-link span.k-i-arrow-s:before { @extend .icon-minus-circle:before;}
+
+
+/*============================================================================
+$ HRBL FORMS
+*/
+/*kendo overrides*/
+.hrblForms span.k-widget {
+  display: block; }
+
+.hrblForms span.k-widget.k-autocomplete {
+    display: inline-block;
+}
+
+.hrblForms .k-widget input {
+  width: inherit;
+  margin: 0; }
+.hrblForms .k-invalid-msg {margin-top: 15px;}
+
+.hrblForms input.k-invalid {
+    border: 1px solid #FCC;
+    background-color:#FCC;
+    box-shadow:none;
+}
+
+/*============================================================================
+$ RTL support
+*/
+[dir="rtl"] .k-grid-header th.k-header{
+    text-align: right;
+}

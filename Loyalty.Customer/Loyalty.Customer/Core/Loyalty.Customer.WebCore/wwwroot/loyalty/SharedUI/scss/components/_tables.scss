@@ -1,0 +1,307 @@
+
+
+    /* Tables
+    ================================================== */
+
+    table { 
+        width: 100%; 
+        border-bottom: 1px solid $softgrey; 
+        border-collapse: collapse;
+    }
+    table h1, table h2, table h3, table h4, table h5, table h6 { 
+        margin: 0; 
+        padding: 0 
+    }
+    th { 
+        border-bottom: 1px solid $lightgrey; 
+        color: $lightblack;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        line-height: 16px;
+    }
+    thead tr { 
+        background: none !important; 
+        color: $lightblack !important; 
+    }
+    tbody tr {
+        &:nth-child(2n+1) { background-color: $offwhite; }
+        &.selected { background-color: $lightgreen !important; }
+    }
+    td { 
+        border-bottom: 1px solid $lightgrey;
+    }
+    td:first-child, th:first-child { padding-left:10px; }
+
+    th,td {
+        vertical-align: middle; 
+        padding: 5px 10px; 
+        text-align: center; 
+        &.r { text-align: right !important; }
+        &.l { text-align: left !important; }
+        &.c { text-align: center !important; }
+        &.hide-mobile {
+            display: none;
+            @include breakpoint($tablet) { display: table-cell; }
+        }
+    }
+
+    caption { background: $lightblue; }
+
+    /* Grid style table cell sizes */
+    table [class*="span"] {
+        float: none;
+        margin-left: 0;
+        display:static;
+    }
+
+    
+    // Add class to table to show highlighted rows on hover
+    table.highlight {
+        tbody tr:hover { background-color: darken($lightgreen, 8) !important; }
+    }
+
+    /* Content Table
+    ================================================== */
+
+    @mixin content-table { 
+        table {
+            thead th.center { text-align: center; padding: 5px 0; }
+            tr {
+                &:active { background-color: $lightgreen; color: $charcoalgrey; }
+                td { 
+                    width: span(6);
+                    padding: 0 10px;
+                    a {   
+                        display: block; 
+                        padding: 10px 0;
+                    }
+                    &.name { font-size: 16px; }
+                    &.action {
+                        width: span(1);
+                        text-align: center;
+                        border-left: 1px solid $lightgrey;
+                        i {
+                            color: $blue;
+                            font-size: 24px;
+                            vertical-align: middle;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+
+
+    /* Grid Table
+    ================================================== */
+
+    table.grid-table { 
+        border-collapse: collapse; 
+        border-spacing: 0;
+        width: 100%;
+        tr { background: none !important; }
+        th, td { 
+            margin: 0; 
+            text-align: center; 
+            border-bottom: 1px solid $grey;
+            vertical-align: middle;
+            &.size {
+                font-weight: bold;
+                color: $charcoalgrey;
+            } 
+        }
+        th { 
+            background-color: $charcoalgrey !important; 
+            color: $white; 
+            font-weight: bold; 
+        }
+    }
+
+    /* Nested Table
+    ================================================== */
+
+    table.nested {   
+        border-collapse:collapse;
+        border-bottom: 1px solid $lightgrey;
+        tr.header {
+            display: table-row;
+            td { 
+                background: none;
+                border: none; 
+                padding-left: 10;
+                &.arrow {
+                    line-height: 10px;
+                    width: 20px;
+                    padding-left: 10px;
+                    cursor:pointer;
+                }
+            }
+        }
+        tbody tr.data {
+            display: none;
+            //&:nth-child(2n) { background-color: lighten($lightgreen, 2); } 
+            //&:nth-child(2n+1) { background-color: darken($lightgreen, 2); } 
+            background-color: lighten($lightgreen, 8);
+            td { 
+                border-bottom: 1px solid darken($lightgreen,4);
+                padding-left: 10px;
+                &.bdr { border-right: 1px solid $white; }
+            }
+            
+            &:hover { background-color: darken($lightgreen, 8) !important; }
+        }
+        tr.open {
+            background-color: $green !important;
+            color: $white !important;
+            a { color: $white; font-weight: normal; }
+            td { font-weight: bold; }
+        }
+        tr.odd { background-color: $offwhite; }
+        tr.even { background-color: $white; }
+    }
+
+
+    /* Scrollable Table
+    ================================================== */
+
+    @mixin scroll-table-shadow {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 15px;
+        height: 100%;
+        -webkit-box-shadow: inset -8px 0px 20px -8px rgba(0,0,0,0.3);
+        -moz-box-shadow: inset -8px 0px 20px -8px rgba(0,0,0,0.3);
+        box-shadow: inset -8px 0px 20px -8px rgba(0,0,0,0.3);
+    }
+
+    @mixin scroll-table { 
+        display: block; 
+        position: relative;
+        overflow:hidden;
+        width: 100%;
+        thead { 
+            display: block; 
+            float: left;
+            tr { display: block; } 
+        }
+        tbody { 
+            display: block;  
+            position: relative; 
+            overflow-x: auto; 
+            white-space: nowrap; 
+            tr { 
+                display: inline-block; 
+                border-right: 1px solid $lightgrey; 
+                margin-left: -3px;
+            }
+        }
+        td { 
+            display: block; 
+            line-height: 14px; 
+            border-bottom: 0;
+            border-bottom: 1px solid $grey;
+
+        }
+        th { 
+            display: block; 
+            line-height: 14px;
+            border-bottom: 0; 
+            border-right: 0; 
+            border-bottom: 1px solid $lightgrey;
+            background-color: $grey;
+        }
+        th:last-child, td:last-child { border-bottom: 1px solid $lightgrey; }
+    }
+
+    /* Row Tables
+    ================================================== */
+
+    @mixin row-table {
+        border: 0;
+
+        thead { display: none; }
+        tr {
+          display: block;
+          border-top: 1px solid $softgrey;
+          border-left: 1px solid $softgrey;
+          border-right: 1px solid $softgrey;
+          border-bottom: 3px solid $softgrey;
+          margin-bottom: 15px;
+        }
+        td {
+          display: block;
+          text-align: right;
+          border-bottom: 1px dotted $softgrey;
+          padding: 7px 10px;
+        }
+        td:last-child { border-bottom: 0; }
+        td:before {
+          content: attr(data-label);
+          float: left;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 12px;
+        }
+    }
+
+    @mixin row-table-headers {
+        border: 0;
+
+        thead { display: none; }
+        tr {
+          display: block;
+          border-bottom: 2px solid $grey;
+          border-left: 1px solid $grey;
+          border-right: 1px solid $grey;
+          margin-bottom: 10px;
+        }
+        td {
+          display: block;
+          text-align: right;
+          border-bottom: 1px solid $softgrey;
+        }
+        td:last-child, td:first-child { border-bottom: 0; }
+        td:first-child { 
+            background-color: $darkblue; 
+            text-align: left; 
+            text-transform: uppercase; 
+            font-weight: bold; 
+            color: $white; 
+            &:before {
+                content: "";
+            }
+            input[type="checkbox"] { float: left; margin: 7px 7px 0 0; }
+            a { 
+                color: $white; 
+                display: block;
+                padding: 5px 0;
+                margin-right: 30px;
+                position: relative;
+                &:after {
+                    font-family: $myherbalife;
+                    content: "\e515";
+                    position: absolute;
+                    top: 5px;
+                    right: -30px;
+                }
+            }
+            input[type="checkbox"] { margin-bottom: 0; }
+        }
+        td:before {
+          content: attr(data-label);
+          float: left;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 12px;
+        }
+    }
+
+
+    /* Table Orientation
+    ================================================== */
+    .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+    * html .cf { zoom: 1; }
+    *:first-child+html .cf { zoom: 1; }

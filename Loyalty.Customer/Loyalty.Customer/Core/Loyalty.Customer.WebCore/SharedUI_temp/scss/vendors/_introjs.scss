@@ -1,0 +1,288 @@
+.introjs-overlay {
+  position: absolute;
+  z-index: 999999;
+  background-color: #000;
+  opacity: 0;
+  background: -moz-radial-gradient(center,ellipse cover,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.7) 100%);
+  background: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(0,0,0,0.7)),color-stop(100%,rgba(0,0,0,0.9)));
+  background: -webkit-radial-gradient(center,ellipse cover,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.7) 100%);
+  background: -o-radial-gradient(center,ellipse cover,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.7) 100%);
+  background: -ms-radial-gradient(center,ellipse cover,rgba(0,0,0,0.2) 0,rgba(00,0,0,0.7) 100%);
+  background: radial-gradient(center,ellipse cover,rgba(0,0,0,0.2) 0,rgba(00,0,0,0.7) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66000000',endColorstr='#e6000000',GradientType=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+.introjs-fixParent {
+  z-index: auto !important;
+  opacity: 1.0 !important;
+}
+
+.introjs-showElement {
+  z-index: 9999999 !important;
+}
+
+.introjs-relativePosition {
+  position: relative;
+}
+
+.introjs-helperLayer {
+  position: absolute;
+  z-index: 9999998;
+  background-color: #FFF;
+  /*background-color: rgba(255,255,255,.9);*/
+  border: 1px solid #777;
+  border: 1px solid rgba(0,0,0,.5);
+  border-radius: 4px;
+  box-shadow: 0 2px 15px rgba(0,0,0,.4);
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+
+.introjs-helperNumberLayer {
+  position: absolute;
+  top: -25px;
+  z-index: 9999999999 !important;
+  padding: 2px;
+  font-family: Arial, verdana, tahoma;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  background: #008ecf; /* Old browsers */
+  background: -webkit-linear-gradient(top, #008ecf 0%, #008eff 100%); /* Chrome10+,Safari5.1+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #008ecf), color-stop(100%, #008eff)); /* Chrome,Safari4+ */
+  background:    -moz-linear-gradient(top, #008ecf 0%, #008eff 100%); /* FF3.6+ */
+  background:     -ms-linear-gradient(top, #008ecf 0%, #008eff 100%); /* IE10+ */
+  background:      -o-linear-gradient(top, #008ecf 0%, #008eff 100%); /* Opera 11.10+ */
+  background:         linear-gradient(to bottom, #008ecf 0%, #008eff 100%);  /* W3C */
+  width: 20px;
+  height:20px;
+  line-height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008ecf', endColorstr='#008eff', GradientType=0); /* IE6-9 */ 
+  filter: progid:DXImageTransform.Microsoft.Shadow(direction=135, strength=2, color=ff0000); /* IE10 text shadows */
+  box-shadow: 0 2px 5px rgba(0,0,0,.4);
+  margin-left: 15px;
+}
+
+.introjs-arrow {
+  border: 5px solid white;
+  content:'';
+  position: absolute;
+}
+.introjs-arrow.top {
+  top: -10px;
+  border-top-color:transparent;
+  border-right-color:transparent;
+  border-bottom-color:white;
+  border-left-color:transparent;
+}
+.introjs-arrow.right {
+  right: -10px;
+  top: 10px;
+  border-top-color:transparent;
+  border-right-color:transparent;
+  border-bottom-color:transparent;
+  border-left-color:white;
+}
+.introjs-arrow.bottom {
+  bottom: -10px;
+  right: 10px;
+  border-top-color:white;
+  border-right-color:transparent;
+  border-bottom-color:transparent;
+  border-left-color:transparent;
+}
+.introjs-arrow.left {
+  left: -10px;
+  top: 10px;
+  border-top-color:transparent;
+  border-right-color:white;
+  border-bottom-color:transparent;
+  border-left-color:transparent;
+}
+
+.introjs-tooltip {
+  position: absolute;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: white;
+  min-width: 225px;
+  max-width: 350px;
+  margin-left: 20px;
+  border-radius: 3px;
+  box-shadow: 0 1px 10px rgba(0,0,0,.4);
+  -webkit-transition: opacity 0.1s ease-out;
+     -moz-transition: opacity 0.1s ease-out;
+      -ms-transition: opacity 0.1s ease-out;
+       -o-transition: opacity 0.1s ease-out;
+          transition: opacity 0.1s ease-out;
+  h4 { margin: 5px 0; }
+}
+
+.introjs-tooltipbuttons {
+  text-align: right;
+}
+
+/* Core */
+  .introjs-button, .introjs-prevbutton, .introjs-nextbutton, .introjs-continuebutton { 
+      margin-top: 10px;
+      display:inline-block; 
+      position:relative; 
+      padding:8px 10px 6px; 
+      color:#555; 
+      line-height:14px; 
+      font-size:13px; 
+      font-weight:600; 
+      text-decoration:none; 
+      text-shadow:0 1px rgba(255, 255, 255, .75); 
+      text-align:center; 
+      border:1px solid #e6e6e6; 
+      -webkit-border-radius:2px; 
+      border-radius:2px; 
+      cursor:pointer; 
+      background-color: #ccc; /* Old browsers */
+      background-image: -moz-linear-gradient(top,  #f0f0f0 0%, #e6e6e6 100%); /* FF3.6+ */
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(100%,#e6e6e6)); /* Chrome,Safari4+ */
+      background-image: -webkit-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%); /* Chrome10+,Safari5.1+ */
+      background-image: -o-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%); /* Opera 11.10+ */
+      background-image: -ms-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%); /* IE10+ */
+      background-image: linear-gradient(to bottom,  #f0f0f0 0%,#e6e6e6 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#e6e6e6',GradientType=0 ); /* IE6-9 */
+      background-repeat:no-repeat; }
+
+  a.introjs-button, a.introjs-prevbutton, a.introjs-nextbutton, a.introjs-continuebutton { color:#515151; }
+
+/* Hover state */
+  .introjs-button:hover, .introjs-prevbutton:hover, .introjs-nextbutton:hover, .introjs-continuebutton:hover { 
+    color: #515151; 
+    text-decoration: none; 
+    background-color: #e3e3e3; 
+    background-position: 0 -15px; 
+    border: 1px solid #ddd; 
+    border-bottom-color: #ccc;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -ms-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+    -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05); }
+
+/* Active state */
+  .introjs-button.active, .introjs-button:active, .introjs-prevbutton.active, .introjs-prevbutton:active { 
+    color: rgba(0,0,0,.5); 
+    outline: 0; 
+    background-image: none; 
+    background-color:#ccc; 
+    top:1px;
+    -webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
+  }
+
+
+/* Set text color
+// ------------------------- */
+  .introjs-nextbutton,
+  .introjs-nextbutton:hover,
+  .introjs-continuebutton,
+  .introjs-continuebutton:hover { color:#FFF !important; border:1px solid #599441; text-shadow:0 0 1px #69b93a; }
+  .introjs-nextbutton, .introjs-continuebutton { border:1px solid #7AC143; }
+
+
+
+/* Set the backgrounds
+// ------------------------- */
+  .introjs-nextbutton, .introjs-continuebutton { background:#7AC143; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7AC143', endColorstr='#7AC143',GradientType=0 ); /* Old browsers */ }
+  .introjs-nextbutton:hover,
+  .introjs-nextbutton:active,
+  .introjs-nextbutton.active,
+  .introjs-continuebutton:hover,
+  .introjs-continuebutton:active,
+  .introjs-continuebutton.active {
+    background-color:#69b93a;
+    background:-moz-linear-gradient(top, #8ac94c 5%, #69b93a 100%); /* FF3.6+ */
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8ac94c), color-stop(1, #69b93a)); /* Chrome,Safari4+ */
+    background:-webkit-linear-gradient(top, #8ac94c 5%, #69b93a 100%); /* Chrome10+,Safari5.1+ */
+    background:-o-linear-gradient(top, #8ac94c 5%, #69b93a 100%); /* Opera 11.10+ */
+    background:-ms-linear-gradient(top, #8ac94c 5%, #69b93a 100%); /* IE10+ */
+    background:linear-gradient(to bottom, #8ac94c 5%, #69b93a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ac94c', endColorstr='#69b93a',GradientType=0 ); /* IE6-9 */
+    background-repeat:no-repeat; }
+  .introjs-nextbutton:active,
+  .introjs-nextbutton.active,
+  .introjs-continuebutton:active,
+  .introjs-continuebutton.active { background-color:#69b93a; }
+
+.introjs-prevbutton {
+  margin-right: 2px;
+}
+
+.introjs-skipbutton {
+  float: left;
+}
+
+
+.introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {
+    cursor: default; 
+    background-image: none; 
+    background-color:#ccc; 
+    color:rgba(0,0,0,.5);
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none; 
+    border: 1px solid #ddd; 
+    text-shadow:0 1px rgba(255, 255, 255, .75);
+  }
+
+a.introjs-disabled, a.introjs-disabled:hover, a.introjs-disabled:focus { color:#666 !important; }
+.introjs-nextbutton.introjs-disabled, .introjs-continuebutton.introjs-disabled, .introjs-prevbutton.introjs-disabled { display:none; }
+/* .introjs-nextbutton.introjs-disabled, .introjs-continuebutton.introjs-disabled, .introjs-prevbutton.introjs-disabled { position:absolute; top:-999999px;left:-999999px; } Breaks first step in Safari */
+.introjs-continuebutton { float:right; }
+
+.introjs-bullets {
+  text-align: center;
+}
+.introjs-bullets ul {
+  clear: both;
+  margin: 15px auto 0;
+  padding: 0;
+  display: inline-block;
+}
+.introjs-bullets ul li {
+  list-style: none;
+  float: left;
+  margin: 0 2px;
+}
+.introjs-bullets ul li a {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #ccc;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-decoration: none;
+}
+.introjs-bullets ul li a:hover {
+  background: #999;
+}
+.introjs-bullets ul li a.active {
+  background: #999;
+}

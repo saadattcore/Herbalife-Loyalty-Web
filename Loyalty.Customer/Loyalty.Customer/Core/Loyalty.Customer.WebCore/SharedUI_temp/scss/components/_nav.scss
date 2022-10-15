@@ -1,0 +1,183 @@
+	
+	/* Top Navigation (Responsive)
+    ================================================== */
+
+	// Horizontal nav 
+	.nav-collapse {
+		margin: 50px 0 0;
+  		display: block;
+  		width: span(4);
+		&.opened {
+	  		max-height: 9999px;
+		}
+
+  		@include breakpoint($tablet) { width: span(8); }
+
+	  	ul {
+			list-style: none;
+	  		width: 100%;
+			background-color: $darkgrey;
+			display: block;
+			margin: 0;
+			li {
+	  			display: block;
+		  		width: 100%;
+				border-bottom: 1px solid $charcoalgrey;
+				a { 
+					display: block;
+					color: $white;
+				  	-webkit-tap-highlight-color: rgba(0,0,0,0);
+				  	text-align: left;
+				  	text-decoration: none; 
+				  	padding: 12px 15px;
+				  	&:hover, &:focus {
+						border-left: 5px solid $green; // Hover menu item highlight (left)
+						color: $white;
+				  	}
+				}
+
+				a:active, .active a {
+					border-left: 5px solid $green; // Active menu item highlight (top)
+					font-weight: bold;
+				}
+			}
+		}
+
+	  	@include breakpoint($desktop) { 
+	  		margin: 0;
+			padding: 0;
+			@include span(10 of 12);
+			ul {
+	  			width: 100%;
+				background: none;
+				padding: 15px 0 0 0;
+	  			li {
+		  			display: inline;
+					border-bottom: none;
+			    	a {
+		  				display: inline;
+					  	text-align: center;
+					  	text-decoration: none;
+					  	padding: 15px;
+					  	color: $grey;
+				  		&:hover, &:focus {
+							border-top: 5px solid $green; // Hover menu item highlight (top)
+							border-left: none;
+							color: $white;
+				  		}
+				  	}
+			   
+	  				a:active, .active a {
+						border-left: 5px solid $green; // Active menu item highlight (left)
+						border-left: none;
+						font-weight: bold;
+					}
+	  			}
+	  		}
+		}
+
+	  	@include breakpoint($ext-desktop) { 
+	  		ul {
+	  			@include span(14 of 16); 
+	  			li a { padding: 18px 15px; }
+	  		}
+	  	}
+	}
+
+	.js .nav-collapse {
+			position: absolute;
+			clip: rect(0 0 0 0);
+			max-height: 0;
+			display: block;
+			overflow: hidden;
+			zoom: 1;
+	    &.closed {
+	    	max-height: none;
+	    }
+
+        @include breakpoint($desktop) { 
+	    	position: relative;
+	    }
+	}
+
+	/* Hamburger Menu
+    ================================================== */
+	.nav-toggle {
+		display: block;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+		text-decoration: none;
+		text-indent: 30px;
+		position: relative;
+		overflow: hidden;
+		width: 70px;
+		height: 35px;
+		padding-top: 15px;
+		float: left;
+		color: $white;
+		line-height: 20px;
+		&:hover, &:focus, &:visited {
+			color: $white;
+		}
+		&:before {
+			color: $white; /* Edit this to change the icon color */
+			font: normal 20px/50px "myherbalife"; /* Edit font-size (28px) to change the icon size */
+			text-transform: none;
+			position: absolute;
+			content: "\e466"; /* Hamburger icon */
+			text-indent: 0;
+			speak: none;
+			width: 100%;
+			left: 0;
+			top: 0;
+		}
+		&.active:before {
+		  	font-size: 18px;
+		  	content: "\e3da"; /* Close icon */
+		}
+
+		@include breakpoint($desktop) { 
+			display: none;
+			text-indent: -300px;
+			width: 60px;
+			height: 55px;
+			float: none;
+	    }
+	}
+
+
+	/* Other Nav Properties
+    ================================================== */
+	.fixed {
+		position: fixed;
+	  	width: 100%;
+	  	left: 0;
+	  	top: 0;
+	}
+
+	.mask {
+    	display: none !important;
+    	opacity: 0;
+  	}
+
+  	.disable-pointer-events {
+	  pointer-events: none !important;
+	}
+
+
+
+
+
+
+
+
+
+
+

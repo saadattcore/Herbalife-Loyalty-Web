@@ -1,0 +1,41 @@
+	
+	/* Icon Box (Link)
+	================================================== */
+
+	@mixin icon-box ($pad: 20px, $margin: 15px, $size: 70px, $display: block) {
+        padding: $pad;
+        background-color: $white;
+        margin-bottom: $gutter;
+        text-align: center;
+        cursor: pointer;
+        @include transition(all .3s ease);
+        @include box-shadow(rgba($lightgrey, .3) 0 0 40px inset, rgba(black, .03) 0px 4px 3px);
+
+        &:hover {
+            background-color: $green;
+            @include transform(scale(1.05));
+            h4, h5 { color: $white; }
+            div { color: $white; }
+        }
+
+        div {
+            display: $display;
+            line-height: normal;
+            margin-bottom: $margin;
+            color: $blue;
+            transition: all .3s ease;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            &.number { margin-bottom: 0; }
+            @include breakpoint($tablet) { display: block; }
+        }
+        i, span { 
+            font-size: $size; 
+        }
+        h4, h5 { margin-bottom: 0; }
+        h4 { 
+            font-size: 16px;
+            i { font-size: 14px; }
+        }
+	}

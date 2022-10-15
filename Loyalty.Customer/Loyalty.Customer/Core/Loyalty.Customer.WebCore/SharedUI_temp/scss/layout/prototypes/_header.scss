@@ -1,0 +1,222 @@
+
+	/* GDO Header
+	================================================== */
+
+	header {
+		position: fixed;
+		width: 100%;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    height: auto;
+	    z-index: 4;
+        background-color: $white; 
+        background: rgba(255,255,255,0.9);
+        @include clearfix;
+        @include box-shadow($box-shadow);
+        @include breakpoint($desktop) { height: 50px; }
+
+
+	    &.checkout { 
+	    	position: relative;
+	    	.logo { 
+	    		display: block; 
+	        	border-right: none;
+	    	} 
+	    }
+
+		.menu-trigger {
+			display: none;
+			text-align: left;
+			float: left;
+			width: auto;
+		    height: 100%;
+		    border-right: 1px solid $grey;
+			@include breakpoint($tablet) { display: block; }
+			@include breakpoint($desktop) { display: none; }
+
+			a {
+				display: block;
+				padding: 12px 14px 10px;
+				i { color: darken($dimgrey,10); }
+			}
+		}
+
+		.search-trigger {
+			float: right;
+			width: auto;
+		    height: 100%;
+			@include breakpoint($tablet) { float: left; }
+			@include breakpoint($desktop) { display: none; }
+
+			a#toggle-search {
+				display: block;
+				padding: 10px 14px 10px;
+				i { 
+					font-size: 20px;
+					color: darken($dimgrey,10);
+				}
+			}
+		}
+
+        .logo {
+        	display: none;
+	        height: 100%;
+        	float: left;
+        	margin-right: 12px;
+	        border-right: 1px solid $grey;
+	        padding: 12px 12px 4px;
+	        @include breakpoint($tablet) { display: block; }
+	        @include breakpoint($desktop) { 
+	        	padding: 17px 12px; 
+	        	margin-right: 0;
+	        }
+        	img {
+	        	width: 95px;
+	        	height: 20px;
+	        }
+        }
+
+        .global-search {
+        	display: none;
+        	padding: 10px;
+        	width: 100%;
+        	border-top: 1px solid $grey;
+        	background-color: $white;
+        	@include breakpoint($tablet) { 
+        		margin-top: 40px;
+        	}
+        	@include breakpoint($desktop) {
+        		display: block; 
+        		background-color: transparent;
+        		border-top: none;
+        		width: 40%;
+        		float: left;
+        		margin-top: 0;
+        	}
+        	@include breakpoint($ext-desktop) { width: 50%; }
+
+        	.search-form {
+				position: relative;
+				height: 30px;
+				width: 100%;
+				@include breakpoint($desktop) {
+					padding: 0;
+					transition: width ease 0.3s;
+				}
+
+				a.btn-magnify {
+					position: absolute;
+				    padding: 7px 9px 4px; 
+				    right: 0;
+				    top: 0;
+					display: block;
+					border-top-right-radius: 3px;
+    				border-bottom-right-radius: 3px;
+					background-color: $blue; 
+					transition: all ease 0.3s;
+					@include breakpoint($tablet) { padding: 8px 15px 4px; }
+
+					i { 
+						color: $white;
+						font-size: 18px; 
+					}
+				}
+
+				select, input { 
+					margin-top: 0;
+					margin-right: 0; 
+					position: absolute;
+				}
+				select {
+					left: 1px;
+					top: 1px;
+					width: 90px;
+					height: 28px;
+					font-size: 12px;
+					border-right: 1px solid $grey;
+					transition: width ease 0.3s;
+					transition: opacity ease 0.3s;
+					@include breakpoint($desktop) {
+						opacity: 0;
+						width: 1px;
+					}
+				}
+				input[type="text"] {
+					top: 0;
+					left: 0;
+					background-color: $white;
+					height: 30px;
+					padding-left: 10px;
+					font-size: 12px;
+					font-weight: bold;
+					width: 100%; 
+					border: 1px solid $grey;
+					transition: all ease 0.1s;
+					&:hover { @include box-shadow(inset 0 0 5px rgba(0,0,0,0.2)); }
+					&:focus { 
+						background-color: $offwhite;  
+						@include box-shadow(none);
+					}
+					//@include breakpoint($desktop) { padding-left: 10px; }
+				}
+			}
+        }
+        
+
+        .nav-items {
+			text-align: left;
+			width: 100%;
+			@include breakpoint($tablet) { 
+				float: right;
+				width: auto;
+			}
+
+			> a, > div {
+				display: inline-block;
+				vertical-align: middle;
+				text-transform: uppercase;
+				position: relative;
+				border-left: 1px solid $grey;
+				text-align: center;
+				padding: 9px 0 7px;
+				@include breakpoint($tablet) { 
+					text-align: left; 
+					padding: 8px 14px 8px;
+				}
+				@include breakpoint($desktop) {
+					padding: 12px;
+				}
+				&.account-name { color: $charcoalgrey; }
+				&.account-volume { color: $dimgrey; }
+				&.account-info {
+					display: none;
+					font-size: 11px;
+				    font-weight: bold;
+				    line-height: 13px;
+					@include breakpoint($desktop) { display: inline-block; }
+				}
+			}
+
+			> a {
+				width: calc(100% / 5);
+				@include breakpoint($tablet) { width: auto; }
+				&:hover { background-color: $offwhite; }
+				i { 
+					color: darken($dimgrey,10); 
+					font-size: 24px; 
+				}
+				&#toggle-menu {
+					@include breakpoint($tablet) { display: none; }
+				}
+				&#toggle-search {
+					@include breakpoint($desktop) { display: none; }
+				}
+				.badge-counter {
+					position: absolute;
+					top: 5px;
+					right: 7px;
+				}
+			}
+		}
+	}

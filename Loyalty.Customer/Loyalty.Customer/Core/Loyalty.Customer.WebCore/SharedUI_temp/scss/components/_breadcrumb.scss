@@ -1,0 +1,21 @@
+
+    
+    /* Breadcrumb
+    ================================================== */
+
+	.breadcrumbs {
+		display: none;
+		@include breakpoint($tablet) { display: block; }
+		width: 100%;
+	    margin: 15px 0;
+	    padding: 0;
+		
+	    li {
+	    	color: $dimgrey;
+		    display: inline;
+		    list-style: none outside none;
+		    padding-right: 4px;
+		    text-transform: uppercase;
+		    vertical-align: top;
+	    }
+	}

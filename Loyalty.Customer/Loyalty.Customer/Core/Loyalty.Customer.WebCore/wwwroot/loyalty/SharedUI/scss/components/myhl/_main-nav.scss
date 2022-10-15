@@ -1,0 +1,390 @@
+    
+    /* MyHL Top Navigation
+    ================================================== */
+    
+    .myhl-nav-desktop {
+        width: 100%;
+        background-color: $green;
+        box-shadow: 0 -1px 0 $darkgreen inset, 0 1px 2px rgba(0, 0, 0, 0.4);
+        height: 50px;
+        z-index: 1000;
+        display: none;
+
+        @include breakpoint($desktop) { display: block; }
+        
+        /*Fixed NAV*/
+        &.fixed {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+        }
+    }
+
+
+    .hrblMenu {
+        &, ul {
+            padding: 0;
+            margin: 0;
+        }
+        > ul {
+            height: 50px;
+        }
+
+        > li {
+            float: left;
+            color: $white;
+            border-right: solid 1px darken($green,11);
+
+            > span {
+                height: 50px;
+                line-height: 1.4;
+                display: table-cell;
+                vertical-align: middle;
+                text-transform: uppercase;
+                white-space: normal;
+                i {
+                    font-size: 18px;
+                }
+            }
+
+            ul {
+                background: $white;
+                cursor: initial;
+            }         
+        }
+
+        > li:hover,
+        > li.active {
+            background-color: $white;
+            cursor: pointer;
+            -webkit-transition: background-color 200ms ease-in-out;
+            -moz-transition: background-color 200ms ease-in-out;
+            -o-transition: background-color 200ms ease-in-out;
+            transition: background-color 200ms ease-in-out;
+            color: $lightblack;
+        }
+    }
+
+
+    .myhl-nav-menu {
+        padding: 0;
+        margin: 0;
+        height: 50px;
+        width: auto;
+        border-left: 1px solid darken($green,11);
+        z-index: 10;
+        float: left;
+
+        > li {
+            list-style: none;
+            outline: none;
+            text-align: center;
+            padding: 0 10px;
+            float: left;            
+            border-right: solid 1px darken($green,11);
+
+            &:hover, &:active {
+                background-color: $white;
+                color: $charcoalgrey;
+                cursor: pointer;
+                @include transition(background-color 0.8s ease-in-out);
+            }
+
+            > span {
+                height: 50px;
+                line-height: 1.4;
+                display: table-cell;
+                vertical-align: middle;
+                text-transform: uppercase;
+                white-space: normal;
+                max-width: 120px;
+                min-width: 80px;
+            }
+
+            > ul {
+                background: $white;
+                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+                cursor: initial;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                left: 0;
+                padding: 25px 10px 20px;
+                position: absolute;
+                width: 100%;
+                z-index: 1000;
+
+                li {
+                    display: inline-block;
+                    height: 120px;
+                    line-height: 1.4;
+                    border-left: 1px dotted $grey;
+
+                    &:first-child { border-left: none; }
+
+                    a {
+                        box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        color: $dimgrey;
+                        display: table-cell;
+                        padding: 15px 10px 0;
+                        width: 130px;
+                        max-width: 130px;
+
+                        &:hover { color: $charcoalgrey; }
+                    }
+
+                    i {
+                        background-color: transparent;
+                        color: $blue;
+                        display: block;
+                        font-size: 44px;
+                        margin: 0 auto;
+                        padding-bottom: 2px;
+                        line-height: 1.4;
+                    }
+                }
+            }
+        }
+    }
+    .k-ie8 {
+        #topNav {
+            > li {
+                 > ul {
+                    border-bottom: solid 1px $charcoalgrey;
+                 }
+            }
+        }
+    } 
+
+
+    .myhl-nav-right {
+        float: right;
+        form{ float: left; }
+
+        input.search {
+            width: 160px;
+            @include transition(all 0.4s ease 0s);
+            background: url(#{$images_path}/myhl/search-glass.png) 4px center no-repeat $offwhite;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+            padding: 4px 16px 4px 28px;
+            width: 208px;
+            height: 28px;
+            margin: 10px;
+            border: none;
+            @include border-radius(2px);
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #search-holder { display: none; }
+
+        > input,
+        > ul {
+            float: left;
+        }
+
+        > ul {
+            position: relative;
+            border-left: 1px solid darken($green,11);
+
+            > li {
+                padding: 0 15px;
+
+                > i {
+                    font-size: 18px;
+                    display: inline-block;
+                }
+
+                > div {
+                    left: auto !important;
+                    right: -1px;
+                }
+
+                > ul {
+                    padding: 20px;
+                    position: absolute;
+                    right: 1px;
+                    top: 50px;
+                    z-index: 100;
+                    border-radius: 0 0 5px 5px;
+                    box-shadow: 0 3px 3px rgba(0,0,0,.4);
+
+                    > li {
+                        width: 160px;
+                        margin: 0 20px;
+                        color: $charcoalgrey;
+
+                        h5, h4 {
+                            margin-top: 0;
+                            margin-bottom: 15px;
+                            white-space: normal;
+                        }
+
+                        hr {
+                            margin: 15px 0;
+                            border: none;
+                            border-bottom: 1px dotted $grey;
+                        }
+
+                        h6, #dvCartInfo ul li {
+                            margin-bottom: 5px;
+                            white-space: normal;
+                        }
+
+                        ul li {
+                            margin-bottom: 8px;
+                            i {
+                                margin-right: 5px;
+                                vertical-align: middle;
+                            }
+                        }
+
+                        i + span {
+                            display: inline-block;
+                            width: 85%;
+                            vertical-align: top;
+                            margin-left: 0;
+                        }
+
+                        h6 span {
+                            color: $darkgreen;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .k-ie8 {
+        #rightTopNav {
+            input.search {
+                width: 192px;
+                height: 28px;
+            }
+        }
+    }
+
+
+    .myhl-nav-mobile {
+        @include span(3);
+        @include transition(left .5s ease-in-out);
+        border: 1px solid $lightgrey;
+        position: absolute;
+        width: 220px;
+        margin: 0;
+        top: 0;
+        //left: -220px;
+        left: -1 * span(3);
+        bottom: 0;
+        color: $black; 
+        overflow: hidden;
+
+        input{
+            height: 40px;
+            border: none;
+            background: none;
+            box-shadow: none;
+            //background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAYAAADwMZRfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMjgwMTE3NDA3MjA2ODExQTYxM0I2QTg3QzdGMTYxMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNTVCQTU1REU3NkExMUUxQUM2QThERDU4QTdBREZDMiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNTVCQTU1Q0U3NkExMUUxQUM2QThERDU4QTdBREZDMiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGQTdGMTE3NDA3MjA2ODExOTJCMEQ4Mjk2ODRBRDJGNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowMjgwMTE3NDA3MjA2ODExQTYxM0I2QTg3QzdGMTYxMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjsgZn0AAALSSURBVHjapFRNTBNREJ592+6yu223KRQKJQ1UYhDigWAIJC1CCaQcqOFkuHjkYIhFA1cSPXjQSEg4Ebwq8eSBA0W8FAheNCE0RQ5aYy+iJKWFSpu6P8408ivx4ttM3s+8N++bb763XFdnF/xP23i3AewyB4cf45jKGGvH3kPzf7VzQfAACFZhWFbkpEN1ZJ1O53vsvyk25asgCKPkv6xZjgc840GsEOfsdvuozW4DURQBkYBpmFAqlXz5fH7u8OBwuFAs3NJ1vfRXELqhQqqIulyuUdWpQmNDI/QP9EN1dTVkMhlYXV2FZDJJgcO5XG7mIHdwVzf00/SJWFEQeU+tJ+twOGw+nw8mJie28MBj9H9C86GNzc7OhraT27C/v2/u/dhrKBaLaRPMMrEWjuPA7rB34iGbVbDCUGQohePO3pu9BboNUX6QZfn1/PP5tZ2dnQDyw6mqehsDPj1Gwyjvjo6OkCAKoGs6WK3W8Z7ungLyAJqmQelXCZAP8NZ77xBPSDx4vd4g409JZsQHblAoGEVeeLnwXdM1IKjHjdYHw4O7Rz+PgGMcuN1u8WylmGmaEAwGN2mRLJ1Oj18sJelEluT7FIz2Nzc3fzx7CTMMA5qamt6032g3eZ4n+COSJD3Dkkt/RMfjfBLTfUSp0B5Ma9nQjfNI+kJ9mUgk8qrKXQVYIXBVuh5gqY9QM1vYazh/gus8EU88TU9Pz2D6J0pmBItIxDzvRaPRLy3XWgD1ArV1tVBXX3ed+sqqSvBf8UMgEACLxQKKolxFNa/j2HOiE4pIzvhanBZfpFKpUCKRACKSqoYcQGtr6yb61hcXF8disRjkD/OQy+Y+o24CZcUSGoLZHejeRen3rbxd6fL7/RF0udDyaCvhgXCM0MeWYxmcTy0tLUFNTU09ysPJXfwVkPjoHfEWvjwmzvCtlI0QS7IEeMnDeDw+1dbWlkCuen4LMADJaQge4TPrywAAAABJRU5ErkJggg==') /*/SharedUI/images/search-icon.png*/ 3px center no-repeat;
+            background: url(#{$images_path}/myhl/search-glass.png) 3px center no-repeat;
+            color: inherit;
+            padding: 4px 15px 4px 25px;
+        }
+
+        aside{ 
+            text-align: center;
+            border-top: 1px solid $lightgrey;
+            padding-top: $gutter;
+
+            i { 
+                display: block;
+                color: $blue;
+                font-size: 24px;
+                padding-bottom: $gutter;
+            }
+        }
+        hr{
+            border-width: 1px 0px 0px;
+            border-style: dotted none none;
+            border-color: $grey;
+            margin: $gutter $gutter;
+        }
+
+        h6 + h6 { margin-bottom: $gutter; }
+
+        .action-button {
+            width: 100%;
+            display: block;
+            background-color: rgb(0, 128, 255);
+            color: $white;
+            padding: 10px 0;
+            margin-top: $gutter;
+            clear: both;
+        }
+
+        .settings-link { 
+            width: 48%;
+            padding-right: 2%; 
+            display: inline-block; 
+            word-wrap: break-word; 
+        
+            & + a {
+                float: right; 
+                width: 48%; 
+                padding-left: 2%; 
+                display: inline-block; 
+                word-wrap: break-word;
+            }
+        }
+
+        .mobile-nav-links {
+            &, ul{
+                margin: 0;
+                padding: $gutter;
+            }
+
+            ul{ padding: 0; }
+            span{
+                text-transform: uppercase;
+                color: $dimgrey;
+            }
+
+            > li{
+                padding-top: $gutter;
+                margin-top: $gutter;
+                border-top: 1px dotted $grey;
+
+                &:first-child{
+                    padding: 0;
+                    margin: 0;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    #hrblSiteWrapper{
+        @include transition(left .5s ease-in-out);
+        position: relative;
+        left: 0;
+    }
+
+    .transformer{
+        overflow: hidden;
+        position: relative;
+
+        &.is-open{
+            #hrblSiteWrapper{ 
+                //left: 220px; 
+                left: span(3 of 4); 
+
+                @include breakpoint($desktop) { left: 0; }
+            }
+            #mobile-main-nav{ 
+                left:0; 
+                @include breakpoint($desktop) { left: -1 * span(3); }
+            }
+        }        
+    }

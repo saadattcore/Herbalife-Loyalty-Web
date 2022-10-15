@@ -1,0 +1,15 @@
+jquery.js
+jquery-migrate.js
+kendo.custom/kendo.custom.min-1.0.1.js
+myhl2-config/myhl2-config-1.0.3.js
+data-view-models/data-view-models-1.0.6.js
+jquery.cookie.js
+omniture-scode.js
+myhl2-ui/myhl2-ui-1.0.5.js
+jquery.simplemodal.js
+MyHerbalife.min.js
+swfobject.js
+TealeafSDKConfig.min.js
+jquery.tools.min.js
+asWidgetManager/asWidgetManager-1.0.1.js
+video.js

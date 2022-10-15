@@ -1,0 +1,95 @@
+
+    /* MyHL Footer
+    ================================================== */
+
+	.myhl-footer {
+	    clear: both;
+	    background-color: $softgrey;
+	    position: relative;
+	    padding-top: 7px;
+	    line-height: 24px;
+	    color: $charcoalgrey;
+
+	    > div {
+	        background-color: $charcoalgrey;
+	        padding: 20px 0;
+            
+            p {
+                vertical-align: middle;
+                color: #AAA;
+            }   
+            
+            .col6 + .col3{
+                margin-right: 0;
+            }          
+	    }
+
+	    nav.footer-links {
+	        //@include m4-t8-d12-e16;
+	        @include m4-t8-d12-e12;
+	        ul {
+	        	margin: 1.5em 0;
+	            @include span(4);
+	            @include breakpoint($tablet) { @include gallery(4 of 8); }
+	            @include breakpoint($desktop) { @include gallery(3 of 12); }
+	            @include breakpoint($ext-desktop) {
+	            	@include gallery(3 of 12);
+	            	//@include gallery(4 of 16);
+	            }
+
+	            li {
+			        h5 { margin-bottom: 15px; }
+			        a {
+			        	color: $charcoalgrey;
+	            		text-decoration: none;
+	            		&:hover {
+	            			color: $blue;
+	        			}
+			        }
+			    }
+	        }
+	    }
+
+	    .footer-lower {
+	        @include m4-t8-d12-e12;
+	        text-align: center;
+	        .footer-dsa {
+	            @include span(4);
+	            @include breakpoint($tablet) {
+	            	@include span(2);
+					text-align: left;
+	            }
+	            @include breakpoint($desktop) { @include span(3); }
+	        }
+
+	        .footer-text {
+	            @include span (4);
+	            @include breakpoint($tablet) { @include span(4); }
+	            @include breakpoint($desktop) { @include span(6); }
+	            @include breakpoint($ext-desktop) {
+					@include span(6);
+	            	//@include span(10);
+	            }
+
+	            p { 
+		        	text-align: center;
+		        	vertical-align: middle;
+		            color: $dimgrey; 
+		        }
+	        }
+
+	        .footer-logo {
+	            @include span(4);
+	            img { float: none; }
+	            
+	            @include breakpoint($tablet) {
+	            	@include span(2 last);
+		            img {
+		            	width: 90%;
+		            	float: right;
+		            }
+	            }
+	            @include breakpoint($desktop) { @include span(3 last); }
+	        }
+	    }
+	}

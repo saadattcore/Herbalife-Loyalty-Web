@@ -1,0 +1,118 @@
+    
+    /* Menus
+    ================================================== */
+
+    // Contacts - Vertical
+
+    .contacts-menu {
+        padding: 0; 
+        margin: 0;
+        list-style: none;
+        li {
+            transition: background-color 0.2s ease;
+            -webkit-transition: background-color 0.2s ease;
+            -moz-transition: background-color 0.2s ease;
+            -o-transition: background-color 0.2s ease;
+            &:nth-child(2n + 1) { background-color: $offwhite; }
+            &:hover { background-color: $lightgreen; }
+            a { 
+                padding: 15px 10px;
+                display: block;
+            }
+            &:active, &.active { 
+                font-weight: bold; 
+                background-color: $green;
+                a { 
+                    color: $white;
+                    cursor: default; 
+                } 
+            }
+        }
+    }
+
+    // Tabbed Menu - Vertical
+
+    .vert-tabs-menu {
+        padding: 0; 
+        margin: 0;
+        list-style: none;
+        li {
+            background-color: $lightgrey;
+            border-bottom: 1px solid $white;
+            transition: background-color 0.2s ease;
+            -webkit-transition: background-color 0.2s ease;
+            -moz-transition: background-color 0.2s ease;
+            -o-transition: background-color 0.2s ease;
+            a { 
+                color: $charcoalgrey; 
+                display: block;
+                cursor: pointer;
+            }
+            &:hover, &:active, &.active { 
+                background-color: $green;
+                a { 
+                    color: $white;
+                } 
+            }
+        }
+    }
+
+
+
+    // Tabbed Menu - Horizontal
+
+    .horz-tabs-menu {
+        padding: 0; 
+        margin: 0;
+        list-style: none;
+        border-bottom: 1px solid $lightgrey;
+        li {
+            transition: background-color 0.2s ease;
+            -webkit-transition: background-color 0.2s ease;
+            -moz-transition: background-color 0.2s ease;
+            -o-transition: background-color 0.2s ease;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 0;
+            background-color: $lightgrey;
+            border-right: 1px solid $grey;
+            a { 
+                display: block;
+                color: $charcoalgrey;
+                padding: 10px;
+                text-align: center;
+                cursor: pointer;
+            }
+            &:hover, &:active, &.active { 
+                background-color: $green;
+                a { 
+                    color: $white;
+                } 
+            }
+        }
+    }
+
+
+    // Highlighted Menu - Horizontal
+
+    .horz-highlight-menu {
+        padding: 0; 
+        margin: 0;
+        list-style: none;
+        border-bottom: 1px solid $grey;
+        li {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 0;
+            a { 
+                display: block;
+                color: $charcoalgrey;
+                padding: 5px 10px;
+                text-align: center;
+            }
+            &:hover, &:active, &.active { 
+                border-bottom: 5px solid $green;
+                font-weight: bold; 
+            }
+        }
+    }

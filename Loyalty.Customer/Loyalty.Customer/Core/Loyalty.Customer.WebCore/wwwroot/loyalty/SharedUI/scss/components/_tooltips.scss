@@ -1,0 +1,26 @@
+    
+    /* Tooltips
+    ================================================== */
+
+    @mixin tooltips ($background, $border, $text) { 
+        display: none;
+        position: absolute;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        padding: 5px 10px;
+        font-size: 13px;
+        background-color: $background;
+        border: 1px solid $border;
+        color: $text;
+    }
+
+    // Dark background tooltip with dark text
+    .tooltip-dark {
+        @include tooltips ($darkgrey, $darkgrey, $white);
+    }
+
+    // Light background tooltip with dark text
+    .tooltip-light {
+        @include tooltips ($white, $grey, $charcoalgrey);
+    }

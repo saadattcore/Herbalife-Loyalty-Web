@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActionBtnModal.Text" xml:space="preserve">
+    <value>Got It!</value>
+  </data>
+  <data name="ActivityAchieved.Text" xml:space="preserve">
+    <value>Activity levels achieved</value>
+  </data>
+  <data name="ActivityDesc1.Text" xml:space="preserve">
+    <value>Getting started on a healthy, active lifestyle</value>
+  </data>
+  <data name="ActivityDesc2.Text" xml:space="preserve">
+    <value>Documenting your experiences and progress</value>
+  </data>
+  <data name="ActivityDesc3.Text" xml:space="preserve">
+    <value>Being part of the community</value>
+  </data>
+  <data name="ActivityInfo.Text" xml:space="preserve">
+    <value>Find here below the activities that will qualify you for points. Anytime you achieve one of them, contact your Herbalife Distributor who will record it and accrue points. As soon as you reach a 25-points level, your pre-selected reward will be for you.</value>
+  </data>
+  <data name="ActivityList.Title" xml:space="preserve">
+    <value>These are available activities for you:</value>
+  </data>
+  <data name="ActivityRewards.Text" xml:space="preserve">
+    <value>Activity Rewards</value>
+  </data>
+  <data name="AllCompleted.Text" xml:space="preserve">
+    <value>All Rewards Completed</value>
+  </data>
+  <data name="AnyQuestion.Text" xml:space="preserve">
+    <value>If you have any question on how to reach the goals and get rewards, please contact me. I’m proud to have you among my loyal customers. I wish you all the success you deserve.</value>
+  </data>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ConsecMonths.Text" xml:space="preserve">
+    <value>Consecutive months achieved</value>
+  </data>
+  <data name="GoalReached.Text" xml:space="preserve">
+    <value>Monthly goal reached</value>
+  </data>
+  <data name="Home.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HowToEarnActivity.Text" xml:space="preserve">
+    <value>How to Earn Activity Points</value>
+  </data>
+  <data name="HowToEarnShopping.Text" xml:space="preserve">
+    <value>How to Earn Product Points</value>
+  </data>
+  <data name="Level1.Text" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="Level2.Text" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="Level3.Text" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="Level4.Text" xml:space="preserve">
+    <value>Level 4</value>
+  </data>
+  <data name="LoyaltyProgram.Text" xml:space="preserve">
+    <value>Loyal Customer Program</value>
+  </data>
+  <data name="Month1.text" xml:space="preserve">
+    <value>Month 1</value>
+  </data>
+  <data name="Month2.text" xml:space="preserve">
+    <value>Month 2</value>
+  </data>
+  <data name="Month3.text" xml:space="preserve">
+    <value>Month 3</value>
+  </data>
+  <data name="Month4.text" xml:space="preserve">
+    <value>Month 4</value>
+  </data>
+  <data name="NeededNextLevel.Text" xml:space="preserve">
+    <value>points needed for next level</value>
+  </data>
+  <data name="NeededThisMonth.Text" xml:space="preserve">
+    <value>points needed to reach your monthly goal</value>
+  </data>
+  <data name="NoDataError.Text" xml:space="preserve">
+    <value>There is an error retriving your information. Please come back later.</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PointsAbr.Text" xml:space="preserve">
+    <value>pts</value>
+  </data>
+  <data name="PreSelect.Label" xml:space="preserve">
+    <value>Pre-select Item</value>
+  </data>
+  <data name="ProgramReach.Text" xml:space="preserve">
+    <value>You have completed this program.</value>
+  </data>
+  <data name="ProgramReach.Title" xml:space="preserve">
+    <value>Congratulations!</value>
+  </data>
+  <data name="Redeem.Text" xml:space="preserve">
+    <value>Redeem</value>
+  </data>
+  <data name="RedeemNow.Label" xml:space="preserve">
+    <value>Select Item</value>
+  </data>
+  <data name="RedeemReward.Document" xml:space="preserve">
+    <value>Are you sure you want to redeem this reward? You will not be able to redeem another reward from this tier in the future.</value>
+  </data>
+  <data name="RedeemReward.Title" xml:space="preserve">
+    <value>Redeem Reward</value>
+  </data>
+  <data name="RewardFailed.Text" xml:space="preserve">
+    <value>Something has failed when requesting your action.</value>
+  </data>
+  <data name="RewardRedeemed.Text" xml:space="preserve">
+    <value>Reward Redeemed</value>
+  </data>
+  <data name="RewardsOption.text" xml:space="preserve">
+    <value>Please select your reward options.</value>
+  </data>
+  <data name="SelectActivityReward.Text" xml:space="preserve">
+    <value>Every qualifying activity you will achieve will give you Points and every 25 Points, you get a reward. Select your wish list now for each activity level.</value>
+  </data>
+  <data name="SelectItem.Label" xml:space="preserve">
+    <value>Select Item</value>
+  </data>
+  <data name="ShoppingPoints.Document" xml:space="preserve">
+    <value>Number of months you’ve purchased 100+ product volume points. First reward after 2 months, second reward after 3 months, third reward after 4 months. Select an option at each tier.</value>
+  </data>
+  <data name="TermsAndCondDesc.Text" xml:space="preserve">
+    <value>Read Customer Terms and conditions</value>
+  </data>
+  <data name="TermsAndConditions.Document" xml:space="preserve">
+    <value>I agree to a 60-day loyalty period with my Distributor offering the program. During this period I agree that I will be unable to sign up as a Preferred Member or Distributor under a different Sponsoring Distributor. I will also be unable to join any competing loyalty program offered by another Distributor. After the conclusion of the 60-day-period, I can once again sign up as a Preferred Member or Distributor with any Herbalife Distributor and join their loyalty program.</value>
+  </data>
+  <data name="TermsAndConditions.text" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+  </data>
+  <data name="Tier1Activity.Text" xml:space="preserve">
+    <value>25 activity points</value>
+  </data>
+  <data name="Tier1Shopping.Text" xml:space="preserve">
+    <value>100 points achieved for 2 consecutive months</value>
+  </data>
+  <data name="Tier2Activity.Text" xml:space="preserve">
+    <value>50 activity points</value>
+  </data>
+  <data name="Tier2Shopping.Text" xml:space="preserve">
+    <value>100 points achieved for 3 consecutive months</value>
+  </data>
+  <data name="Tier3Activity.Text" xml:space="preserve">
+    <value>75 activity points</value>
+  </data>
+  <data name="Tier3Shopping.Text" xml:space="preserve">
+    <value>100 points achieved for 4 consecutive months</value>
+  </data>
+  <data name="Tier4Activity.Text" xml:space="preserve">
+    <value>100 activity points</value>
+  </data>
+  <data name="WelcomeModal.Document" xml:space="preserve">
+    <value>This is the beginning of a wonderful journey together. I, as your preferred distributor, am committing to do my best to encourage you in this adventure, to bring you help and advice and recognize all your efforts with great rewards. My first advice is to pre-select the wards that you wish to get at each tiers of success in your loyalty race. As you know already, product rewards are fulfilled with product orders, pre-selection becomes really key if you want me to place sometimes order for you. If a gift has been pre-selected, no problem, anytime you reach a tier, the gift will be automatically added to your order with no hassle.</value>
+  </data>
+  <data name="WelcomeModalTitle.Text" xml:space="preserve">
+    <value>Welcome to the Loyal Customer Program.</value>
+  </data>
+  <data name="AllDone.Text" xml:space="preserve">
+    <value>All done here?</value>
+  </data>
+  <data name="ShopForPoint.Text" xml:space="preserve">
+    <value>Purchase to earn Points</value>
+  </data>
+  <data name="RetroPoints.Text" xml:space="preserve">
+    <value>Welcome to the Loyal Customer Program. You get points for purchases with me in the 21 past days before enrollment. It may take 24 hours to update your points with these prior orders.</value>
+  </data>
+  <data name="RetroPoints.Text2" xml:space="preserve">
+    <value>* Qualifying purchases should match email or phone number of your program enrollment.</value>
+  </data>
+  <data name="RetroPoints.Text3" xml:space="preserve">
+    <value>We updated product points from your prior orders. What a great start! Congratulations!</value>
+  </data>
+  <data name="Activity" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+</root>

@@ -1,0 +1,109 @@
+﻿
+    /* Product Carousel
+    ================================================== */
+
+	.product-slide {
+        padding-top: 30px;
+
+        .product-item {
+            text-align: center;
+            float: left;
+            img {
+                display: block;
+                position: relative;
+                margin: 0 auto 15px;
+                width: 140px;
+                height: 140px;
+                background-color: $lightgrey;
+                &:after {
+                    height: 40px;
+                    width: 40px;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    padding: 10px;
+                    color: $white;
+                    font-family: $myherbalife;
+                    font-size: 20px;
+                    background-color: $charcoalgrey;
+                    @include border-radius(50%);
+                }
+                &.shopping {
+                    &:after { content: "\e070"; }
+                }
+                &.activity {
+                    &:after { content: "\e03a"; }
+                }
+            }
+            span {
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .product-carousel {
+        padding-top: 30px; 
+        overflow: hidden;
+        position: relative;
+
+        > div {
+            text-align: center;
+
+            img {
+                display: block;
+                margin: 0 auto 5px;
+                width: 140px;
+                height: 140px;
+            }
+            span {
+                font-size: 14px;
+                display: inline-block;
+                width: auto;
+                position: relative;
+                padding-left: 50px;
+                text-align: left;
+                line-height: 18px;
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -19px;
+                    padding: 10px;
+                    vertical-align: middle;
+                    font-family: $myherbalife;
+                    color: $white;
+                    font-size: 18px;
+                    margin-right: 10px;
+                    @include border-radius(50%);
+                }
+                &.shopping { 
+                    &:before { 
+                        background-color: $salmon;
+                        content: "\e070"; 
+                    } 
+                }
+                &.activity { 
+                    &:before { 
+                        background-color: $purple;
+                        content: "\e03a"; 
+                    } 
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

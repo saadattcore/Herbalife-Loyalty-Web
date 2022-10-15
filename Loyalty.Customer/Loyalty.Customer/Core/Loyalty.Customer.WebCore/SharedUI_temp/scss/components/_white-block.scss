@@ -1,0 +1,10 @@
+	
+	/* White Block with Drop Shadow
+	================================================== */
+
+	@mixin white-block{
+        padding: 20px;
+        background-color: $white;
+        @include box-shadow(rgba($lightgrey, .3) 0 0 40px inset, rgba($black, .03) 0px 4px 3px);
+        margin-bottom: 20px;
+	}

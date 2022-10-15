@@ -1,0 +1,23 @@
+    
+    /* Helpers
+    ================================================== */
+
+
+	// Clear Fix
+	.clear { clear: both; }
+	.clear10 { @extend .clear; height: 10px; } 
+	.clear20 { @extend .clear; height: 20px; }
+	.clear30 { @extend .clear; height: 30px; }
+	.clear40 { @extend .clear; height: 40px; }
+	.clear50 { @extend .clear; height: 50px; }
+
+
+	// Hide / Enable / Disable
+	.hide               { display : none; }
+	.disabled           { opacity : 0.5; pointer-events: none; }
+	.enabled            { opacity : 1.0; }
+
+
+	// Floats
+	.left { float: left; }
+	.right { float: right; }

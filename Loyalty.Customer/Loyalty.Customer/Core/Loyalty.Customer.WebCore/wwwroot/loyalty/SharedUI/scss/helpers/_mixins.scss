@@ -1,0 +1,459 @@
+    
+    /* Mixins
+    ================================================== */
+
+    // Box sizing
+    @mixin box-sizing($value) { 
+        -moz-box-sizing: $value;  
+        box-sizing: $value;
+    } 
+
+    // Border radius
+    @mixin border-radius ($value) { 
+        -webkit-border-radius: $value; 
+        -moz-border-radius: $value;  
+        border-radius: $value;
+    } 
+
+    // Clearfix
+    @mixin clearfix {
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    /* Transitions (cross-browser)
+    @mixin transition($property) {
+        -webkit-transition: $property;
+        -moz-transition: $property;
+        -ms-transition: $property;
+        -o-transition: $property;
+        transition: $property;
+    }*/
+
+    // Containers
+    @mixin wrap-normal {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(12); }
+        @include breakpoint($ext-desktop) { @include container(16); }
+    }
+
+    @mixin m100-t8-d12-e16 {
+        width: 100%;
+        padding: 0 10px;
+        @include breakpoint($tablet) { 
+            padding: 0;
+            @include container(8); 
+        }
+        @include breakpoint($desktop) { @include container(12); }
+        @include breakpoint($ext-desktop) { @include container(16); }
+
+    }
+
+    @mixin m4-t8-d10-e12 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(10); }
+        @include breakpoint($ext-desktop) { @include container(12); }
+    }
+
+    @mixin m4-t6-d12-e12 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(6); }
+        @include breakpoint($desktop) { @include container(12); }
+        @include breakpoint($ext-desktop) { @include container(12); }
+    }
+    @mixin m4-t8-d12-e14 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(12); }
+        @include breakpoint($ext-desktop) { @include container(14); }
+    }
+
+    @mixin m4-t8-d12-e16 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(12); }
+        @include breakpoint($ext-desktop) { @include container(16); }
+    }
+    @mixin m4-t8-d12-e14 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(12); }
+        @include breakpoint($ext-desktop) { @include container(14); }
+    }
+
+    @mixin m4-t8-d12-e12 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(12); }
+    }
+    @mixin m4-t8-d8-e8 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(8); }
+        @include breakpoint($ext-desktop) { @include container(8); }
+    }
+   @mixin m4-t8-d10-e10 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(10); }
+        @include breakpoint($ext-desktop) { @include container(10); }
+    }
+ @mixin m4-t8-d10-e12 {
+        @include container(4);
+        @include breakpoint($tablet) { @include container(8); }
+        @include breakpoint($desktop) { @include container(10); }
+        @include breakpoint($ext-desktop) { @include container(12); }
+    }
+
+    @mixin m4-t6-d6 { 
+        @include container(4);
+        @include breakpoint($tablet) {
+            @include container(6);
+        }
+        @include breakpoint($desktop) {
+            @include container(6);
+        }
+    }
+
+    @mixin m4-t6-d8 {
+        @include container(4);
+        @include breakpoint($tablet) {
+            @include container(6);
+        }
+        @include breakpoint($desktop) {
+            @include container(8);
+        }
+    }
+
+    @mixin m4-t6-d10 {
+        @include container(4);
+        @include breakpoint($tablet) {
+            @include container(6);
+        }
+        @include breakpoint($desktop) {
+            @include container(10);
+        }
+    }
+
+    @mixin m4-t6-d12 {
+        @include container(4);
+        @include breakpoint($tablet) {
+            @include container(6);
+        }
+        @include breakpoint($desktop) {
+            @include container(12);
+        }
+    }
+
+    @mixin m4-t8-d8 {
+        @include container(4);
+        @include breakpoint($tablet) {
+            @include container(8);
+        }
+        @include breakpoint($desktop) {
+            @include container(8);
+        }
+    }
+
+    @mixin m4-t8-d10 {
+        @include container(4);
+        @include breakpoint($tablet) {
+            @include container(8);
+        }
+        @include breakpoint($desktop) {
+            @include container(10);
+        }
+    }
+        @mixin mfull-t8-d10 {
+        width:100%;
+        @include breakpoint($tablet) {
+            @include container(8);
+        }
+        @include breakpoint($desktop) {
+            @include container(10);
+        }
+    }
+
+
+
+
+    // Link positioning
+    @mixin right-link {
+        float: right;
+        margin-top: 4px;
+        text-align: right;
+        i { font-size: 24px; }
+    }
+
+    @mixin left-link {
+        float: left;
+        margin-top: 4px;
+        text-align: left;
+        i { font-size: 24px; }
+    }
+
+
+
+	/* Button Mixins
+    ================================================== */
+
+    @mixin btn-disabled {
+		cursor: default; 
+		-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+		box-shadow: none; 
+		text-shadow: none;
+		opacity: 0.5;
+    }
+
+	@mixin btn-core {
+		cursor: pointer;
+		outline: 0;
+		font-weight: bold;
+		text-align: center;
+		line-height: 16px;
+		text-align: center;
+    	text-decoration: none;
+		&:disabled, &.disabled {
+			@include btn-disabled;
+		}
+	}
+
+	@mixin btn-style ($bgcolor, $bdrcolor, $txtcolor, $effect) {
+		@include sassy-button("flat", 3px, 14px, $bgcolor, $bdrcolor, $txtcolor, "false");
+		&:hover, &:active, &.active { 
+			background-color: $effect($bgcolor, 4); 
+			color: $txtcolor;
+		}
+	}
+
+
+
+	/* Primary Buttons
+    ================================================== */
+
+    @mixin btn-primary {
+    	@include btn-core;
+    	@include btn-style($blue, $blue, $white, lighten);
+        filter: none;
+    }
+
+    	/* Default/Secondary Buttons
+    ================================================== */
+
+    @mixin btn {
+    	@include btn-core;
+    	@include btn-style($softgrey, $softgrey, $charcoalgrey, darken);
+        filter: none;
+    } 
+
+
+    /* Button Sizes
+    ================================================== */
+
+	//Default
+	@mixin btn-default {
+		width: auto;
+		padding: 0.5em 1.5em;
+        margin: 4px;
+	}
+
+    //X-Large
+    @mixin btn-xlarge { 
+        padding: 20px 40px 18px;
+        font-size: 24px;
+        line-height: 20px;
+        text-transform: uppercase;
+        i { vertical-align: middle; }
+    }
+
+	//Large
+	@mixin btn-large { 
+		padding: 9px 20px; 
+		font-size: 16px; 
+		line-height: 20px; 
+	}
+
+	//Small
+	@mixin btn-small { 
+		padding: 5px 9px; 
+		font-size: 11px; 
+		line-height: 11px; 
+	}
+
+	//Full
+	@mixin btn-full {
+		width: 100%;
+		padding: 8px 0;
+		margin-right: 0;
+		margin-left: 0;
+		text-align: center;
+		margin: 4px 0;
+	}
+
+	//Half
+	@mixin btn-half {
+		width: calc(50% - 10px);
+		padding: 8px 0;
+		text-align: center;
+		margin-right: 16px;
+		&:nth-child(2n) { margin-right: 0; }
+	}
+
+
+    /* Form Mixins
+    ================================================== */
+    // Mixin for placeholder text color
+    @mixin placeholder-color($color) {
+      &::-webkit-input-placeholder { /* WebKit browsers */
+          color: $color;
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+          color: $color;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color: $color;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+          color: $color;
+      }
+    }
+
+
+    /* Line Clam (with ellipsis)
+    ================================================== */
+
+    /* mixin for multiline */
+    @mixin multiLineEllipsis($lineHeight: 16px, $lineCount: 1, $bgColor: $white){
+      overflow: hidden;
+      position: relative;
+      line-height: $lineHeight;
+      max-height: $lineHeight * $lineCount; 
+      //text-align: justify;
+      //margin-right: -1em;
+      //padding-right: 1em;
+      &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 1px;
+        font-size: 18px;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: $bgColor;
+      }
+    }
+
+    .block-with-text {
+      @include multiLineEllipsis($lineHeight: 18px, $lineCount: 3, $bgColor: $white);  
+    }
+
+
+
+    /* Tiles
+    ================================================== */
+
+    @mixin tiles {
+        width: 100%;
+        margin: 0;
+        @include breakpoint($tablet) { 
+            &.triple {
+                li {
+                    @include breakpoint($tablet) {
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 165px;
+                        margin-right: 12px;
+                    }
+                }
+            }
+            &.double {
+                @include container(6);
+                li { 
+                    @include breakpoint($tablet) { @include gallery(3 of 6); }
+                }
+            }
+        }
+        li {
+            width: 100%;
+            text-align: left;
+            margin-bottom: $gutter;
+            @include breakpoint($tablet) { text-align: center; }
+            &.full {
+                @include breakpoint ($tablet) {
+                    text-align:center;
+                    float: none;
+                    margin: 0 auto;
+                }
+            }
+            .tile {
+                display: block;
+                position: relative;
+                cursor: pointer;
+                padding: 10px 35px 10px 10px;
+                font-size: 12px;
+                line-height: 14px;
+                border: 1px solid $softgrey;
+                border-left: 5px solid $blue; 
+                color: $charcoalgrey;
+                @include box-shadow($box-shadow);
+                @include transition(background-color ease 0.5s);
+
+                @include breakpoint($tablet) { 
+                    padding: 15px; 
+                    border-left: 1px solid $softgrey;
+                    border-bottom: 5px solid $blue;
+                }
+
+                &:hover {
+                    background-color: $blue;
+                    color: $white;
+                    h5, i, a { color: $white; }
+                }
+
+                &:after {
+                    content:"\e54c";
+                    font-family: $myherbalife;
+                    position: absolute;
+                    font-size: 16px;
+                    color: $charcoalgrey;
+                    right: 8px;
+                    top: 50%;
+                    margin-top: -6px;
+                    @include breakpoint($tablet) { display: none; }
+                }
+                
+                i { 
+                    display: none;
+                    color: $blue;
+                    font-size: 48px;
+                    margin-bottom: 10px;
+                    @include breakpoint($tablet) { display: block; }
+                }
+
+                h5 { 
+                    margin-bottom: 0; 
+                    @include breakpoint($tablet) { margin-bottom: 5px; }
+                }
+            }
+
+            a.change {
+                display: none;
+                @include breakpoint($tablet) {
+                    display: block;
+                    margin-top: 8px; 
+                }
+            }
+        }
+    }

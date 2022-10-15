@@ -1,0 +1,82 @@
+﻿@using System.Net
+@using System.Globalization
+@using Shop.Storefront.Common.Infrastructure.StorefrontData
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Shop.Storefront.Content.Infrastructure
+@tagHelperPrefix th-
+@{
+    var locale = CultureInfo.CurrentCulture.Name;
+    var store = Context.GetStore();
+    var authCookieValue = Context.Request.Cookies["Storefront.Auth"];
+
+#if DEBUG
+    ServicePointManager.ServerCertificateValidationCallback=
+((sender, certificate, chain, sslPolicyErrors) => true);
+#endif
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- header tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="author" content="Custom Development - MTS" />
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="/SharedUI/Images/favicon.ico" />
+    <!-- For iPhone 4 with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/loyalty/SharedUI/Images/mobile/h_apple-touch-icon.png" />
+    <!-- For first-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/loyalty/SharedUI/Images/mobile/m_apple-touch-icon.png" />
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="/loyalty/SharedUI/Images/mobile/l_apple-touch-icon-precomposed.png" />
+    <!-- For nokia devices: -->
+    <link rel="shortcut icon" href="/loyalty/SharedUI/Images/mobile/l_apple-touch-icon.png" />
+
+    <title>goHerbalife.com | Loyalty</title>
+
+    <!-- Styles
+          ================================================== -->
+    <!--[if gt IE 9]> -->
+    <link rel="stylesheet" type="text/css" href="/loyalty/css/bundle/site.css" />
+    <!-- <![endif]-->
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="/loyalty/CSS/bundle/site_1.css" />
+        <link rel="stylesheet" type="text/css" href="/loyalty/CSS/bundle/site_2.css" />
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="/loyalty/SharedUI/Scripts/html5.js"></script>
+        <script src="/loyalty/SharedUI/Scripts/respond.min.js"></script>
+    <![endif]-->
+
+    @*Jquery from CDN*@
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="/loyalty/Scripts/vendors/kendo/kendo.core.min-1.0.0.js"></script>
+    <script src="/loyalty/Scripts/bundle/common.js"></script>
+    <script src="/loyalty/Scripts/bundle/vertical.js"></script>
+
+    @Html.Partial("_Fullstory")
+</head>
+<body>
+    @RenderSection("SpaViews", required: false)
+
+    <div class="wrapper">
+        <th-storefront-header locale="@locale" store="@(store?.Name ?? "markhughes")" 
+                              is-authenticated="@User.Identity.IsAuthenticated" 
+                              auth-value="@authCookieValue" />
+        <div id="loyalty-app" class="container body-content">
+            @RenderBody()
+        </div>
+        <th-storefront-footer locale="@locale" store="@(store?.Name ?? "markhughes")" 
+                              distributor-id="@(store?.DistributorId ?? "1111111111")" />
+    </div>
+    
+    <script src="/loyalty/Scripts/Spa/app.bundle.js"></script>
+</body>
+</html>

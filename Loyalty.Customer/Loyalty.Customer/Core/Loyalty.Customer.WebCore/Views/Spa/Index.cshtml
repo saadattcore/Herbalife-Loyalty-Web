@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("Templates/_LayoutTemplate")
+
+@section SpaViews {
+    @* List Views *@
+    @Html.Partial("Pages/_custHome")
+    @Html.Partial("Pages/_loyaltyTerms")
+    @Html.Partial("Pages/_dashboard")
+}

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptTerms.Text" xml:space="preserve">
+    <value>Al marcar esta casilla, reconoces que has leído, entendido y que cumplirás con los Términos y Condiciones  del programa del Cliente Leal.</value>
+  </data>
+  <data name="Activate.Button" xml:space="preserve">
+    <value>Activar</value>
+  </data>
+  <data name="Error.Title" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="FirstName.Label" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="FormDesc.Text" xml:space="preserve">
+    <value>Para ayudarte mejor como mi cliente leal, por favor proporciona o verifica la siguiente información:</value>
+  </data>
+  <data name="GoBack.Link" xml:space="preserve">
+    <value>Regresar</value>
+  </data>
+  <data name="LastName.Label" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="LockMessage.Ok" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="LockMessage.Text" xml:space="preserve">
+    <value>Lo siento, no puedes inscribirte en el Programa del Cliente Leal con este Distribuidor debido a que aún estás adscrito con alguien más.</value>
+  </data>
+  <data name="Member.Error" xml:space="preserve">
+    <value>: Sorry but Herbalife Distributors and Herbalife Preferred Members are not eligible for the Loyal Customer Program. We cannot proceed to your enrollment.</value>
+  </data>
+  <data name="PhoneNumber.Label" xml:space="preserve">
+    <value>Número de teléfono</value>
+  </data>
+  <data name="PhoneType.Home" xml:space="preserve">
+    <value>Casa</value>
+  </data>
+  <data name="PhoneType.Mobile" xml:space="preserve">
+    <value>Celular</value>
+  </data>
+  <data name="PhoneType.Work" xml:space="preserve">
+    <value>Trabajo</value>
+  </data>
+  <data name="RequiredField.Msg" xml:space="preserve">
+    <value>Campo obligatorio.</value>
+  </data>
+  <data name="Terms.Title" xml:space="preserve">
+    <value>Programa del Cliente Leal</value>
+  </data>
+  <data name="TermsHeader.Document" xml:space="preserve">
+    <value>Por favor, lee y acepta los siguientes términos y condiciones. Una vez que aceptes, podrás activar y comenzar en el programa del Cliente Leal.</value>
+  </data>
+  <data name="TermsHeader.Titllte" xml:space="preserve">
+    <value>Términos y Condiciones para el Programa del Cliente Leal</value>
+  </data>
+  <data name="ValidPhone.Msg" xml:space="preserve">
+    <value>Por favor ingresa un número télefonico a diez digitos.</value>
+  </data>
+  <data name="Warning.Document" xml:space="preserve">
+    <value>: Gracias por su interés en inscribirse en el Programa del Cliente Leal. Nuestros registros indican que actualmente está inscrito y está activo en el programa de Cliente Leal con otro distribuidor. Pedimos a cada cliente que complete su Período de Lealtad antes de inscribirse en el programa de Cliente Leal de Herbalife con otro Distribuidor. Por favor no dude en volver a inscribirse en este programa en ese momento.
+Tenga en cuenta, sin embargo, que si se inscribe en el Programa del Cliente Leal de Herbalife con otro Distribuidor, comenzará el programa desde el principio. Si desea continuar construyendo sobre los puntos que ya ha acumulado, puede que desee continuar en su programa actual.</value>
+  </data>
+  <data name="Warning.Title" xml:space="preserve">
+    <value>ADVERTENCIA</value>
+  </data>
+</root>

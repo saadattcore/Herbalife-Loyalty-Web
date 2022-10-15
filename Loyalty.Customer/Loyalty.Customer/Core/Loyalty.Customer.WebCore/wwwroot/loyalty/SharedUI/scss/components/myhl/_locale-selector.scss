@@ -1,0 +1,88 @@
+
+    /* MyHL Language Selector
+    ================================================== */
+    
+    .locale-selector {
+        background: url(#{$images_path}/map.png) no-repeat scroll 150px center transparent;
+        border-bottom: 1px solid $green;
+        text-shadow: 0 1px 0 $white;
+        display: none;
+        padding: 0 20px;
+        
+        .wrap {
+            @include m4-t8-d12-e12;
+            //@include m4-t8-d12-e16;
+            #closeLocalSel {
+                width: 100%;
+                color: $charcoalgrey;
+                text-decoration: none;
+                position: relative;
+                i {
+                    float: right;
+                    margin-top: $gutter;
+                    position: relative;
+                }
+            }
+        }
+
+        .locales-wrap {
+            @include m4-t8-d12-e12;
+            //@include m4-t8-d12-e16;
+            padding: 0 0 $gutter 0;
+
+            .locales-drop { 
+                @include span(4);
+                margin-bottom: $gutter;
+                min-height: 90px;
+                position: relative;
+
+                @include breakpoint($tablet) {
+                    @include gallery(4 of 8);
+                }
+                @include breakpoint($desktop) {
+                    @include gallery(3 of 12);
+                }
+                @include breakpoint($ext-desktop) {
+                    @include gallery(3 of 12);
+                    //@include gallery(4 of 16);
+                }
+
+                h4, > span{
+                    position: absolute;
+                    bottom: 30px;
+                }
+
+                > span{
+                    bottom: 0;
+                }
+            }
+
+        }
+
+        h4 + span { 
+            width: 100%; 
+            background-color: transparent;
+        }
+    }
+
+    .k-ie8  {
+        #locales {
+            .locales-wrap {
+                .locales-drop {
+                    @include breakpoint($tablet) {
+                        @include span(4 of 8);
+                        &:first-child + div,
+                        & + div + div + div {
+                            margin-right: 0px;
+                        }
+                    }
+                    @include breakpoint($desktop) {
+                       &, &:first-child + div {
+                            @include span(3 of 12);
+                            margin-right: $gutter;
+                        }
+                    }
+                }
+            }
+        }
+    }

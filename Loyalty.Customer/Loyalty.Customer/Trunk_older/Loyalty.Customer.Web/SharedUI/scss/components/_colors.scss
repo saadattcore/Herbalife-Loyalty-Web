@@ -1,0 +1,83 @@
+
+    /* Background Colors
+    ================================================== */
+
+	.nobg 			{ background: none !important; }
+
+    // Colors (Web)
+
+	// Brand Colors
+	.green          { background-color: $green; }
+    .orange         { background-color: $orange; }
+
+	// Text Colors
+    .lightblack     { background-color: $lightblack; }
+    .lightcharcoal  { background-color: $lightcharcoal; }
+    .blue           { background-color: $blue; }
+    .red            { background-color: $red; }
+
+	// Page Subheader Colors
+    .salmon         { background-color: $salmon; }
+    .darkgreen      { background-color: $darkgreen; }
+    .purple         { background-color: $purple; }
+    .darkblue       { background-color: $darkblue; }
+    .darkgrey       { background-color: $darkgrey; }
+
+	// More Colors
+    .brightgreen    { background-color: $brightgreen; }
+    .lightgreen     { background-color: $lightgreen; }
+    .lightorange    { background-color: $lightorange; }
+    .lightred    	{ background-color: $lightred; }
+    .lightblue   	{ background-color: $lightblue; }
+    .pink           { background-color: $pink; }
+    .teal           { background-color: $teal; }
+
+	// Greyscale Colors
+    .black          { background-color: $black; }
+    .charcoalgrey   { background-color: $charcoalgrey; }
+    .dimgrey        { background-color: $dimgrey; }
+    .grey           { background-color: $grey; }
+    .softgrey       { background-color: $softgrey; }
+    .lightgrey      { background-color: $lightgrey; }
+    .offwhite       { background-color: $offwhite; }
+    .white          { background-color: $white; border: 1px solid $lightgrey; }
+
+
+    // Colors (Catalog)
+
+    .cat-yellow         { background-color: $cat-yellow; }     
+    .cat-lightorange    { background-color: $cat-lightorange; }
+    .cat-orange         { background-color: $cat-orange; }     
+    .cat-bloodorange    { background-color: $cat-bloodorange; }
+    .cat-red            { background-color: $cat-red; }        
+    .cat-peach          { background-color: $cat-peach; }      
+    .cat-brown          { background-color: $cat-brown; }      
+    .cat-lightblue      { background-color: $cat-lightblue; }  
+    .cat-turquoise      { background-color: $cat-turquoise; }  
+    .cat-blue           { background-color: $cat-blue; }       
+    .cat-darkblue       { background-color: $cat-darkblue; }   
+    .cat-navyblue       { background-color: $cat-navyblue; }   
+    .cat-pink           { background-color: $cat-pink; }       
+    .cat-purple         { background-color: $cat-purple; }     
+    .cat-lagoon         { background-color: $cat-lagoon; }     
+
+    // Green Colors
+    .cat-green          { background-color: $cat-green; }      
+    .cat-greenapple     { background-color: $cat-greenapple; } 
+    .cat-greenolive     { background-color: $cat-greenolive; } 
+    .cat-greengrass     { background-color: $cat-greengrass; } 
+    .cat-greenforest    { background-color: $cat-greenforest; }
+    .cat-greenocean     { background-color: $cat-greenocean; } 
+
+    // Greyscale Colors
+    .cat-darkestgrey    { background-color: $cat-darkestgrey; }
+    .cat-darkgrey       { background-color: $cat-darkgrey; }   
+    .cat-charcoalgrey   { background-color: $cat-charcoalgrey; }
+    .cat-dimgrey        { background-color: $cat-dimgrey; }    
+    .cat-grey           { background-color: $cat-grey; }       
+    .cat-softgrey       { background-color: $cat-softgrey; }   
+    .cat-lightgrey      { background-color: $cat-lightgrey; }  
+    .cat-offwhite       { background-color: $cat-offwhite; }   
+
+
+

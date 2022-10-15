@@ -1,0 +1,50 @@
+	/* Primary Buttons
+    ================================================== */
+
+    input[type="submit"] { @include btn-primary; }
+
+
+	/* Default/Secondary Buttons
+    ================================================== */
+
+    button, input[type="button"], input[type="reset"] { @include btn; }
+
+    /* Button Set for Forms
+    ================================================== */
+	.button-set { 
+		width: 100%;
+		display: block;
+		margin-top: 10px; 
+		@include clearfix; 
+		button, a, input[type="submit"], input[type="button"], input[type="reset"] {
+			width: 100%; 
+			margin-bottom: 15px;
+			margin-left: 0;
+			display: block;
+			text-align: center;
+			@include breakpoint($tablet) { 
+				margin-left: 10px; 
+				margin-bottom: 0;
+				width: auto;
+				float: right;
+				&.opp-side { 
+					float: left;
+					margin-left: 0;
+					margin-right: 10px;
+				} 
+			}
+    		&:last-child { margin-bottom: 0; }
+    	}
+
+	}
+
+
+
+
+
+
+
+
+
+
+

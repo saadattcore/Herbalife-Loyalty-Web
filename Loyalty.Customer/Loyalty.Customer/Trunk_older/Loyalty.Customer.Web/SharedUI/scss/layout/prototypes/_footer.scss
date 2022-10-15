@@ -1,0 +1,82 @@
+
+    /* MyHL Footer
+    ================================================== */
+
+    footer {
+        display: table-row;
+        height: 1px;
+        width: 100%;
+        background-color: $charcoalgrey;
+        color: $grey;
+        font-size: 14px;
+        .footer-content {
+        	padding-top: $gutter;
+        	@include m4-t8-d12-e16;
+        	@include clearfix;
+        	&:last-child { 
+        		padding: 15px 0 60px;
+        	}
+        	.logos {
+        		text-align: center;
+        		width: 100%;
+	        	@include breakpoint($tablet) {
+	        		text-align: left; 
+	        		@include span(4); 
+	        	}
+	        	a {
+	        		display: inline-block;
+	        		vertical-align: middle;
+	        		margin-right: $gutter;
+	        	}
+	        }
+	        .footertext {
+	        	text-align: center;
+	        	width: 100%;
+	        }
+	        .region-selector {
+        		width: 100%;
+        		text-align: center;
+        		margin-bottom: 15px;
+	        	@include breakpoint($tablet) { 
+		        	text-align: right;
+        			margin-bottom: 0;
+		        	@include span(4 last);  
+		        }
+
+	            label, a {
+	            	display: inline-block;
+	            	vertical-align: middle;
+	            	margin-left: 6px;
+	            	color: $white;
+	            }
+	            label { font-size: 12px; }
+	            a {
+            		font-size: 14px;
+            		text-decoration: none;
+            		padding: 8px 25px 7px 35px;
+            		margin-bottom: 5px;
+	            	background-color: lighten($charcoalgrey, 6);
+	            	position: relative;
+	            	@include border-radius(20px);
+	            	&:hover { background-color: lighten($charcoalgrey, 10); }
+	            	img {
+	            		position: absolute;
+	            		left: 7px;
+					    top: 5px;
+					    width: 20px;
+					    height: 20px;
+	            		@include box-shadow(1px 1px 0px rgba(0,0,0,0.3));
+						@include border-radius(50%);
+	            	}
+	            	&:after {
+	            		    content: "\e54c";
+						    font-family: $myherbalife;
+						    position: absolute;
+						    font-size: 12px;
+						    right: 8px;
+						    top: 8px;
+	            	}
+	            }
+	        }
+	    }
+    }

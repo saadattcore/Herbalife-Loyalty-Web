@@ -1,0 +1,13 @@
+	
+	/* White Block with Drop Shadow
+	================================================== */
+
+	@mixin white-block ($m-pad:20px, $t-pad:20px, $d-pad:20px, $e-pad:20px) {
+        padding: $m-pad;
+        background-color: $white;
+        @include box-shadow(rgba($lightgrey, .3) 0 0 40px inset, rgba($black, .03) 0px 4px 3px);
+        margin-bottom: 20px;
+        @include breakpoint($tablet) { padding: $t-pad; }
+        @include breakpoint($desktop) { padding: $d-pad; }
+        @include breakpoint($ext-desktop) { padding: $e-pad; }
+	}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="loyaltycustomer-usw-qa-asweb" />
+  <parameter name="customErrorsMode" defaultValue="Off">
+    <parameterEntry kind="XmlFile" scope="Package\\PackageTmp\\Web.config$" match="/configuration/system.web/customErrors/@mode" />
+  </parameter>
+  <!-- We rely on Azure own BLOG storage for logging -->
+  <parameter name="removeSection" value="">
+    <parameterEntry kind="XmlFile" scope="Package\\PackageTmp\\Web.config$" match="/configuration/system.diagnostics" />
+  </parameter>
+  <parameter name="disableDebug" value="false">
+    <parameterEntry kind="XmlFile" scope="Package\\PackageTmp\\Web.config$" match="/configuration/system.web/compilation/@debug" />
+  </parameter>
+  <!-- For security reason, authentication should only be done via HTTPS -->
+  <parameter name="httpsOnly" value="false">
+    <parameterEntry kind="XmlFile" scope="Package\\PackageTmp\\Web.config$" match="/configuration/system.web/authentication/forms/@requireSSL" />
+  </parameter>
+
+  <!-- Note that anything in value attribute that has its value enclosed with double underscore will get its value from externalAppSetting file -->
+  <!-- This is sample to add non-existing (on web.config) setting from externalAppSetting
+  <parameter name="AppSettingName" description="AppSettingName" defaultValue="&lt;add key='AppSettingName' value='__AppSettingName__' /&gt;">
+    <parameterEntry kind="XmlFile" scope="Package\\PackageTmp\\Web.config$" match="//appSettings" />
+  </parameter>
+  -->
+  <!-- This is sample to add existing (on web.config) setting from externalAppSetting
+  <parameter name="AppSettingName_OverrideExisting" value="__AppSettingName__">
+    <parameterEntry kind="XmlFile" scope="Package\\PackageTmp\\Web.config$" match="/configuration/appSettings/add[@key='AppSettingName']/@value" />
+  </parameter>
+  -->
+
+  <!-- Circuit breaker setting -->
+  <parameter name="CircuitBreakerThreshholdValue_OverrideExisting" value="__CircuitBreakerThreshholdValue__">
+    <parameterEntry kind="XmlFile" scope="Package\\PackageTmp\\Web.config$" match="/configuration/appSettings/add[@key='CircuitBreakerThreshholdValue']/@value" />
+  </parameter>
+  <parameter name="CircuitBreakerTimeoutInMiliseconds_OverrideExisting" value="__CircuitBreakerTimeoutInMiliseconds__">
+    <parameterEntry kind="XmlFile" scope="Package\\PackageTmp\\Web.config$" match="/configuration/appSettings/add[@key='CircuitBreakerTimeoutInMiliseconds']/@value" />
+  </parameter>
+
+  <!-- WCF Services -->
+
+</parameters>

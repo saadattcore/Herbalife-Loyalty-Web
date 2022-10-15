@@ -1,0 +1,219 @@
+	
+	/* Switch Toggle Colors
+	================================================== */
+
+	@mixin switch-colors ($off, $offtext, $on, $ontext) {
+		.switch-left-right {
+			.switch-label { 
+				&:before { 
+					color: $offtext;
+					background-color: $off; 
+				}
+				&:after { 
+					color: $ontext;
+					background-color: $on; 
+				}
+			}
+		}
+	}
+	
+
+	/* Switch Toggle
+	================================================== */
+
+	.switch {
+		position: relative;
+		display: block;
+		vertical-align: top;
+		width: 85px;
+		height: 24px;
+		padding: 0;
+		//margin: -5px 0 10px 0;
+		background: linear-gradient(to bottom, $lightgrey, $white 25px);
+		background-image: -webkit-linear-gradient(top, $lightgrey, $white 25px);
+		border-radius: 18px;
+		box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+		cursor: pointer;
+
+		&.xlarge {
+			height: 42px;
+			width: 130px;
+			.switch-handle {
+				height: 42px;
+				width: 42px;
+				left: -3px; 
+			}
+			.switch-input:checked ~ .switch-handle { left: 100px; }
+			.switch-label {
+				font-size: 24px;
+				&:before, &:after {
+					height: 42px;
+					top: 12px;
+					padding: 10px 0 0 0;
+				}
+				&:before {
+					padding-left: 130px;
+					text-indent: -60px;
+				}
+				&:after { text-indent: 15px; }
+			}
+		}
+
+		&.large {
+			height: 34px;
+			width: 100px;
+			.switch-handle {
+				height: 34px;
+				width: 34px;
+				left: -1px; 
+			}
+			.switch-input:checked ~ .switch-handle { left: 70px; }
+			.switch-label {
+				font-size: 16px;
+				&:before, &:after {
+					height: 34px;
+					top: 8px;
+					padding: 10px 0 0 0;
+				}
+				&:before {
+					padding-left: 100px;
+					text-indent: -45px;
+				}
+				&:after { text-indent: 15px; }
+			}
+		}
+	}
+	.switch-input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+	.switch-label {
+		position: relative;
+		display: block;
+		height: inherit;
+		font-size: 12px;
+		font-weight: bold;
+		text-transform: uppercase;
+		background: #eceeef;
+		border-radius: inherit;
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+
+		&:before, &:after {
+			position: absolute;
+			top: 50%;
+			margin-top: -.5em;
+			line-height: 1;
+			-webkit-transition: inherit;
+			-moz-transition: inherit;
+			-o-transition: inherit;
+			transition: inherit;	
+		}
+
+		&:before {
+			content: attr(data-off);
+			right: 11px;
+			color: $white;
+			//text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+		}
+		&:after {
+			content: attr(data-on);
+			left: 11px;
+			color: $white;
+			//text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+			opacity: 0;
+		}
+	}
+
+	.switch-input:checked ~ .switch-label {
+		background: #E1B42B;
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+	}
+	.switch-input:checked ~ .switch-label:before {
+		opacity: 0;
+	}
+	.switch-input:checked ~ .switch-label:after {
+		opacity: 1;
+	}
+	.switch-handle {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 24px;
+		height: 24px;
+		background: linear-gradient(to bottom, $white 40%, $grey);
+		background-image: -webkit-linear-gradient(top, $white 40%, $grey);
+		border-radius: 100%;
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -6px 0 0 -6px;
+			width: 12px;
+			height: 12px;
+			background: linear-gradient(to bottom, $softgrey, $white);
+			background-image: -webkit-linear-gradient(top, $softgrey, $white);
+			border-radius: 6px;
+			box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);	
+		}
+	}
+
+	.switch-input:checked ~ .switch-handle {
+		left: 62px;
+		box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.5);
+	}
+	 
+	/* Transition
+	========================== */
+	.switch-label, .switch-handle {
+		transition: All 0.3s ease;
+		-webkit-transition: All 0.3s ease;
+		-moz-transition: All 0.3s ease;
+		-o-transition: All 0.3s ease;
+	}
+
+	.switch-left-right {
+		.switch-label {
+			overflow: hidden;
+			&:before, &:after {
+				width: 20px;
+				height: 24px;
+				top: 6px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				padding: 6px 0 0 0;
+				text-indent: -32px;
+				border-radius: 20px;
+				box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+			}
+			&:before {
+				background: $green;
+				text-align: left;
+				padding-left: 85px;
+			}
+			&:after {
+				text-align: left;
+				text-indent: 10px;
+				background: $dimgrey;
+				left: -100px;
+				opacity: 1;
+				width: 100%;
+			}
+		}
+	}
+
+	.switch-left-right .switch-input:checked ~ .switch-label:before {
+		opacity: 1;
+		left: 100px;
+	}
+	.switch-left-right .switch-input:checked ~ .switch-label:after {
+		left: 0;
+	}
+	.switch-left-right .switch-input:checked ~ .switch-label {
+		background: inherit;
+	}

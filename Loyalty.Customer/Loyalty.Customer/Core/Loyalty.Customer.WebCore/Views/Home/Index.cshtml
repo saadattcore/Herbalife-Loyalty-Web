@@ -1,0 +1,61 @@
+﻿@using System.Globalization
+@{ 
+    var locale = CultureInfo.CurrentCulture.Name;
+    var urlToEnroll = $"/Loyalty/Spa/ValidRoute/{locale}/";
+}
+
+<div class="custHome" wire-model="homeProgramViewModel">
+    <!-- Enroll Now -->
+    <section class="enroll">
+
+        <article>
+            <img src="@Localize["Icon"]" align="left">
+            @Html.Raw(Localize["Header.Section"].Value)
+        </article>
+        <aside>
+            <a href="@urlToEnroll" class="btn-continue">@Localize["EnrollNow.Text"]</a>
+        </aside>
+
+    </section>
+    <!-- /Enroll Now -->
+    <!-- List of Rewards -->
+    <section class="rewards">
+        <div>
+            <h3>@Localize["HighValue.Title"]</h3>
+            <!-- Slick Responsive Carousel -->
+            <div  id="gifts-holder" class="product-carousel" data-bind="source: rewardsSource" data-template="rewards-template"></div>
+            <!-- /Slick Responsive Carousel -->
+        </div>
+    </section>
+    <!-- /List of Rewards -->
+    <!-- Program Rewards Information -->
+    <section class="rewards-info"  >
+        <div>
+            <article class="shopping" data-bind="visible : enableShoppingRewards" >
+                <aside>
+                    <i class="icon-shopping-bag-ln-3"></i>
+                </aside>
+                <div wire-model="showModel">
+                    @await Component.InvokeAsync("Content", new { requestType = ContentRequestType.Fragment, path = "Loyalty/Customer/shoppingDesc.xml" })
+                </div>
+                
+            </article>
+            <article class="activity"  data-bind="visible : enableActivityRewards"  >
+                <aside><i class="icon-connection-ln-3"></i></aside>
+                <div class="info">
+                    @await Component.InvokeAsync("Content", new { requestType = ContentRequestType.Fragment, path = "Loyalty/Customer/activityRewards.xml" })
+                </div>
+            </article>
+            <a href="@urlToEnroll" class="btn-continue">@Localize["EnrollNow.Text"]</a>
+        </div>
+    </section>
+    <!-- /Program Rewards Information -->
+</div>
+
+<script id="rewards-template" type="text/x-kendo-template">
+    <div class="product-item">
+        <img class="shopping" data-bind="attr: {src: image}" />
+        <span class="#= categoryCode #"><strong data-bind="text: name"></strong><br />#= categoryDescription # </span><br />
+    </div>
+</script>
+

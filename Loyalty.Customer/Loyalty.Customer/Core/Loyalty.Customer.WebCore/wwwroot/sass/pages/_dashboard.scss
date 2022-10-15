@@ -1,0 +1,598 @@
+﻿	
+	/* Customer Dashboard
+	================================================== */
+
+    #dashboard{
+        .main-loader{
+           
+                    margin-top: 100px;
+        }
+
+        .notification-info{
+            background-color: $lightblue;
+        }
+
+        .btn-continue{
+    
+            line-height: 16px;
+            text-align: center;
+            font-size: 14px;
+            padding: 0.5em 1.5em;
+            text-transform: inherit;
+            @include breakpoint($desktop) {
+				display: block;
+				margin-top: 5px;
+	
+			}
+        }
+
+        .rewardsDiv{
+            @include breakpoint($tablet) { @include container(8); }
+			@include breakpoint($desktop) { @include gallery(6 of 12); }
+			@include breakpoint($ext-desktop) { @include gallery(8 of 16); }
+        }
+
+        .divider {
+
+			@include m4-t8-d12-e16;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            display: block;
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            div{
+                padding: 0 20px;
+                background-color: #e8e8e8;
+                display: inline-block;
+                margin: 0;
+            }
+			   
+
+            
+            hr{
+                position: absolute;
+                top: 50%;
+                border-width: 1px 0 0;
+                border-color: #ccc;
+                width: 100%;
+                z-index: -1;
+            }  
+            
+            h4{
+                padding: 0 20px;
+                background-color: #e8e8e8;
+                display: inline-block;
+                margin: 0;
+            }    
+
+            :after{
+                content: " ";
+                
+            }
+		}
+         
+		> section {
+			&:first-child{ @include m4-t8-d12-e16; }
+            & + section{ @include m4-t8-d12-e14; }
+
+            div.intro{
+                @include breakpoint($desktop) { @include span(8); }
+				@include breakpoint($ext-desktop) { @include span(10); }
+            }
+
+            div.shop {
+                position:relative;
+				@include breakpoint($desktop) {
+					float: right;
+					text-align: right;
+				}
+				a { 
+					
+				}
+                
+                margin-bottom: 20px;
+			}
+
+
+            .content > aside{
+			    width: 100%;					
+			    @include breakpoint($tablet) { @include container(8); }
+			    @include breakpoint($desktop) { @include gallery(6 of 12); }
+			    @include breakpoint($ext-desktop) { @include gallery(8 of 16); }
+
+                &.resume {
+                    position: relative;
+
+                    div:first-child{
+				        padding: 10px;
+				        width: 100%;
+                        text-align: center;
+					    display: block;					    
+					    font-weight: bold;
+					    color: $white;
+					    line-height: normal;
+				        @include text-shadow($text-shadow);
+
+				        @include breakpoint($tablet) { 
+					        padding: $gutter;
+					        position: absolute;
+					        top: 0;
+					        bottom: 0;
+					        left: 0;
+					        width: span(3);
+				        }
+					    @include breakpoint($desktop) { width: span(2); }
+					    @include breakpoint($ext-desktop) { width: span(3); }
+
+                        > span{
+                            display: block;
+                        }
+
+                        i{
+                            margin-bottom: 10px;
+                            display: inline-block;
+                        }
+
+                        i.loader{
+                            font-size: 10px;
+                            border-left-color: white;
+                        }
+
+				        > span:first-of-type{ 
+                            font-size: 24px;
+                            white-space: nowrap;
+				        }
+
+                        i{
+					        font-size: 60px;
+
+					        @include breakpoint($tablet) { font-size: 100px; }
+					        @include breakpoint($desktop) { font-size: 60px; }
+					        @include breakpoint($ext-desktop) { font-size: 100px; }
+                        }
+
+                        > span > b {
+					        font-size: 60px;
+
+					        @include breakpoint($tablet) { font-size: 78px; }
+					        @include breakpoint($desktop) { font-size: 40px; }
+					        @include breakpoint($ext-desktop) { font-size: 78px; }
+                        }
+
+				        span + span {
+					        @include breakpoint($desktop) { font-size: 16px; }
+				        }
+
+                        + div{
+                            width: 100%;
+				            text-align: left;
+				            padding: $gutter $gutter $gutter*2 $gutter;
+
+				            @include breakpoint($tablet) { 
+					            padding: $gutter $gutter $gutter*2 0;
+					            @include span(5 last); 
+				            }
+					        @include breakpoint($tablet) { @include span(5 last); }
+					        @include breakpoint($desktop) { @include span(4 last); }
+					        @include breakpoint($ext-desktop) { @include span(5 last); }			    
+                        }
+
+                    }
+
+		            &.shopping { 
+			            div:first-child { background-color: $cat-darkblue; }
+			            ul li { 
+				            border-color: $cat-darkblue;
+				            &.completed { background-color: $cat-darkblue; } 
+				            i, span { color: $cat-darkblue; }
+			            }
+		            }
+
+		            &.activity { 
+			            div:first-child { background-color: $cat-pink; }
+			            ul li { 
+				            border-color: $cat-pink;
+				            &.completed { background-color: $cat-pink; } 
+				            i, span { color: $cat-pink; }
+			            }
+		            }
+
+                    &.shopping,
+                    &.activity{
+                        background-color: $white;
+                        margin-bottom: $gutter;	
+                    }
+
+                    ul {
+					    margin: 0;
+					    width: 100%;
+					    li {
+						    display: inline-block;
+						    vertical-align: top;
+                            margin: 25px 6px 0 0;
+						    height: 40px;
+						    padding: 8px 2px 0;
+						    text-align: center;
+						    border: 2px dashed;
+                            position: relative;
+						    @include border-radius(3px);
+
+						    @include breakpoint(0 $tablet) { 
+							    width: 125px;
+							    &:nth-child(2n) { margin-right: 0; }
+						    }
+						    @include breakpoint($tablet) { width: 80px; }
+						    @include breakpoint($desktop $ext-desktop) {
+							    width: 130px;
+							    &:nth-child(2n) { margin-right: 0; }
+						    }
+						    @include breakpoint($ext-desktop) { 
+							    width: 82px; 
+                                &:last-child { margin-right: 0; }
+						    }
+
+						    &.completed {
+							    border: none;
+							    padding: 10px 0 0;
+							    i { 
+								    color: $white;
+								    font-size: 19px;
+								    @include text-shadow($text-shadow); 
+							    }
+						    }
+
+                            &.hideStars i{
+                                display: none;
+                            }
+
+						    i { 
+                                font-size: 18px; 
+                                margin-right: -4px;
+						    }
+
+                            span{
+                                display: block;
+                                font-size: 12px;
+                                font-weight: bold;
+                                position: absolute;
+                                text-align: center;
+                                bottom: -22px;
+                                width: 100%;
+                            }
+
+					    }
+				    }
+
+                    &.single div:first-child{
+					    @include breakpoint($desktop) { width: span(3); }
+					    @include breakpoint($ext-desktop) { width: span(4); }
+
+				        + div {
+					        @include breakpoint($tablet) { @include span(5 last); }
+					        @include breakpoint($desktop) { @include span(9 last); }
+					        @include breakpoint($ext-desktop) { @include span(8 last); }
+				            }
+                    }
+
+
+                }
+
+                &.single{
+                    @include breakpoint($desktop) { 
+                        @include container(12); 
+                        float: none;
+                    }
+                }
+
+            }            
+                 
+		}
+
+        article{
+		    text-align: left;
+		    border: 1px solid $softgrey;
+		    @include white-block;
+		    padding: 30px $gutter;
+            clear: both;
+            overflow: hidden;
+		    @include breakpoint($tablet) { padding: 30px; }  
+		    @include breakpoint($desktop) { padding: 30px $gutter; }
+
+		    > aside {
+			    margin-bottom: $gutter;
+			    @include breakpoint($tablet) { @include span(2); }
+			    @include breakpoint($desktop) { @include span(3); }
+			    > i {
+				    display: block;
+				    height: 140px;
+				    padding-top: 30px;
+				    margin: 0 auto;
+				    text-align: center;
+				    font-size: 80px; 
+				    color: $white;
+				    @include border-radius(50%);
+				    @include container(2);  
+			    }
+		    } 
+
+		    table {
+			    margin: 10px 0;
+			    @include breakpoint(0 $desktop) { @include scroll-table; } 
+                thead, th, td {
+                    text-a7lign: left;
+					max-width: 100px; 
+                    overflow: scroll;
+                    @include breakpoint($desktop) {
+					    max-width: 100px;  
+					   
+				    }
+                }
+
+			    th, td { 
+				    text-align: right;
+				    min-height: 55px;
+				    @include breakpoint($desktop) {
+					    text-align: left;
+					    min-width: 100px; 
+					    &:nth-child(3), &:last-child { text-align: right; }
+				    }
+			    }
+
+		    }
+
+            &:first-of-type > aside > i{ 
+                background-color: $cat-darkblue; 
+            }
+
+            &:first-of-type + article > aside > i{ 
+                background-color: $cat-pink; 
+            }
+
+		    > div {
+			    width: 100%;
+			    @include breakpoint($tablet) { @include span(5 last); }
+			    @include breakpoint($desktop) { @include span(8); }
+			    @include breakpoint($ext-desktop) { @include span(8); }
+
+			    p { 
+				    max-width: 400px; 
+                    font-size: 18px;
+                    line-height: 22px;
+
+				    @include breakpoint($desktop) { max-width: 620px; }
+			    }
+
+                > ul{
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+		    }
+
+		    div div { 
+			    margin-bottom: 10px;
+		    }
+
+            ul{
+                list-style: disc;
+
+                + p{
+                    margin-top: 20px;
+                }
+
+            }
+
+            a{
+                text-align: center;
+                @include breakpoint($tablet) { text-align:left ; }
+            }
+
+            a, h5{
+                margin-top: 20px;
+                display: block;
+            }
+
+            &.activity-info .activities{
+				width: 100%;
+				border-bottom: 1px solid $lightgrey;
+				padding: 15px 0;
+                overflow: hidden;
+				@include breakpoint($tablet) { padding: 30px 0 $gutter; }
+				@include breakpoint($desktop) { padding: 30px $gutter $gutter; }
+
+                span:first-child{
+					display: block;
+					font-size: 14px;
+					@include breakpoint($tablet) { @include span(3); }
+					@include breakpoint($desktop) {
+						font-size: 18px; 
+						@include span(5); 
+					}
+
+                    + span{
+						@include span(2 last);
+						font-size: 18px;
+						text-align: right;
+                        font-weight: bold;
+                    }
+                }
+
+            }
+
+         } 
+
+        .program{
+
+            > div{
+			    background-color: $white;
+			    margin-bottom: $gutter;
+			    padding: 12px 0;
+                overflow: hidden;
+                position: relative;
+
+			    &.closed {
+				    > ul { display: none; }
+			    }
+
+			    &:after {
+				    font-family: $myherbalife;
+				    position: absolute;
+				    right: 0;
+				    top: 0;
+				    width: 90px;
+				    color: $white;
+				    font-size: 20px;
+				    text-align: center;
+				    padding: 10px 0;
+				    border-bottom-left-radius: 5px;
+                    background-color: $cat-darkblue; 
+			    }
+
+			    &.one:after { content: "\e2e6"; }
+			    &.two:after { content: "\e2e6\e2e6"; }
+			    &.three:after { content: "\e2e6\e2e6\e2e6"; }
+			    &.four:after { content: "\e2e6\e2e6\e2e6\e2e6"; }
+
+			    &.redeemed {
+				    padding: 11px 0;
+				    cursor: pointer;
+				    overflow: hidden;
+
+				    &:after { content: "\e5b4"; }
+				    > ul li {
+                        @extend .disabled;
+
+                        a { visibility: hidden; }
+				    }
+
+			    }
+
+			    > h5 { 
+				    margin-bottom: 0;
+				    padding: 0 90px 0 20px; 
+					    @include breakpoint($desktop) { font-size: 16px; }
+			    }
+			
+			    > ul {
+				    margin: 30px 0 0;
+				    padding: 0 10px;
+				    text-align: center;
+
+				    @include breakpoint($tablet) { 
+					    padding: 0 $gutter;
+				    }
+
+                    &.toRedeemed a{
+                            display: none;
+
+                            + a{ display: inline-block;}
+                    }                    
+
+				    li {
+					    position: relative;
+					    cursor: pointer;
+					    margin-bottom: $gutter;
+					    padding: 10px 5px 0 5px;
+					    display: inline-block;
+					    vertical-align: top;
+					    width: 130px;
+
+					    &.selected { 
+						    border: 3px solid $green;
+                            opacity: 1;
+                             
+						    &:after {
+							    font-family: $myherbalife;
+							    content: "\e5b4";
+							    position: absolute;
+							    bottom: 0;
+							    right: 0;
+							    left: 0;
+							    background-color: $green;
+							    color: $white;
+							    font-size: 16px;
+							    padding: 5px 3px 0 8px;
+						    }
+						    a { visibility: hidden; }
+					    }
+
+					    img { 
+						    width: 75%; 
+						    margin-bottom: 10px;
+					    }
+
+					    a { 
+						    margin-top: 10px;
+						    @include btn-small; 
+
+                            + a{
+                                display: none;
+                            }
+					    }
+                        
+                        span{
+                            display: block;
+						    height: 65px;
+						    line-height: 16px; 
+                            overflow: hidden;
+                        }
+                         
+				    }
+
+			    }
+
+                .loader{
+                    
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -40px;
+                    margin-left: -50px;
+                }
+
+            }
+
+            & + .program > div:after{
+                background-color: $cat-pink; 
+            }
+        }
+
+        h4.terms{           
+            margin-top: 80px;
+            text-align: center;
+
+            + a{
+                text-align: center;
+                display: block;
+                margin-bottom: 40px;
+            }
+
+        }
+
+    }
+
+    .modalWindow{
+         .close-icon {
+            font-size: 22px; 
+            line-height: .5; 
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            color: $grey;
+            text-shadow: 0 -1px 1px rbga(0, 0, 0, 0.5);
+            font-weight: bold;
+            cursor: pointer;
+        }   
+
+        img{
+            margin: 0 auto 20px auto;
+            display: block;
+            width: 80%;
+            border: 1px solid $softgrey;
+        }
+
+    }

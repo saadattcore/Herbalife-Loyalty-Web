@@ -1,0 +1,89 @@
+﻿// =============
+// Logout / Splash Page
+// -----
+// This File contains all styles for the Splash / Login Page
+//
+//==============
+
+
+
+body {
+    background: $lightgrey;
+    position: relative; /* Required for static Slidebars to function properly. */
+
+ 	.loyaltyTerms {
+			 @include m4-t8-d12-e14; 
+             padding: 30px 0px;
+			
+			.terms-conditions { 
+				@include white-block();  
+                overflow: auto;
+
+				.terms {
+					width: 100%;
+					max-height: 200px;
+					overflow-y: scroll;
+					padding: $gutter;
+					background-color: $offwhite;
+					border: 1px solid $softgrey;
+					@include breakpoint($tablet) { max-height: 250px; }     
+					p { font-size: 14px; }   
+				}
+
+				.acknowledge {
+					margin-top: $gutter;
+					width: 100%;
+					@include breakpoint($desktop) { 
+						@include span(8 last);   
+					}
+					form {
+						@include form-1;
+						@include breakpoint($tablet) { @include form-2; }
+					}
+					input[type="checkbox"] {
+						@include checkbox(22px, 32px, -16px);     
+					}
+                    .two{
+                        width: 46%;
+                    }
+				}
+			}
+
+            .terms {
+			
+			    > div { 
+				    @include m4-t8-d12-e14; 
+				    text-align: center;
+			    } 
+
+			    .terms-text { 
+				    display: none; 
+				    text-align: left;
+				    margin-top: $gutter;
+				    @include breakpoint($desktop) { margin-top: 40px; } 
+				    > h4 { padding-top: $gutter; }
+				    > p { font-size: 14px; } 
+			    }
+
+		    }
+            .button-set{
+                margin-bottom: 25px;
+            }
+		}
+    // Extras
+    .btn-continue {
+        background-color: #0080ff;
+        color: #fff;
+        padding: 20px 40px 18px;
+        font-size: 24px;
+        line-height: 20px;
+        text-transform: uppercase;
+        i{
+            font-size: 24px;
+        }
+    }
+    .back{ 
+        padding-top: 25px;
+    }
+    
+}

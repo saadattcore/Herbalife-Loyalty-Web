@@ -1,0 +1,109 @@
+
+	/* Account
+	================================================== */
+
+	.my-account {
+		position: fixed;
+		top: 40px;
+		bottom: 0;
+		right: 0;
+		background-color: $white;
+		margin-right: -300px;
+		visibility: hidden;
+		width: 300px;
+		overflow-y: scroll;
+		z-index: 3;
+		@include box-shadow(-1px 0 8px rgba(0,0,0,0.3));
+		@include transition(all ease 0.3s);
+
+		@include breakpoint($desktop) { 
+			top: 50px; 
+			width: 400px;
+		}
+
+		&.active {
+			visibility: visible;
+			margin-right: 0;
+			.account-content { opacity: 1; }
+		}
+
+		.account-content {
+			opacity: 0;
+			@include transition(opacity ease 0.5s);
+
+			.about-me {
+				width: 100%;
+				background-color: $charcoalgrey;
+				padding: $gutter;
+				position: relative;
+				overflow: hidden;
+				@include clearfix;
+				&:before {
+					content: "\e33c";
+					font-family: $myherbalife;
+					color: $white;
+					opacity: 0.1;
+					font-size: 175px;
+					position: absolute;
+					top: 70px;
+					left: 0;
+					margin-left: -50px;
+					display: none;
+					@include breakpoint($desktop) { display: block; }
+				}
+				> div  {
+					width: 100%;
+					@include breakpoint($desktop) {
+						@include span(3 last);
+					}
+
+					h4, h5 { color: $white; }
+					.btn-logout, .btn-view { @include btn-full; }
+					.btn-logout { @include btn-primary; }
+					.btn-view { @include btn; }
+				}
+			}
+			h5.volume-head {
+				padding: 5px 0;
+				margin-bottom: 0;
+				text-align: center;
+				color: $white;
+				background-color: $dimgrey;
+			}
+			.volume-dom, .volume-full {
+				color: $charcoalgrey;
+				background-color: $offwhite;
+				padding: 8px 10px 5px;
+				text-align: center;
+				border-bottom: 1px solid $grey;
+				span {
+					font-size: 20px;
+					font-weight: bold;
+				}
+			}
+			.volume-dom {
+				display: inline-block;
+				width: 50%;
+				&:first-child { border-right: 1px solid $grey; }
+			}
+
+			.account-links {
+				> ul {
+					margin-bottom: 30px;
+					&:first-child { margin-top: $gutter; }
+					
+					li {
+						width: 100%;
+						border-bottom: 1px solid $grey;
+						a { 
+							display: block;
+							padding: 10px;
+							&:hover {
+								background-color: darken($white,2);
+							}
+						}
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,87 @@
+
+	
+	/* Mega Menu
+	================================================== */
+
+	// colors
+	/*
+	$color-1: #111433; // Haiti
+	$color-2: #3f8654; // Goblin
+	$color-3: #ffffff; // White
+	*/
+
+	$color-1: $darkgrey;
+	$color-2: lighten($green,10);
+	$color-3: $white;
+
+	// fonts 
+
+	$primary-font: sans-serif;
+
+
+	//mixins
+
+	// center vertically and/or horizontally an absolute positioned element
+
+	@mixin center($xy:xy) {
+	  @if $xy == xy {
+	    left: 50%;
+	    top: 50%;
+	    bottom: auto;
+	    right: auto;
+	    @include transform(translateX(-50%) translateY(-50%));
+	  }
+	  @else if $xy == x {
+	    left: 50%;
+	    right: auto;
+	    @include transform(translateX(-50%));
+	  }
+	  @else if $xy == y {
+	    top: 50%;
+	    bottom: auto;
+	    @include transform(translateY(-50%));
+	  }
+	}
+
+	// antialiasing mode font rendering
+
+	@mixin font-smoothing {
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	}
+
+	@mixin transform-origin ($origin) {
+	    -moz-transform-origin: $origin;
+		     -o-transform-origin: $origin;
+		    -ms-transform-origin: $origin;
+		-webkit-transform-origin: $origin;
+	          transform-origin: $origin;
+	}
+
+
+	// breakpoints
+   
+	$S:     $mobile;   
+	$M:     $tablet;     
+	$L:     $desktop;     
+
+	// media queries
+
+	@mixin MQ($canvas) {
+	  @if $canvas == S {
+	   @media only screen and (min-width: $S) { @content; } 
+	  }
+	  @else if $canvas == M {
+	   @media only screen and (min-width: $M) { @content; } 
+	  }
+	  @else if $canvas == L {
+	   @media only screen and (min-width: $L) { @content; } 
+	  }
+	}
+
+	// super light grid - it works with the .cd-container class inside style.scss
+
+	@mixin column($percentage, $float-direction:left) {
+	  width: 100% * $percentage;
+	  float: $float-direction;
+	}

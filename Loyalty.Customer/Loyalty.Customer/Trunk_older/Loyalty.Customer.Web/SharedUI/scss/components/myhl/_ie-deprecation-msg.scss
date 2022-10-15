@@ -1,0 +1,60 @@
+﻿.section-outdated_message {
+    background: $lightgreen;
+    padding: 20px;
+    position: fixed;
+    width: 100%; 
+    z-index: 20000; 
+    top: 0;
+    @include box-shadow(rgba($lightgrey, .3) 0 0 40px inset, rgba(black, .3) 0px 4px 3px);
+
+    div {
+        @include m4-t8-d12-e12;
+        text-align: center;
+        .close-icon {
+            font-size: 22px;
+            line-height: .5;
+            float: right;
+            color: $black; 
+            cursor: pointer;
+         }
+
+        h1 {
+            font-size: 18px;
+        }
+        ul {
+            margin: 0;
+            li {
+                @include span(4);
+                margin-bottom: 20px;
+                a {
+                    position: relative;
+                    img {
+                        height: 64px;
+                        width: 64px;
+                    }
+                    span {
+                        @include btn;
+                        vertical-align: top; 
+                        margin-top: 16px;
+                        max-width: 70%;
+                    }
+                }
+            }
+        }
+        @include breakpoint($tablet) {
+            h1 {
+                font-size: 28px;
+            }
+            ul li {
+                @include span(4 of 8);
+                margin-right: 0;
+            }
+        }
+        @include breakpoint($desktop) {
+            ul li {
+                @include span(6 of 12);
+                margin-right: 0;
+            }
+        }
+    }
+}

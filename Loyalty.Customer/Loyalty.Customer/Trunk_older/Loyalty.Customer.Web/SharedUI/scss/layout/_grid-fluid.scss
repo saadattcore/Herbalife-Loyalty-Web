@@ -1,0 +1,27 @@
+// =============
+// Grid
+// -----
+// 
+//
+//==============
+// Grid
+$susy:(
+    math:fluid,
+    columns:4,
+    gutters:.05,
+    global-box-sizing:border-box,
+);
+
+
+$large-gutter: (
+    gutters:.25,
+);
+
+
+
+.wrap-no-respond{
+     @include container(12);
+     max-width: $fl-tablet;
+ 
+
+}

@@ -1,0 +1,15 @@
+
+	/* Bulk Actions
+	================================================== */
+	
+	.bulk-action {    
+        width: 100%;
+        @include form-1;
+        @include breakpoint($tablet) { width: 220px; }
+    }
+
+    .select-all-mobile {
+        text-align: center;
+        margin-bottom: 5px;
+        @include breakpoint($tablet) { display: none; }
+    } 

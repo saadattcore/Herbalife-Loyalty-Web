@@ -1,0 +1,22 @@
+	
+	/* Susy Grid Setup
+    ================================================== */
+ 
+	$susy: (
+	  columns: 4,
+	  column-width: 60px,
+	  gutters: 1/3,
+	  math: static, 
+	  output: float,
+	  gutter-position: after,
+	  debug: (
+	    image: show-columns,
+	    output: overlay,
+	    color: rgba(#ff0000, .10),
+	    toggle: top right,
+	  ),
+	);
+
+	/* Global Border-Box
+    ================================================== */
+	@include border-box-sizing;

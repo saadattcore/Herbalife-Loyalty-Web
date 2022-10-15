@@ -1,0 +1,1623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2689C899-6D54-442C-B0AF-388AFE6112D8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Loyalty.Customer.Web</RootNamespace>
+    <AssemblyName>Loyalty.Customer.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationInsightsResourceId>/subscriptions/7904d35c-f332-45d7-94ea-349402a4d826/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Loyalty.Customer.Web</ApplicationInsightsResourceId>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Blocks.Caching, Version=1.1.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Blocks.Caching.1.1.11\lib\HL.Blocks.Caching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Blocks.CircuitBreaker, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Blocks.CircuitBreaker.1.1.1.0\lib\HL.Blocks.CircuitBreaker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Blocks.Localization, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Blocks.Localization.1.1.1.0\lib\HL.Blocks.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Common.Configuration, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Common.Configuration.1.1.1.0\lib\HL.Common.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Common.DataContract.Interfaces, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Common.DataContract.Interfaces.1.1.1.0\lib\HL.Common.DataContract.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Common.DataContract.ValueObjects, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Common.DataContract.ValueObjects.1.1.1.0\lib\HL.Common.DataContract.ValueObjects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Common.Logging, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Common.Logging.1.1.2.0\lib\HL.Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Common.Utilities, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Common.Utilities.1.1.1.0\lib\HL.Common.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Common.ValueObjects, Version=1.1.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Common.ValueObjects.1.1.17.0\lib\HL.Common.ValueObjects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HL.Loyalty.Models, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HL.Loyalty.Models.1.0.0.5\lib\HL.Loyalty.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Documents.Client, Version=1.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.DocumentDB.1.10.0\lib\net45\Microsoft.Azure.Documents.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.4.0.70, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.0\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.0.70, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.0\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.0.70, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MyHerbalife3.Shared.Infrastructure, Version=1.2.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MyHerbalife3.Shared.Infrastructure.1.2.23.0\lib\MyHerbalife3.Shared.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MyHerbalife3.Shared.Interfaces, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MyHerbalife3.Shared.Interfaces.1.2.1.0\lib\MyHerbalife3.Shared.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MyHerbalife3.Shared.ViewModel, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MyHerbalife3.Shared.ViewModel.1.2.6.0\lib\MyHerbalife3.Shared.ViewModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Shop.Storefront.Common.DTO, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Shop.Storefront.Common.DTO.1.0.0.5\lib\net462\Shop.Storefront.Common.DTO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Shop.Storefront.Common.Infrastructure, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Shop.Storefront.Common.Infrastructure.1.0.0.4\lib\net462\Shop.Storefront.Common.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.1.605.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.1.605\lib\net46\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis.Extensions.Core, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.Extensions.Core.1.4.0\lib\net45\StackExchange.Redis.Extensions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis.Extensions.Newtonsoft, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.Extensions.Newtonsoft.1.4.0\lib\net45\StackExchange.Redis.Extensions.Newtonsoft.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SpaController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HtmlHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Deployment\loyalty-customer-usw-dev-web2.setParameters.xml" />
+    <Content Include="Deployment\loyaltycustomer-usw-qa-asweb.SetParameters.xml" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gruntfile.js" />
+    <Content Include="LoyaltyCustomer\css\bundle\site.css" />
+    <Content Include="LoyaltyCustomer\css\bundle\site_1.css" />
+    <Content Include="LoyaltyCustomer\css\bundle\site_2.css" />
+    <Content Include="LoyaltyCustomer\css\main-loyalty.css" />
+    <Content Include="LoyaltyCustomer\css\main-loyalty_1.css" />
+    <Content Include="LoyaltyCustomer\css\main-loyalty_2.css" />
+    <Content Include="LoyaltyCustomer\css\mainCSS.txt" />
+    <Content Include="LoyaltyCustomer\scripts\bundle\slick.min.js" />
+    <Content Include="Scripts\app\vertical.txt" />
+    <Content Include="Scripts\bundle\common.js" />
+    <Content Include="package.json" />
+    <Content Include="Scripts\app\helpers\slick-helper.js" />
+    <Content Include="Scripts\bundle\commonSPA.js" />
+    <Content Include="Scripts\bundle\vertical.js" />
+    <Content Include="Scripts\Spa\app.bundle.js" />
+    <Content Include="Scripts\Spa\app.bundle.js.map">
+      <DependentUpon>app.bundle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Spa\app.bundle.raw.js">
+      <DependentUpon>app.bundle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Spa\app.js" />
+    <Content Include="Scripts\Spa\core\layout.js" />
+    <Content Include="Scripts\Spa\core\router.js" />
+    <Content Include="Scripts\Spa\util\logger.js" />
+    <Content Include="Scripts\Spa\viewmodels\dashboardVM.js" />
+    <Content Include="Scripts\Spa\viewmodels\homeVM.js" />
+    <Content Include="Scripts\Spa\viewmodels\termsVM.js" />
+    <Content Include="Scripts\vendors\kendo\kendo.core.min-1.0.0.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.calendar.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.color.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.columnsorter.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.combobox.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.datepicker.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.drawing.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.excel.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.grid.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.listview.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.maskedtextbox.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.multiselect.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.notification.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.ooxml.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.pager.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.pdf.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.progressbar.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.router.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.timepicker.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.upload.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.validator.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\kendo.view.min.js" />
+    <Content Include="Scripts\vendors\kendo\widgets\pako_deflate.min.js" />
+    <Content Include="Scripts\app\slick.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="SharedUI\CommonJS.txt" />
+    <Content Include="SharedUI\CommonLegacyCSS1.txt" />
+    <Content Include="SharedUI\CommonLegacyCSS2.txt" />
+    <Content Include="SharedUI\CommonLegacyCSS3.txt" />
+    <Content Include="SharedUI\CommonLegacyJS.txt" />
+    <Content Include="SharedUI\css\hrbl-font-icons\hrbl-font-icons-1.1.2.css" />
+    <Content Include="SharedUI\css\kendo-common.css" />
+    <Content Include="SharedUI\css\kendo-rtl.css" />
+    <Content Include="SharedUI\css\kendo-skin.css" />
+    <Content Include="SharedUI\css\myhl2-global.css" />
+    <Content Include="SharedUI\css\myhl2-hl-ui\myhl2-hl-ui-1.0.6.css" />
+    <Content Include="SharedUI\css\myhl2-nav.css" />
+    <Content Include="SharedUI\fonts\herbalife.dev.svg" />
+    <Content Include="SharedUI\fonts\herbalife.svg" />
+    <Content Include="SharedUI\fonts\myherbalife.svg" />
+    <Content Include="SharedUI\fonts\oxygen-regular-webfont.svg" />
+    <Content Include="SharedUI\fonts\proximanova-regular-webfont.svg" />
+    <Content Include="SharedUI\fonts\raleway-regular-webfont.svg" />
+    <Content Include="SharedUI\images\ajax-loader.gif" />
+    <Content Include="SharedUI\images\backgrounds\background.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bg-appt-small.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-appt.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-events-small.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-events.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-followups-small.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-followups.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-gradient-header.gif" />
+    <Content Include="SharedUI\images\backgrounds\bg-gradient-right-v2.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bg-gradient-right.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bg-meetings-small.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-meetings.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-other-small.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-other.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-personal-small.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-personal.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-phonecalls-small.png" />
+    <Content Include="SharedUI\images\backgrounds\bg-phonecalls.png" />
+    <Content Include="SharedUI\images\backgrounds\bkg-blue-gradient.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg-blue-header-gradient.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg-bullet.png" />
+    <Content Include="SharedUI\images\backgrounds\bkg-grn-gradient.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_hdrlogo_blue.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_hdrlogo_gold.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_hdrlogo_green.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_hdrlogo_orange.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_hdrlogo_pink.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_hdrlogo_purple.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_header_do.gif" />
+    <Content Include="SharedUI\images\backgrounds\bkg_main_catalog.gif" />
+    <Content Include="SharedUI\images\backgrounds\bkg_main_catalog.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_page_blue.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_page_gold.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_page_green.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_page_green_reversed.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_page_map.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_page_orange.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_page_pink.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_page_purple.jpg" />
+    <Content Include="SharedUI\images\backgrounds\bkg_rndBox_blue.png" />
+    <Content Include="SharedUI\images\backgrounds\bl.png" />
+    <Content Include="SharedUI\images\backgrounds\blue-square-bg.gif" />
+    <Content Include="SharedUI\images\backgrounds\blue-square-bg.png" />
+    <Content Include="SharedUI\images\backgrounds\blue-square-btm-left.png" />
+    <Content Include="SharedUI\images\backgrounds\blue-square-btm-right.png" />
+    <Content Include="SharedUI\images\backgrounds\blue-square-sdw-left.png" />
+    <Content Include="SharedUI\images\backgrounds\blue-square-sdw-right.png" />
+    <Content Include="SharedUI\images\backgrounds\bluebox.gif" />
+    <Content Include="SharedUI\images\backgrounds\blueCorner.gif" />
+    <Content Include="SharedUI\images\backgrounds\bottom_footer.jpg" />
+    <Content Include="SharedUI\images\backgrounds\br.png" />
+    <Content Include="SharedUI\images\backgrounds\container-bg-gradient.jpg" />
+    <Content Include="SharedUI\images\backgrounds\content-footer-background.jpg" />
+    <Content Include="SharedUI\images\backgrounds\divider.gif" />
+    <Content Include="SharedUI\images\backgrounds\Expandable.png" />
+    <Content Include="SharedUI\images\backgrounds\footerBg.gif" />
+    <Content Include="SharedUI\images\backgrounds\gdo-popup-bg.gif" />
+    <Content Include="SharedUI\images\backgrounds\gradient-bg.jpg" />
+    <Content Include="SharedUI\images\backgrounds\greenbox.gif" />
+    <Content Include="SharedUI\images\backgrounds\gridline.JPG" />
+    <Content Include="SharedUI\images\backgrounds\grnbox-btm.png" />
+    <Content Include="SharedUI\images\backgrounds\grnbox-btmlt.png" />
+    <Content Include="SharedUI\images\backgrounds\grnbox-btmrt.png" />
+    <Content Include="SharedUI\images\backgrounds\grnbox-lt.png" />
+    <Content Include="SharedUI\images\backgrounds\grnbox-rt.png" />
+    <Content Include="SharedUI\images\backgrounds\hdivider.gif" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-blue.gif" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-blue.jpg" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-green.gif" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-green.jpg" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-orange.gif" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-orange.jpg" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-pink.gif" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-pink.jpg" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-purple.gif" />
+    <Content Include="SharedUI\images\backgrounds\header-bg-purple.jpg" />
+    <Content Include="SharedUI\images\backgrounds\hrblPreLoader-mini.gif" />
+    <Content Include="SharedUI\images\backgrounds\hrblPreLoader.gif" />
+    <Content Include="SharedUI\images\backgrounds\icon_arrowRight.gif" />
+    <Content Include="SharedUI\images\backgrounds\ml.png" />
+    <Content Include="SharedUI\images\backgrounds\mr.png" />
+    <Content Include="SharedUI\images\backgrounds\ms.png" />
+    <Content Include="SharedUI\images\backgrounds\myOffice-tab.jpg" />
+    <Content Include="SharedUI\images\backgrounds\myoffice-tab.png" />
+    <Content Include="SharedUI\images\backgrounds\Outlook.gif" />
+    <Content Include="SharedUI\images\backgrounds\popup-footer-info-bg.jpg" />
+    <Content Include="SharedUI\images\backgrounds\popup-sender-info-bg.jpg" />
+    <Content Include="SharedUI\images\backgrounds\RootItemBg-old.gif" />
+    <Content Include="SharedUI\images\backgrounds\RootItemBg.gif" />
+    <Content Include="SharedUI\images\backgrounds\step1_bckg.jpg" />
+    <Content Include="SharedUI\images\backgrounds\step1_create_invoice.jpg" />
+    <Content Include="SharedUI\images\backgrounds\step2_create_invoice.jpg" />
+    <Content Include="SharedUI\images\backgrounds\step2_create_invoice.png" />
+    <Content Include="SharedUI\images\backgrounds\SubItemStates.png" />
+    <Content Include="SharedUI\images\backgrounds\tbl-header-background.gif" />
+    <Content Include="SharedUI\images\backgrounds\texture-dots-2.png" />
+    <Content Include="SharedUI\images\backgrounds\tl.png" />
+    <Content Include="SharedUI\images\backgrounds\tr.png" />
+    <Content Include="SharedUI\images\backgrounds\uc10_mid.gif" />
+    <Content Include="SharedUI\images\backgrounds\uc10_midedge_left.gif" />
+    <Content Include="SharedUI\images\backgrounds\uc10_midedge_right.gif" />
+    <Content Include="SharedUI\images\backgrounds\underline-thick.gif" />
+    <Content Include="SharedUI\images\backgrounds\underline-thin.gif" />
+    <Content Include="SharedUI\images\bg-blur-5.jpg" />
+    <Content Include="SharedUI\images\box\blue\box_cap_top_left.png" />
+    <Content Include="SharedUI\images\box\blue\box_cap_top_left_curve.png" />
+    <Content Include="SharedUI\images\box\blue\box_cap_top_middle.png" />
+    <Content Include="SharedUI\images\box\blue\box_cap_top_right.png" />
+    <Content Include="SharedUI\images\box\blue\box_cap_top_right_curve.png" />
+    <Content Include="SharedUI\images\box\blue\box_footer_bot_left.png" />
+    <Content Include="SharedUI\images\box\blue\box_footer_bot_left_curve.png" />
+    <Content Include="SharedUI\images\box\blue\box_footer_bot_middle.png" />
+    <Content Include="SharedUI\images\box\blue\box_footer_bot_right.png" />
+    <Content Include="SharedUI\images\box\blue\box_footer_bot_right_curve.png" />
+    <Content Include="SharedUI\images\box\blue\box_header_bkg.png" />
+    <Content Include="SharedUI\images\box\blue\box_left_shadow.png" />
+    <Content Include="SharedUI\images\box\blue\box_left_shadow2.png" />
+    <Content Include="SharedUI\images\box\blue\box_right_shadow.png" />
+    <Content Include="SharedUI\images\box\green\box_cap_top_left.png" />
+    <Content Include="SharedUI\images\box\green\box_cap_top_left_curve.png" />
+    <Content Include="SharedUI\images\box\green\box_cap_top_middle.png" />
+    <Content Include="SharedUI\images\box\green\box_cap_top_right.png" />
+    <Content Include="SharedUI\images\box\green\box_cap_top_right_curve.png" />
+    <Content Include="SharedUI\images\box\green\box_header_bkg.png" />
+    <Content Include="SharedUI\images\box\grnbox-btm.png" />
+    <Content Include="SharedUI\images\box\grnbox-btmlt.png" />
+    <Content Include="SharedUI\images\box\grnbox-btmrt.png" />
+    <Content Include="SharedUI\images\box\grnbox-lt.png" />
+    <Content Include="SharedUI\images\box\grnbox-rt.png" />
+    <Content Include="SharedUI\images\box\purple\box_cap_top_left.png" />
+    <Content Include="SharedUI\images\box\purple\box_cap_top_left_curve.png" />
+    <Content Include="SharedUI\images\box\purple\box_cap_top_middle.png" />
+    <Content Include="SharedUI\images\box\purple\box_cap_top_right.png" />
+    <Content Include="SharedUI\images\box\purple\box_cap_top_right_curve.png" />
+    <Content Include="SharedUI\images\box\purple\box_header_bkg.png" />
+    <Content Include="SharedUI\images\buttons\btn-small-arrow-left.png" />
+    <Content Include="SharedUI\images\buttons\btn-small-arrow-right.png" />
+    <Content Include="SharedUI\images\buttons\btn_blue_lg_bkg.png" />
+    <Content Include="SharedUI\images\buttons\btn_delivery_bkg.gif" />
+    <Content Include="SharedUI\images\buttons\btn_delivery_lt.gif" />
+    <Content Include="SharedUI\images\buttons\btn_delivery_rt.gif" />
+    <Content Include="SharedUI\images\buttons\btn_plus_minus.png" />
+    <Content Include="SharedUI\images\buttons\btn_red_bg.gif" />
+    <Content Include="SharedUI\images\buttons\btn_red_icon_x.gif" />
+    <Content Include="SharedUI\images\buttons\btn_red_rt.gif" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_bkg.gif" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_bkg.png" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_lt.gif" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_lt.png" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_lt_arrow.gif" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_lt_arrow.png" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_rt.gif" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_rt.png" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_rt_arrow.gif" />
+    <Content Include="SharedUI\images\buttons\btn_slvr_rt_arrow.png" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_bg.gif" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_empty.gif" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_empty.png" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_icon_arr.gif" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_icon_arr.png" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_icon_cart.gif" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_icon_cart.png" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_icon_check.gif" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_icon_plus.gif" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_icon_plus.png" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_rt.gif" />
+    <Content Include="SharedUI\images\buttons\btn_ylw_rt.png" />
+    <Content Include="SharedUI\images\divider.gif" />
+    <Content Include="SharedUI\images\dropdown-arrow.png" />
+    <Content Include="SharedUI\images\fallback\google_chrome_logo-min.png" />
+    <Content Include="SharedUI\images\fallback\internet_explorer_logo-min.png" />
+    <Content Include="SharedUI\images\favicon.ico" />
+    <Content Include="SharedUI\images\flags.png" />
+    <Content Include="SharedUI\images\Gold-standards.png" />
+    <Content Include="SharedUI\images\HeaderLogo.gif" />
+    <Content Include="SharedUI\images\HERBALIFE-LOGO-368-white.png" />
+    <Content Include="SharedUI\images\Herbalife-Logo.png" />
+    <Content Include="SharedUI\images\icon-shadow.png" />
+    <Content Include="SharedUI\images\icons\Alert_gray.png" />
+    <Content Include="SharedUI\images\icons\Alert_red.png" />
+    <Content Include="SharedUI\images\icons\arrowLeft.jpg" />
+    <Content Include="SharedUI\images\icons\arrowRight.jpg" />
+    <Content Include="SharedUI\images\icons\Arrow_Down_01.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Down_02.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Down_03.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Left_01.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Left_02.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Left_03.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Right_01.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Right_02.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Right_03.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Up_01.png" />
+    <Content Include="SharedUI\images\icons\Arrow_Up_02.png" />
+    <Content Include="SharedUI\images\icons\atIcon.png" />
+    <Content Include="SharedUI\images\icons\audio.gif" />
+    <Content Include="SharedUI\images\icons\back.png" />
+    <Content Include="SharedUI\images\icons\bbbsealh2.gif" />
+    <Content Include="SharedUI\images\icons\bkg-bullet.png" />
+    <Content Include="SharedUI\images\icons\blue-arrow-down.gif" />
+    <Content Include="SharedUI\images\icons\blue-arrow-left-double.gif" />
+    <Content Include="SharedUI\images\icons\blue-arrow-left.gif" />
+    <Content Include="SharedUI\images\icons\blue-arrow-right-double.gif" />
+    <Content Include="SharedUI\images\icons\blue-arrow-right.gif" />
+    <Content Include="SharedUI\images\icons\bottonArrow.png" />
+    <Content Include="SharedUI\images\icons\btn_close_window.png" />
+    <Content Include="SharedUI\images\icons\burst14x14.png" />
+    <Content Include="SharedUI\images\icons\Callouts.gif" />
+    <Content Include="SharedUI\images\icons\callout_arrow_up.png" />
+    <Content Include="SharedUI\images\icons\cart.png" />
+    <Content Include="SharedUI\images\icons\checkmark-green.gif" />
+    <Content Include="SharedUI\images\icons\checkmark-purple.gif" />
+    <Content Include="SharedUI\images\icons\copy.png" />
+    <Content Include="SharedUI\images\icons\delete.png" />
+    <Content Include="SharedUI\images\icons\delete_btn.png" />
+    <Content Include="SharedUI\images\icons\doc.png" />
+    <Content Include="SharedUI\images\icons\dot-bullet.gif" />
+    <Content Include="SharedUI\images\icons\doubleArrowLeft.jpg" />
+    <Content Include="SharedUI\images\icons\doubleRightArrow.jpg" />
+    <Content Include="SharedUI\images\icons\dropdown-arrow.png" />
+    <Content Include="SharedUI\images\icons\edit.png" />
+    <Content Include="SharedUI\images\icons\email.png" />
+    <Content Include="SharedUI\images\icons\emailIcon.png" />
+    <Content Include="SharedUI\images\icons\envelope_closed.png" />
+    <Content Include="SharedUI\images\icons\envelope_closed_gray.png" />
+    <Content Include="SharedUI\images\icons\envelope_opened.png" />
+    <Content Include="SharedUI\images\icons\external.png" />
+    <Content Include="SharedUI\images\icons\feed.png" />
+    <Content Include="SharedUI\images\icons\green-arrow-collapse-expand.gif" />
+    <Content Include="SharedUI\images\icons\green-arrow-collapse.gif" />
+    <Content Include="SharedUI\images\icons\green-arrow-down.gif" />
+    <Content Include="SharedUI\images\icons\green-arrow-expand.gif" />
+    <Content Include="SharedUI\images\icons\green-arrow-left-double.gif" />
+    <Content Include="SharedUI\images\icons\green-arrow-left.gif" />
+    <Content Include="SharedUI\images\icons\green-arrow-right-double.gif" />
+    <Content Include="SharedUI\images\icons\green-arrow-right.gif" />
+    <Content Include="SharedUI\images\icons\green-arrow-up.gif" />
+    <Content Include="SharedUI\images\icons\icon-alert.png" />
+    <Content Include="SharedUI\images\icons\icon-checkmark-green.gif" />
+    <Content Include="SharedUI\images\icons\icon-collapse.png" />
+    <Content Include="SharedUI\images\icons\icon-error.gif" />
+    <Content Include="SharedUI\images\icons\icon-exclamation.gif" />
+    <Content Include="SharedUI\images\icons\icon-expand.png" />
+    <Content Include="SharedUI\images\icons\icon-feedback.png" />
+    <Content Include="SharedUI\images\icons\icon-pdf.gif" />
+    <Content Include="SharedUI\images\icons\icon-printerfriendly.gif" />
+    <Content Include="SharedUI\images\icons\icon-question.gif" />
+    <Content Include="SharedUI\images\icons\icons-18-white.png" />
+    <Content Include="SharedUI\images\icons\icons-36-white.png" />
+    <Content Include="SharedUI\images\icons\icon_back_to_top.png" />
+    <Content Include="SharedUI\images\icons\icon_back_to_top_pane.gif" />
+    <Content Include="SharedUI\images\icons\icon_error.png" />
+    <Content Include="SharedUI\images\icons\icon_faq.png" />
+    <Content Include="SharedUI\images\icons\icon_select_normal.png" />
+    <Content Include="SharedUI\images\icons\icon_select_normal2.png" />
+    <Content Include="SharedUI\images\icons\icon_select_over.png" />
+    <Content Include="SharedUI\images\icons\icon_select_over2.png" />
+    <Content Include="SharedUI\images\icons\icon_shipping.png" />
+    <Content Include="SharedUI\images\icons\icon_success.png" />
+    <Content Include="SharedUI\images\icons\im.png" />
+    <Content Include="SharedUI\images\icons\inbox_bubble.png" />
+    <Content Include="SharedUI\images\icons\inbox_empty.png" />
+    <Content Include="SharedUI\images\icons\info_img.png" />
+    <Content Include="SharedUI\images\icons\iPdf.png" />
+    <Content Include="SharedUI\images\icons\Loading.gif" />
+    <Content Include="SharedUI\images\icons\LoadingGreenCircle.gif" />
+    <Content Include="SharedUI\images\icons\logo-bbb.gif" />
+    <Content Include="SharedUI\images\icons\logo-bigleaf.png" />
+    <Content Include="SharedUI\images\icons\logo-dsa.gif" />
+    <Content Include="SharedUI\images\icons\logo-myhladmin.png" />
+    <Content Include="SharedUI\images\icons\logo_HID_300dpi.jpg" />
+    <Content Include="SharedUI\images\icons\logo_HID_300dpi.png" />
+    <Content Include="SharedUI\images\icons\mngCtmBtn.png" />
+    <Content Include="SharedUI\images\icons\mngStdBtn.png" />
+    <Content Include="SharedUI\images\icons\newAlert.png" />
+    <Content Include="SharedUI\images\icons\ntf_bullets-1.png" />
+    <Content Include="SharedUI\images\icons\ntf_bullets-2.png" />
+    <Content Include="SharedUI\images\icons\ntf_bullets-3.png" />
+    <Content Include="SharedUI\images\icons\numbers.png" />
+    <Content Include="SharedUI\images\icons\OrangeCheck.png" />
+    <Content Include="SharedUI\images\icons\Outlook.gif" />
+    <Content Include="SharedUI\images\icons\pdf.gif" />
+    <Content Include="SharedUI\images\icons\pdf.png" />
+    <Content Include="SharedUI\images\icons\pencil_edit.png" />
+    <Content Include="SharedUI\images\icons\placeholder.jpg" />
+    <Content Include="SharedUI\images\icons\PlusMinus-blue.png" />
+    <Content Include="SharedUI\images\icons\print.png" />
+    <Content Include="SharedUI\images\icons\print_green.png" />
+    <Content Include="SharedUI\images\icons\rightArrow-nocircle.gif" />
+    <Content Include="SharedUI\images\icons\rightArrow.gif" />
+    <Content Include="SharedUI\images\icons\Satisfaction-Gaurantee.jpg" />
+    <Content Include="SharedUI\images\icons\smallErrorIcon.jpg" />
+    <Content Include="SharedUI\images\icons\smallErrorIcon.png" />
+    <Content Include="SharedUI\images\icons\stdAlertIcn.png" />
+    <Content Include="SharedUI\images\icons\telerik-sprites.gif" />
+    <Content Include="SharedUI\images\icons\tip-arrow-dark.png" />
+    <Content Include="SharedUI\images\icons\tip-arrow.png" />
+    <Content Include="SharedUI\images\icons\ToolTipSprites.gif" />
+    <Content Include="SharedUI\images\icons\ToolTipVerticalSprites.gif" />
+    <Content Include="SharedUI\images\icons\topArrow.png" />
+    <Content Include="SharedUI\images\icons\trash.png" />
+    <Content Include="SharedUI\images\icons\video.gif" />
+    <Content Include="SharedUI\images\icons\viewRptBtn.png" />
+    <Content Include="SharedUI\images\icons\visited.png" />
+    <Content Include="SharedUI\images\icons\whiteArrowRight.png" />
+    <Content Include="SharedUI\images\icons\xls.png" />
+    <Content Include="SharedUI\images\learn-more-arrow.png" />
+    <Content Include="SharedUI\images\loader.gif" />
+    <Content Include="SharedUI\images\loading.gif" />
+    <Content Include="SharedUI\images\loadingAnimation.gif" />
+    <Content Include="SharedUI\images\logo-bbb.png" />
+    <Content Include="SharedUI\images\logo-colored.png" />
+    <Content Include="SharedUI\images\logo-dsa-grey.png" />
+    <Content Include="SharedUI\images\logo-dsa-grey_2.png" />
+    <Content Include="SharedUI\images\logo-myherbalife-sm-green.png" />
+    <Content Include="SharedUI\images\logo-myherbalife-sm.png" />
+    <Content Include="SharedUI\images\logo-myherbalife.png" />
+    <Content Include="SharedUI\images\logos\footer_dsa.jpg" />
+    <Content Include="SharedUI\images\logos\footer_herbalife.gif" />
+    <Content Include="SharedUI\images\logos\footer_line.jpg" />
+    <Content Include="SharedUI\images\logos\HeaderLogo.gif" />
+    <Content Include="SharedUI\images\logos\HL-logo-368-small.png" />
+    <Content Include="SharedUI\images\logos\logo-bubble.png" />
+    <Content Include="SharedUI\images\logos\logo-myherbalife-color.png" />
+    <Content Include="SharedUI\images\logos\myHerbalife-header-logo.png" />
+    <Content Include="SharedUI\images\logo_HID_300dpi.jpg" />
+    <Content Include="SharedUI\images\map.png" />
+    <Content Include="SharedUI\images\mobile\h_apple-touch-icon.png" />
+    <Content Include="SharedUI\images\mobile\l_apple-touch-icon-precomposed.png" />
+    <Content Include="SharedUI\images\mobile\l_apple-touch-icon.png" />
+    <Content Include="SharedUI\images\mobile\m_apple-touch-icon.png" />
+    <Content Include="SharedUI\images\modal-gloss.png" />
+    <Content Include="SharedUI\images\myhl\map.png" />
+    <Content Include="SharedUI\images\myhl\search-glass.png" />
+    <Content Include="SharedUI\images\spritemain.png" />
+    <Content Include="SharedUI\images\Telerik\Ajax\loadingAnimation.gif" />
+    <Content Include="SharedUI\images\Telerik\Ajax\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\AutoCompleteBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Ajax\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\AutoCompleteBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Button\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Calendar\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Calendar\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ColorPicker\ColorPickerSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ColorPicker\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ColorPicker\rcpVerticalSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ColorPicker\rcpVerticalSpritesIE6.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ComboBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\CommandSpritesLight.png" />
+    <Content Include="SharedUI\images\Telerik\brown\DataPager\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Dock\CommandSprite.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Dock\HorizontalSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Dock\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Dock\VerticalSprite.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\DropDownList\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Editor\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Editor\ToolBarSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Editor\ToolbarVerticalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\FileExplorer\FileExplorerToolbarSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\FileExplorer\FileExplorerToolbarSpritesIE6.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\FileExplorer\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Filter\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Filter\rfLast.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Filter\rfLine.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Filter\rfMiddle.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Filter\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\FormDecorator\ButtonSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\FormDecorator\CheckBoxSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\FormDecorator\ComboSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\FormDecorator\FieldsetBgr.png" />
+    <Content Include="SharedUI\images\Telerik\brown\FormDecorator\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\FormDecorator\RadioButtonSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\FormDecorator\RadioButtonSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Grid\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Grid\rgDrag.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Grid\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ImageEditor\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ImageGallery\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Input\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Input\ResizeEdge.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Input\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\LightBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\LightBox\sprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ListBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ListBox\rlbButtonHover.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ListBox\rlbButtonNormal.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ListBox\rlbDropClue.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ListBox\rlbHeaderFooter.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ListBox\rlbSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ListView\drag.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ListView\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\loading.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\loading_small.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\MediaPlayer\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\MediaPlayer\sprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Menu\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Menu\rmRoundedLeft.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Menu\rmRoundedLeft_rtl.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Menu\rmRoundedRight.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Menu\rmRoundedRight_rtl.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Menu\rmSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Menu\rmVSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Notification\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\OrgChart\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\OrgChart\rocItemTileLight.png" />
+    <Content Include="SharedUI\images\Telerik\brown\OrgChart\rocLinesDark.png" />
+    <Content Include="SharedUI\images\Telerik\brown\PanelBar\Expandable.png" />
+    <Content Include="SharedUI\images\Telerik\brown\PanelBar\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\PanelBar\RootItemBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\PanelBar\SubItemStates.png" />
+    <Content Include="SharedUI\images\Telerik\brown\PivotGrid\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\PivotGrid\sprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ProgressArea\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\radActionsSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\radFormSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\radFormSpriteIE6.png" />
+    <Content Include="SharedUI\images\Telerik\brown\radFormToggleSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\radFormToggleSpriteIE6.png" />
+    <Content Include="SharedUI\images\Telerik\brown\radGradientButtonSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\radGradientListSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Rating\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Rating\Sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Rating\Sprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\RibbonBar\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\RibbonBar\rrbGradients.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Rotator\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Rotator\RotatorButtons.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Scheduler\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Scheduler\rsInlineEditHSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Scheduler\rsInlineEditVSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Scheduler\rsModalBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Scheduler\rsModalBgIE6.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Scheduler\rsModalTitleBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Scheduler\rsSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Scheduler\rsVerticalHeaderBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\SearchBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\SiteMap\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\DragHandle.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\DragHandleDown.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\DragVerticalHandle.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\DragVerticalHandleRight.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\Handles.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\HandlesVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\ItemHorizontalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\ItemVerticalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\LargeChangeHorizontal.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\LargeChangeMiddleHorizontal.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\LargelChangeCenterVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\LargelChangeVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\SelectedRegionHorizontalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\SelectedRegionVerticalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\SmallChangeCenterVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\SmallChangeHorizontal.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\SmallChangeMiddleHorizontal.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\SmallChangeVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\TrackBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Slider\TrackVerticalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\SocialShare\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Splitter\ExpandCollapseBarsCommands.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Splitter\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Splitter\ResizeBarHorizontalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Splitter\ResizeBarVerticalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Splitter\slideTitleContainerBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TabStrip\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TabStrip\TabStripStates.png" />
+    <Content Include="SharedUI\images\Telerik\brown\TabStrip\TabStripVStates.png" />
+    <Content Include="SharedUI\images\Telerik\brown\TagCloud\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Tile\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Tile\rtileSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Tile\rtileSpriteIE6.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbActiveBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbClickedDropArrows.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbControlBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbDropArrows.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbDropDownBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbHoverBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbRoundedLeft.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbRoundedLeft_rtl.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbRoundedRight.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbRoundedRight_rtl.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolBar\rtbVerticalControlBg.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolTip\Callouts.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolTip\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolTip\ToolTipSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\ToolTip\ToolTipVerticalSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\rtlBottom.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\rtlBottomRTL.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\rtlMiddle.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\rtlMiddleRTL.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\rtlSingle.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\rtlTop.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\rtlTopRTL.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeList\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeView\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\TreeView\PlusMinus.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Upload\AsyncProgress.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Upload\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Upload\ruProgress.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Upload\ruSprite.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Upload\ruSpriteIE6.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Window\CommandButtonSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Window\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Window\WindowHorizontalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Window\WindowHorizontalSprites.png" />
+    <Content Include="SharedUI\images\Telerik\brown\Window\WindowVerticalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\brown\Window\WindowVerticalSprites.png" />
+    <Content Include="SharedUI\images\Telerik\Button\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Calendar\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Calendar\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\ColorPicker\ColorPickerSprites.png" />
+    <Content Include="SharedUI\images\Telerik\ColorPicker\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\ColorPicker\rcpVerticalSprites.png" />
+    <Content Include="SharedUI\images\Telerik\ColorPicker\rcpVerticalSpritesIE6.png" />
+    <Content Include="SharedUI\images\Telerik\ComboBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\ComboBox\radActionsSprite.png" />
+    <Content Include="SharedUI\images\Telerik\CommandSpritesLight.png" />
+    <Content Include="SharedUI\images\Telerik\DataPager\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Dock\CommandSprite.gif" />
+    <Content Include="SharedUI\images\Telerik\Dock\HorizontalSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Dock\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Dock\VerticalSprite.gif" />
+    <Content Include="SharedUI\images\Telerik\DropDownList\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\DropDownList\radActionsSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Editor\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Editor\ToolBarSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\Editor\ToolbarVerticalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\FileExplorer\FileExplorerToolbarSprites.png" />
+    <Content Include="SharedUI\images\Telerik\FileExplorer\FileExplorerToolbarSpritesIE6.gif" />
+    <Content Include="SharedUI\images\Telerik\FileExplorer\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Filter\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Filter\rfLast.gif" />
+    <Content Include="SharedUI\images\Telerik\Filter\rfLine.gif" />
+    <Content Include="SharedUI\images\Telerik\Filter\rfMiddle.gif" />
+    <Content Include="SharedUI\images\Telerik\Filter\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\FormDecorator\ButtonSprites.png" />
+    <Content Include="SharedUI\images\Telerik\FormDecorator\CheckBoxSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\FormDecorator\ComboSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\FormDecorator\FieldsetBgr.png" />
+    <Content Include="SharedUI\images\Telerik\FormDecorator\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\FormDecorator\RadioButtonSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\FormDecorator\RadioButtonSprites.png" />
+    <Content Include="SharedUI\images\Telerik\Grid\loading_small.gif" />
+    <Content Include="SharedUI\images\Telerik\Grid\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Grid\rgDrag.gif" />
+    <Content Include="SharedUI\images\Telerik\Grid\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\ImageEditor\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\ImageGallery\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Input\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Input\ResizeEdge.gif" />
+    <Content Include="SharedUI\images\Telerik\Input\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\LightBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\LightBox\sprite.png" />
+    <Content Include="SharedUI\images\Telerik\ListBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\ListBox\rlbButtonHover.png" />
+    <Content Include="SharedUI\images\Telerik\ListBox\rlbButtonNormal.png" />
+    <Content Include="SharedUI\images\Telerik\ListBox\rlbDropClue.png" />
+    <Content Include="SharedUI\images\Telerik\ListBox\rlbHeaderFooter.png" />
+    <Content Include="SharedUI\images\Telerik\ListBox\rlbSprite.png" />
+    <Content Include="SharedUI\images\Telerik\ListView\drag.gif" />
+    <Content Include="SharedUI\images\Telerik\ListView\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\loading.gif" />
+    <Content Include="SharedUI\images\Telerik\loading_small.gif" />
+    <Content Include="SharedUI\images\Telerik\MediaPlayer\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\MediaPlayer\sprite.png" />
+    <Content Include="SharedUI\images\Telerik\Menu\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Menu\rmRoundedLeft.png" />
+    <Content Include="SharedUI\images\Telerik\Menu\rmRoundedLeft_rtl.png" />
+    <Content Include="SharedUI\images\Telerik\Menu\rmRoundedRight.png" />
+    <Content Include="SharedUI\images\Telerik\Menu\rmRoundedRight_rtl.png" />
+    <Content Include="SharedUI\images\Telerik\Menu\rmSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Menu\rmVSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Notification\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\OrgChart\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\OrgChart\rocItemTileLight.png" />
+    <Content Include="SharedUI\images\Telerik\OrgChart\rocLinesDark.png" />
+    <Content Include="SharedUI\images\Telerik\PanelBar\Expandable.png" />
+    <Content Include="SharedUI\images\Telerik\PanelBar\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\PanelBar\RootItemBg.png" />
+    <Content Include="SharedUI\images\Telerik\PanelBar\SubItemStates.png" />
+    <Content Include="SharedUI\images\Telerik\PivotGrid\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\PivotGrid\sprite.png" />
+    <Content Include="SharedUI\images\Telerik\ProgressArea\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\radActionsSprite.png" />
+    <Content Include="SharedUI\images\Telerik\radFormSprite.png" />
+    <Content Include="SharedUI\images\Telerik\radFormSpriteIE6.png" />
+    <Content Include="SharedUI\images\Telerik\radFormToggleSprite.png" />
+    <Content Include="SharedUI\images\Telerik\radFormToggleSpriteIE6.png" />
+    <Content Include="SharedUI\images\Telerik\radGradientButtonSprite.png" />
+    <Content Include="SharedUI\images\Telerik\radGradientListSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Rating\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Rating\Sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\Rating\Sprite.png" />
+    <Content Include="SharedUI\images\Telerik\RibbonBar\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\RibbonBar\rrbGradients.png" />
+    <Content Include="SharedUI\images\Telerik\Rotator\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Rotator\RotatorButtons.gif" />
+    <Content Include="SharedUI\images\Telerik\Scheduler\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Scheduler\rsInlineEditHSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Scheduler\rsInlineEditVSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Scheduler\rsModalBg.png" />
+    <Content Include="SharedUI\images\Telerik\Scheduler\rsModalBgIE6.png" />
+    <Content Include="SharedUI\images\Telerik\Scheduler\rsModalTitleBg.png" />
+    <Content Include="SharedUI\images\Telerik\Scheduler\rsSprites.png" />
+    <Content Include="SharedUI\images\Telerik\Scheduler\rsVerticalHeaderBg.png" />
+    <Content Include="SharedUI\images\Telerik\SearchBox\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\SearchBox\radActionsSprite.png" />
+    <Content Include="SharedUI\images\Telerik\SiteMap\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\DragHandle.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\DragHandleDown.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\DragVerticalHandle.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\DragVerticalHandleRight.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\Handles.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\HandlesVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\ItemHorizontalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\ItemVerticalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\LargeChangeHorizontal.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\LargeChangeMiddleHorizontal.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\LargelChangeCenterVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\LargelChangeVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\radActionsSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Slider\SelectedRegionHorizontalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\SelectedRegionVerticalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\SmallChangeCenterVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\SmallChangeHorizontal.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\SmallChangeMiddleHorizontal.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\SmallChangeVertical.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\TrackBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\Slider\TrackVerticalBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\SocialShare\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Splitter\ExpandCollapseBarsCommands.gif" />
+    <Content Include="SharedUI\images\Telerik\Splitter\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Splitter\ResizeBarHorizontalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\Splitter\ResizeBarVerticalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\Splitter\slideTitleContainerBgr.gif" />
+    <Content Include="SharedUI\images\Telerik\TabStrip\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\TabStrip\TabStripStates.png" />
+    <Content Include="SharedUI\images\Telerik\TabStrip\TabStripVStates.png" />
+    <Content Include="SharedUI\images\Telerik\TagCloud\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Tile\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Tile\rtileSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Tile\rtileSpriteIE6.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbActiveBg.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbClickedDropArrows.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbControlBg.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbDropArrows.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbDropDownBg.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbHoverBg.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbRoundedLeft.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbRoundedLeft_rtl.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbRoundedRight.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbRoundedRight_rtl.png" />
+    <Content Include="SharedUI\images\Telerik\ToolBar\rtbVerticalControlBg.png" />
+    <Content Include="SharedUI\images\Telerik\ToolTip\Callouts.gif" />
+    <Content Include="SharedUI\images\Telerik\ToolTip\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\ToolTip\ToolTipSprites.png" />
+    <Content Include="SharedUI\images\Telerik\ToolTip\ToolTipVerticalSprites.png" />
+    <Content Include="SharedUI\images\Telerik\TreeList\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeList\rtlBottom.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeList\rtlBottomRTL.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeList\rtlMiddle.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeList\rtlMiddleRTL.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeList\rtlSingle.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeList\rtlTop.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeList\rtlTopRTL.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeList\sprite.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeView\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\TreeView\PlusMinus.png" />
+    <Content Include="SharedUI\images\Telerik\Upload\AsyncProgress.png" />
+    <Content Include="SharedUI\images\Telerik\Upload\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Upload\ruProgress.gif" />
+    <Content Include="SharedUI\images\Telerik\Upload\ruSprite.png" />
+    <Content Include="SharedUI\images\Telerik\Upload\ruSpriteIE6.png" />
+    <Content Include="SharedUI\images\Telerik\Window\CommandButtonSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\Window\MyHL3.gif" />
+    <Content Include="SharedUI\images\Telerik\Window\WindowHorizontalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\Window\WindowHorizontalSprites.png" />
+    <Content Include="SharedUI\images\Telerik\Window\WindowVerticalSprites.gif" />
+    <Content Include="SharedUI\images\Telerik\Window\WindowVerticalSprites.png" />
+    <Content Include="SharedUI\images\underline-thick.gif" />
+    <Content Include="SharedUI\images\underline-thin.gif" />
+    <Content Include="SharedUI\images\up-arrow.png" />
+    <Content Include="SharedUI\images\worldmap.gif" />
+    <Content Include="SharedUI\scripts\data-view-models\data-view-models-1.0.6.js" />
+    <Content Include="SharedUI\scripts\data-view-models\data-view-models-1.1.6.js" />
+    <Content Include="SharedUI\scripts\hrbl-config\hrbl-config-1.1.3.js" />
+    <Content Include="SharedUI\scripts\hrbl-ui\hrbl-ui-1.2.6.js" />
+    <Content Include="SharedUI\scripts\html5.js" />
+    <Content Include="SharedUI\scripts\jquery.cookie.js" />
+    <Content Include="SharedUI\scripts\jquery.simplemodal.js" />
+    <Content Include="SharedUI\scripts\kendo.custom\kendo.custom.min-1.0.1.js" />
+    <Content Include="SharedUI\scripts\MyHerbalife.js" />
+    <Content Include="SharedUI\scripts\MyHerbalife.min.js" />
+    <Content Include="SharedUI\scripts\myhl2-config\myhl2-config-1.0.3.js" />
+    <Content Include="SharedUI\scripts\myhl2-ui\myhl2-ui-1.0.5.js" />
+    <Content Include="SharedUI\scripts\respond.min.js" />
+    <Content Include="SharedUI\scripts\TealeafSDKConfig.js" />
+    <Content Include="SharedUI\scripts\TealeafSDKConfig.min.js" />
+    <Content Include="SharedUI\scripts\video.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Spa\Index.cshtml" />
+    <Content Include="Views\Spa\Templates\_LayoutTemplate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Views\Spa\" />
+    <Folder Include="fonts\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="LoyaltyCustomer\css\main-loyalty.css.map" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Views\Logon\Index.cshtml" />
+    <Content Include="SharedUI\fonts\AmaticSC-Bold.ttf" />
+    <Content Include="SharedUI\fonts\AmaticSC-Regular.ttf" />
+    <Content Include="SharedUI\fonts\herbalife.eot" />
+    <Content Include="SharedUI\fonts\herbalife.ttf" />
+    <Content Include="SharedUI\fonts\herbalife.woff" />
+    <Content Include="SharedUI\fonts\myherbalife.eot" />
+    <Content Include="SharedUI\fonts\myherbalife.ttf" />
+    <Content Include="SharedUI\fonts\myherbalife.woff" />
+    <Content Include="SharedUI\fonts\oxygen-regular-webfont.eot" />
+    <Content Include="SharedUI\fonts\oxygen-regular-webfont.ttf" />
+    <Content Include="SharedUI\fonts\oxygen-regular-webfont.woff" />
+    <Content Include="SharedUI\fonts\ProximaNova-Light.otf" />
+    <Content Include="SharedUI\fonts\proximanova-regular-webfont.eot" />
+    <Content Include="SharedUI\fonts\proximanova-regular-webfont.ttf" />
+    <Content Include="SharedUI\fonts\proximanova-regular-webfont.woff" />
+    <Content Include="SharedUI\fonts\ProximaNova-Regular.otf" />
+    <Content Include="SharedUI\fonts\ProximaNova-Semibold.otf" />
+    <Content Include="SharedUI\fonts\raleway-regular-webfont.eot" />
+    <Content Include="SharedUI\fonts\raleway-regular-webfont.ttf" />
+    <Content Include="SharedUI\fonts\raleway-regular-webfont.woff" />
+    <Content Include="SharedUI\fonts\Web.config" />
+    <Content Include="SharedUI\images\box\green\Thumbs.db" />
+    <Content Include="SharedUI\images\box\purple\Thumbs.db" />
+    <Content Include="sass\pages\_loyaltyIntro.scss" />
+    <Content Include="sass\pages\_loyaltyTerms.scss" />
+    <Content Include="sass\components\_product-carousel.scss" />
+    <Content Include="sass\components\_icons.scss" />
+    <Content Include="sass\components\_slick-gohl.scss" />
+    <Content Include="LoyaltyCustomer\css\main-loyalty.css.map" />
+    <Content Include="Scripts\bundle\common.js.map" />
+    <Content Include="Scripts\bundle\vertical.js.map" />
+    <Content Include="Scripts\bundle\commonSPA.js.map" />
+    <Content Include="sass\main-loyalty.scss" />
+    <None Include="Properties\PublishProfiles\loyalty-customer-usw-dev-web2 - Web Deploy.pubxml" />
+    <Content Include="sass\pages\_dashboard.scss" />
+    <None Include="SharedUI\scss\base\_fonts.scss" />
+    <None Include="SharedUI\scss\base\_typography.scss" />
+    <None Include="SharedUI\scss\components\myhl\_category-list.scss" />
+    <None Include="SharedUI\scss\components\myhl\_feed-box.scss" />
+    <None Include="SharedUI\scss\components\myhl\_font-icons.scss" />
+    <None Include="SharedUI\scss\components\myhl\_ie-deprecation-msg.scss" />
+    <None Include="SharedUI\scss\components\myhl\_legacy.scss" />
+    <None Include="SharedUI\scss\components\myhl\_loading-icon.scss" />
+    <None Include="SharedUI\scss\components\myhl\_locale-selector.scss" />
+    <None Include="SharedUI\scss\components\myhl\_main-nav.scss" />
+    <None Include="SharedUI\scss\components\myhl\_notifications-modal.scss" />
+    <None Include="SharedUI\scss\components\myhl\_side-nav.scss" />
+    <None Include="SharedUI\scss\components\_badge-counter.scss" />
+    <None Include="SharedUI\scss\components\_breadcrumb.scss" />
+    <None Include="SharedUI\scss\components\_bulk-actions.scss" />
+    <None Include="SharedUI\scss\components\_buttons.scss" />
+    <None Include="SharedUI\scss\components\_checkbox.scss" />
+    <None Include="SharedUI\scss\components\_colors.scss" />
+    <None Include="SharedUI\scss\components\_font-icons.scss" />
+    <None Include="SharedUI\scss\components\_forms.scss" />
+    <None Include="SharedUI\scss\components\_icon-box.scss" />
+    <None Include="SharedUI\scss\components\_loader.scss" />
+    <None Include="SharedUI\scss\components\_menus.scss" />
+    <None Include="SharedUI\scss\components\_modals.scss" />
+    <None Include="SharedUI\scss\components\_module-block.scss" />
+    <None Include="SharedUI\scss\components\_nav.scss" />
+    <None Include="SharedUI\scss\components\_notifications.scss" />
+    <None Include="SharedUI\scss\components\_pagination.scss" />
+    <None Include="SharedUI\scss\components\_progress-tracker.scss" />
+    <None Include="SharedUI\scss\components\_summer-promo-banner.scss" />
+    <None Include="SharedUI\scss\components\_switch-toggle.scss" />
+    <None Include="SharedUI\scss\components\_tables.scss" />
+    <None Include="SharedUI\scss\components\_tooltips.scss" />
+    <None Include="SharedUI\scss\components\_white-block.scss" />
+    <None Include="SharedUI\scss\helpers\_extends.scss" />
+    <None Include="SharedUI\scss\helpers\_functions.scss" />
+    <None Include="SharedUI\scss\helpers\_helpers.scss" />
+    <None Include="SharedUI\scss\helpers\_mixins.scss" />
+    <None Include="SharedUI\scss\helpers\_variables.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\double\_default-pair.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\double\_default.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\double\_double-string.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\resolution\_resolution.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\single\_default.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\triple\_default.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\_double.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\_query.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\_resolution.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\_single.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\parsers\_triple.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\_context.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\_helpers.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\_legacy-settings.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\_no-query.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\_parsers.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\_respond-to.scss" />
+    <None Include="SharedUI\scss\initials\breakpoint\_settings.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_animation.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_appearance.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_background-clip.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_background-origin.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_background-size.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_border-radius.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_box-shadow.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_box-sizing.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_box.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_columns.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_deprecated-support.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_filter.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_flexbox.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_font-face.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_hyphenation.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_images.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_inline-block.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_opacity.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_pie.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_regions.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_selection.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_shared.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_text-shadow.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_transform.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_transition.scss" />
+    <None Include="SharedUI\scss\initials\compass\css3\_user-interface.scss" />
+    <None Include="SharedUI\scss\initials\compass\layout\_grid-background.scss" />
+    <None Include="SharedUI\scss\initials\compass\layout\_sticky-footer.scss" />
+    <None Include="SharedUI\scss\initials\compass\layout\_stretching.scss" />
+    <None Include="SharedUI\scss\initials\compass\reset\_utilities-legacy.scss" />
+    <None Include="SharedUI\scss\initials\compass\reset\_utilities.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\links\_hover-link.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\links\_link-colors.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\links\_unstyled-link.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\lists\_bullets.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\lists\_horizontal-list.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\lists\_inline-block-list.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\lists\_inline-list.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\text\_ellipsis.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\text\_force-wrap.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\text\_nowrap.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\text\_replacement.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\_links.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\_lists.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\_text.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\_units.scss" />
+    <None Include="SharedUI\scss\initials\compass\typography\_vertical_rhythm.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\color\_brightness.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\color\_contrast.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\general\_clearfix.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\general\_float.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\general\_hacks.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\general\_min.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\general\_reset.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\general\_tabs.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\general\_tag-cloud.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\links\_hover-link.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\links\_link-colors.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\links\_unstyled-link.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\lists\_bullets.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\lists\_horizontal-list.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\lists\_inline-block-list.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\lists\_inline-list.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\sass\_lists.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\sass\_maps.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\sprites\_base.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\sprites\_sprite-img.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\tables\_alternating-rows-and-columns.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\tables\_borders.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\tables\_scaffolding.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\text\_ellipsis.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\text\_nowrap.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\text\_replacement.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_color.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_general.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_links.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_lists.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_print.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_sass.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_sprites.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_tables.scss" />
+    <None Include="SharedUI\scss\initials\compass\utilities\_text.scss" />
+    <None Include="SharedUI\scss\initials\compass\_configuration.scss" />
+    <None Include="SharedUI\scss\initials\compass\_css3.scss" />
+    <None Include="SharedUI\scss\initials\compass\_layout.scss" />
+    <None Include="SharedUI\scss\initials\compass\_normalize.scss" />
+    <None Include="SharedUI\scss\initials\compass\_reset-legacy.scss" />
+    <None Include="SharedUI\scss\initials\compass\_reset.scss" />
+    <None Include="SharedUI\scss\initials\compass\_support.scss" />
+    <None Include="SharedUI\scss\initials\compass\_typography.scss" />
+    <None Include="SharedUI\scss\initials\compass\_utilities.scss" />
+    <None Include="SharedUI\scss\initials\sassy-buttons\_sassy-button-gradients.sass" />
+    <None Include="SharedUI\scss\initials\sassy-buttons\_sassy-button-pseudo-states.sass" />
+    <None Include="SharedUI\scss\initials\sassy-buttons\_sassy-button-shadows.sass" />
+    <None Include="SharedUI\scss\initials\sassy-buttons\_sassy-button-styles.sass" />
+    <None Include="SharedUI\scss\initials\sassy-buttons\_sassy-button-text.sass" />
+    <None Include="SharedUI\scss\initials\susy\language\susyone\_background.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susyone\_functions.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susyone\_grid.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susyone\_isolation.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susyone\_margin.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susyone\_media.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susyone\_padding.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susyone\_settings.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_background.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_bleed.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_box-sizing.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_breakpoint-plugin.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_container.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_context.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_gallery.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_grids.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_gutters.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_isolate.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_margins.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_padding.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_rows.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_settings.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_span.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\susy\_validation.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\_susy.scss" />
+    <None Include="SharedUI\scss\initials\susy\language\_susyone.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\float\_container.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\float\_end.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\float\_isolate.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\float\_span.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\shared\_background.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\shared\_container.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\shared\_direction.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\shared\_inspect.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\shared\_margins.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\shared\_output.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\shared\_padding.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\support\_background.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\support\_box-sizing.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\support\_clearfix.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\support\_prefix.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\support\_rem.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\support\_support.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\_float.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\_shared.scss" />
+    <None Include="SharedUI\scss\initials\susy\output\_support.scss" />
+    <None Include="SharedUI\scss\initials\susy\su\_grid.scss" />
+    <None Include="SharedUI\scss\initials\susy\su\_settings.scss" />
+    <None Include="SharedUI\scss\initials\susy\su\_utilities.scss" />
+    <None Include="SharedUI\scss\initials\susy\su\_validation.scss" />
+    <None Include="SharedUI\scss\initials\susy\_su.scss" />
+    <None Include="SharedUI\scss\initials\_breakpoint.scss" />
+    <None Include="SharedUI\scss\initials\_compass.scss" />
+    <None Include="SharedUI\scss\initials\_lemonade.scss" />
+    <None Include="SharedUI\scss\initials\_normalize.scss" />
+    <None Include="SharedUI\scss\initials\_sassy-buttons.sass" />
+    <None Include="SharedUI\scss\initials\_susy.scss" />
+    <None Include="SharedUI\scss\layout\myhl\_footer.scss" />
+    <None Include="SharedUI\scss\layout\myhl\_header.scss" />
+    <None Include="SharedUI\scss\layout\prototypes\_account-menu.scss" />
+    <None Include="SharedUI\scss\layout\prototypes\_footer.scss" />
+    <None Include="SharedUI\scss\layout\prototypes\_header.scss" />
+    <None Include="SharedUI\scss\layout\prototypes\_subfooter.scss" />
+    <None Include="SharedUI\scss\layout\_grid-fluid.scss" />
+    <None Include="SharedUI\scss\layout\_grid-static-debug.scss" />
+    <None Include="SharedUI\scss\layout\_grid-static.scss" />
+    <None Include="SharedUI\scss\layout\_header.scss" />
+    <None Include="SharedUI\scss\layout\_proto-footer.scss" />
+    <None Include="SharedUI\scss\layout\_proto-header.scss" />
+    <None Include="SharedUI\scss\layout\_proto-subfooter.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\double\_default-pair.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\double\_default.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\double\_double-string.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\resolution\_resolution.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\single\_default.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\triple\_default.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\_double.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\_query.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\_resolution.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\_single.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\parsers\_triple.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\_context.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\_helpers.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\_legacy-settings.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\_no-query.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\_parsers.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\_respond-to.scss" />
+    <None Include="SharedUI\scss\vendors\breakpoint\_settings.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_animation.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_appearance.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_background-clip.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_background-origin.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_background-size.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_border-radius.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_box-shadow.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_box-sizing.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_box.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_columns.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_filter.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_flexbox.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_font-face.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_hyphenation.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_images.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_inline-block.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_opacity.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_pie.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_regions.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_shared.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_text-shadow.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_transform-legacy.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_transform.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_transition.scss" />
+    <None Include="SharedUI\scss\vendors\compass\css3\_user-interface.scss" />
+    <None Include="SharedUI\scss\vendors\compass\functions\_colors.scss" />
+    <None Include="SharedUI\scss\vendors\compass\functions\_constants.scss" />
+    <None Include="SharedUI\scss\vendors\compass\functions\_cross_browser_support.scss" />
+    <None Include="SharedUI\scss\vendors\compass\functions\_display.scss" />
+    <None Include="SharedUI\scss\vendors\compass\functions\_gradient_support.scss" />
+    <None Include="SharedUI\scss\vendors\compass\functions\_lists.scss" />
+    <None Include="SharedUI\scss\vendors\compass\layout\_grid-background.scss" />
+    <None Include="SharedUI\scss\vendors\compass\layout\_sticky-footer.scss" />
+    <None Include="SharedUI\scss\vendors\compass\layout\_stretching.scss" />
+    <None Include="SharedUI\scss\vendors\compass\reset\_utilities-legacy.scss" />
+    <None Include="SharedUI\scss\vendors\compass\reset\_utilities.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\links\_hover-link.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\links\_link-colors.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\links\_unstyled-link.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\lists\_bullets.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\lists\_horizontal-list.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\lists\_inline-block-list.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\lists\_inline-list.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\text\_ellipsis.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\text\_force-wrap.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\text\_nowrap.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\text\_replacement.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\_links.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\_lists.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\_text.scss" />
+    <None Include="SharedUI\scss\vendors\compass\typography\_vertical_rhythm.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\color\_contrast.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\general\_clearfix.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\general\_float.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\general\_hacks.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\general\_min.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\general\_reset.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\general\_tabs.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\general\_tag-cloud.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\links\_hover-link.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\links\_link-colors.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\links\_unstyled-link.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\lists\_bullets.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\lists\_horizontal-list.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\lists\_inline-block-list.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\lists\_inline-list.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\sprites\_base.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\sprites\_sprite-img.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\tables\_alternating-rows-and-columns.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\tables\_borders.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\tables\_scaffolding.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\text\_ellipsis.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\text\_nowrap.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\text\_replacement.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\_color.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\_general.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\_links.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\_lists.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\_print.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\_sprites.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\_tables.scss" />
+    <None Include="SharedUI\scss\vendors\compass\utilities\_text.scss" />
+    <None Include="SharedUI\scss\vendors\compass\_css3.scss" />
+    <None Include="SharedUI\scss\vendors\compass\_functions.scss" />
+    <None Include="SharedUI\scss\vendors\compass\_layout.scss" />
+    <None Include="SharedUI\scss\vendors\compass\_reset-legacy.scss" />
+    <None Include="SharedUI\scss\vendors\compass\_reset.scss" />
+    <None Include="SharedUI\scss\vendors\compass\_support.scss" />
+    <None Include="SharedUI\scss\vendors\compass\_typography.scss" />
+    <None Include="SharedUI\scss\vendors\compass\_utilities.scss" />
+    <None Include="SharedUI\scss\vendors\sassy-buttons\_sassy-button-gradients.sass" />
+    <None Include="SharedUI\scss\vendors\sassy-buttons\_sassy-button-pseudo-states.sass" />
+    <None Include="SharedUI\scss\vendors\sassy-buttons\_sassy-button-shadows.sass" />
+    <None Include="SharedUI\scss\vendors\sassy-buttons\_sassy-button-styles.sass" />
+    <None Include="SharedUI\scss\vendors\sassy-buttons\_sassy-button-text.sass" />
+    <None Include="SharedUI\scss\vendors\susy\language\susyone\_background.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susyone\_functions.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susyone\_grid.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susyone\_isolation.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susyone\_margin.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susyone\_media.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susyone\_padding.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susyone\_settings.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_background.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_bleed.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_box-sizing.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_breakpoint-plugin.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_container.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_context.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_gallery.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_grids.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_gutters.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_isolate.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_margins.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_padding.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_rows.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_settings.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_span.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\susy\_validation.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\_susy.scss" />
+    <None Include="SharedUI\scss\vendors\susy\language\_susyone.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\float\_container.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\float\_end.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\float\_isolate.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\float\_span.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\shared\_background.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\shared\_container.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\shared\_direction.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\shared\_inspect.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\shared\_margins.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\shared\_output.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\shared\_padding.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\support\_background.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\support\_box-sizing.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\support\_clearfix.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\support\_prefix.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\support\_rem.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\support\_support.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\_float.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\_shared.scss" />
+    <None Include="SharedUI\scss\vendors\susy\output\_support.scss" />
+    <None Include="SharedUI\scss\vendors\susy\su\_grid.scss" />
+    <None Include="SharedUI\scss\vendors\susy\su\_settings.scss" />
+    <None Include="SharedUI\scss\vendors\susy\su\_utilities.scss" />
+    <None Include="SharedUI\scss\vendors\susy\su\_validation.scss" />
+    <None Include="SharedUI\scss\vendors\susy\_su.scss" />
+    <None Include="SharedUI\scss\vendors\telerik\_telerik-myhl2-skin.scss" />
+    <None Include="SharedUI\scss\vendors\telerik\_telerik-myhl3-skin.scss" />
+    <None Include="SharedUI\scss\vendors\_bmi-calculator.scss" />
+    <None Include="SharedUI\scss\vendors\_breakpoint.scss" />
+    <None Include="SharedUI\scss\vendors\_compass.scss" />
+    <None Include="SharedUI\scss\vendors\_flags.scss" />
+    <None Include="SharedUI\scss\vendors\_introjs.scss" />
+    <None Include="SharedUI\scss\vendors\_kendo-common.scss" />
+    <None Include="SharedUI\scss\vendors\_kendo-fixes.scss" />
+    <None Include="SharedUI\scss\vendors\_kendo-herbalife.scss" />
+    <None Include="SharedUI\scss\vendors\_kendo-rtl.scss" />
+    <None Include="SharedUI\scss\vendors\_kendo-skin.scss" />
+    <None Include="SharedUI\scss\vendors\_mega-dropdown-setup.scss" />
+    <None Include="SharedUI\scss\vendors\_mega-menu-style.scss" />
+    <None Include="SharedUI\scss\vendors\_normalize.scss" />
+    <None Include="SharedUI\scss\vendors\_sandbox.scss" />
+    <None Include="SharedUI\scss\vendors\_sassy-buttons.sass" />
+    <None Include="SharedUI\scss\vendors\_slick-grey.scss" />
+    <None Include="SharedUI\scss\vendors\_slick-theme-blocks.scss" />
+    <None Include="SharedUI\scss\vendors\_slick-theme-grey.scss" />
+    <None Include="SharedUI\scss\vendors\_slick-theme.scss" />
+    <None Include="SharedUI\scss\vendors\_slick.scss" />
+    <None Include="SharedUI\scss\vendors\_slidebars.scss" />
+    <None Include="SharedUI\scss\vendors\_susy.scss" />
+    <Content Include="Views\Spa\Pages\_custHome.cshtml" />
+    <Content Include="Views\Spa\Pages\_loyaltyTerms.cshtml" />
+    <Content Include="Views\Spa\Pages\_dashboard.cshtml" />
+    <Content Include="Views\Template\Dashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Loyalty.Customer.Providers\Loyalty.Customer.Providers.csproj">
+      <Project>{ea8cd9b9-49d8-4641-84b5-c76dc4526944}</Project>
+      <Name>Loyalty.Customer.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loyalty.Customer.WebApi\Loyalty.Customer.WebApi.csproj">
+      <Project>{41834208-87d1-4c5c-854f-1e018e54df92}</Project>
+      <Name>Loyalty.Customer.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Views\Home\App_LocalResources\Index.cshtml.en-US.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\App_LocalResources\Index.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Spa\Pages\App_LocalResources\_loyaltyTerms.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Spa\Pages\App_LocalResources\_custHome.cshtml.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39816</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:39816/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.DocumentDB.1.10.0\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.DocumentDB.1.10.0\build\Microsoft.Azure.DocumentDB.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Azure.DocumentDB.1.10.0\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\packages\Microsoft.Azure.DocumentDB.1.10.0\build\Microsoft.Azure.DocumentDB.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

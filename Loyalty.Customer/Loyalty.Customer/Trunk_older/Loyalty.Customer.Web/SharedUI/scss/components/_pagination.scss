@@ -1,0 +1,84 @@
+
+    
+    /* Pagination
+    ================================================== */
+
+	.pagination {
+		width: 100%;
+		padding: 15px 0 10px;
+		border-bottom: 1px solid $softgrey;
+		margin-bottom: 20px;
+		text-align: center;
+		@include breakpoint($tablet) { text-align: left; }
+
+		&:after {
+	        content: "";
+	        height: 0;
+	        display: block;
+	        clear: both; 
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			display: block;
+			@include breakpoint($tablet) { float: left; }
+
+			li {
+				display: inline-block;
+				list-style: none;
+				a {
+					border: 1px solid $white;
+					background-color: $white;
+					color: $lightcharcoal;
+					display: block;
+					height: 25px;
+					width: 25px;
+					line-height: 24px;
+					text-align: center;
+					border-radius: 50%;
+					-webkit-border-radius: 50%;
+					-moz-border-radius: 50%;
+					-o-border-radius: 50%;
+					@include breakpoint($tablet) { 
+						height: 30px;
+						width: 30px;
+						line-height: 30px;
+					}
+
+					&.arrow {
+						border: 1px solid $lightgrey;
+						i { 
+							font-size: 16px;
+						}
+					}
+					&:hover, &:active, &.active {
+						border: 1px solid $green;
+						background-color: $green;
+						color: $white;
+					}
+				}
+			}
+		}
+		div {
+			float: left;
+			margin-top: 10px;
+			@include breakpoint($tablet) {
+				margin-left: $gutter;
+				margin-top: 0;
+			}
+			select, span { 
+				display: inline-block;
+				margin-top: 0;
+				margin-right: 10px;
+			}
+			select { width: 60px; }
+			span { font-size: 12px; }
+		}
+		label { 
+			margin-top: 15px;
+			float: right;
+			font-size: 12px;
+			@include breakpoint($tablet) { margin-top: 5px; }
+		}
+	}

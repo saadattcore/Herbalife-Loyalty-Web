@@ -1,0 +1,84 @@
+﻿/*THIS FILE IS FOR LOADING NORMALIZE CSS FOR DEVELOPMENT PURPOSES ONLY*/
+
+/* vendors Vendors
+================================================== */
+    @import "normalize-scss/sass/normalize/import-now";
+    @import "compass-mixins/lib/compass";
+    @import "susy/sass/susy"; 
+    @import "breakpoint-sass/stylesheets/breakpoint";
+    @import "sassier-buttons/scss/sassy-buttons";
+    @import "compass-mixins/lib/animation/_core";  
+  
+    //Setting SharedUI
+    $sharedUI: "/loyalty/SharedUI"; 
+
+    //helpers
+    @import "../loyalty/SharedUI/scss/helpers/_variables";                               // Variables
+    @import "../loyalty/SharedUI/scss/helpers/_mixins";                                  // Mixins ***
+    @import "../loyalty/SharedUI/scss/helpers/_helpers";                                // Helpers
+
+    //base
+    @import "../loyalty/SharedUI/scss/base/_fonts";                                   // Fonts
+    @import "../loyalty/SharedUI/scss/base/_typography";                                 // Typography
+
+    //layout
+    @import "../loyalty/SharedUI/scss/layout/_grid-static";                              // Grid Static
+    @import "../loyalty/SharedUI/scss/layout/myhl/_header";                              // MyHL Header
+    @import "../loyalty/SharedUI/scss/layout/myhl/_footer";                              // MyHL Footer
+
+    //aditional helpers
+    @import "../loyalty/SharedUI/scss/helpers/_extends";                                 // Extends
+
+    //myhl components
+    @import "../loyalty/SharedUI/scss/components/_buttons";                              // Buttons 
+    @import "../loyalty/SharedUI/scss/components/_forms";                                // Forms      
+    @import "../loyalty/SharedUI/scss/components/_tables"; 
+    @import "../loyalty/SharedUI/scss/components/myhl/_font-icons";                      // Fonts       
+    @import "../loyalty/SharedUI/scss/components/myhl/_loading-icon";                    // MyHl Loader               
+    @import "../loyalty/SharedUI/scss/components/_notifications";
+    @import "../loyalty/SharedUI/scss/components/myhl/_notifications-modal";
+    @import "../loyalty/SharedUI/scss/components/_breadcrumb";                           // Breadcrumbs
+    @import "../loyalty/SharedUI/scss/components/myhl/_locale-selector";                 // MyHL Locale Selector
+    @import "../loyalty/SharedUI/scss/components/myhl/_main-nav";                        // MyHL Main Navigation
+    @import "../loyalty/SharedUI/scss/components/_white-block";                          // White Block
+    @import "../loyalty/SharedUI/scss/components/_loader";
+
+    @import "../loyalty/SharedUI/scss/components/myhl/_legacy";                         // MyHL Legacy (Consolidation File)
+    
+
+    //Kendo
+    @import "../loyalty/SharedUI/scss/vendors/_kendo-common";
+    @import "../loyalty/SharedUI/scss/vendors/_kendo-herbalife";
+
+    //vendors
+    @import "components/_slick-gohl.scss";    // Slick Carousel Theme 
+    @import "components/_icons.scss";
+    @import "components/_product-carousel.scss";
+
+    // Pages and local styles    
+    @import "pages/_renewal.scss";
+    @import "pages/_loyaltyIntro.scss";
+    @import "pages/_loyaltyTerms.scss";
+    @import "pages/_dashboard.scss";
+
+    .wrapper {
+        padding-top: 40px;
+        display: table;
+        height: 100%;
+        table-layout: fixed;
+        width: 100%;
+        @include breakpoint($desktop) { 
+            width: calc(100% - 48px);
+            margin-left: 48px;
+            padding-top: 50px;
+        }
+        @include breakpoint($ext-nav) {
+            width: calc(100% - 240px);
+            margin-left: 240px; 
+        }
+        &.clean {
+            width: 100%;
+            margin-left: 0;
+            margin-top: $gutter;  
+        }
+    }

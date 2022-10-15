@@ -1,0 +1,191 @@
+	
+	/* Typography
+	================================================== */
+	
+	// Fonts 
+	body {
+		height: 100%;
+		color: $lightcharcoal;
+		font-family: $proxima;
+		font-size: 14px;
+		line-height: 20px;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+		-moz-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+		margin: 0;
+		overflow: auto;
+	}
+
+	// Headings 
+	h1, h2, h3, h4, h5, h6 { 
+		color:$charcoalgrey; 
+		font-weight: bold; 
+		font-style: normal; 
+		text-rendering: optimizeLegibility; 
+		line-height: 1.1; 
+		margin-top: 0; 
+	} 
+
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight:inherit; }
+	h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size:70%; font-weight:normal; }
+
+	h1 { 
+		font-size:36px;
+		margin-bottom: 20px; 
+		@include breakpoint($tablet) { font-size:40px; } 
+	}
+
+	h2 { 
+		font-size:30px;
+		margin-bottom: 20px; 
+		@include breakpoint($tablet) { font-size:36px; }
+	}
+
+	h3 { 
+		font-size:24px;
+		margin-bottom: 10px; 
+		@include breakpoint($tablet) { font-size:28px; } 
+	}
+
+	h4 { 
+		font-size:16px;
+		margin-bottom: 10px; 
+		@include breakpoint($tablet) { font-size:20px; }
+	}
+
+	h5 { 
+		font-size:14px; 
+		margin-bottom: 5px; 
+	}
+	
+	h6 { font-size:14px; text-transform:uppercase; font-weight:normal; margin:0 0 7px; }
+
+	// Paragraphs 
+	p { 
+		margin: 0 0 20px 0; 
+		line-height:20px;
+		img { margin: 0; }
+		&.viewing-mode { text-align: right; font-weight: bold; }
+		&.note { font-size: 11px; line-height: 13px; margin: 0 0 10px 0; }
+	}
+
+	span.note { font-size: 11px; line-height: 13px; }
+
+	// Emphasis
+	em { font-style: italic; }
+	i { font-style: italic; }
+	strong { font-weight: bold; }
+	b { font-weight: bold; }
+	small { font-size: 80%; }
+
+	// Blockquotes
+	blockquote, blockquote p { font-size:18px; line-height:20px; color:$charcoalgrey; font-style: italic; }
+	blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left:5px solid $offwhite; }
+	blockquote p { margin:0; }
+	blockquote cite { display: block; font-size: 14px; color: $charcoalgrey; font-style:normal; margin-top: 5px; }
+	blockquote cite:before { content: "\2014 \0020"; }
+	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: $grey; }
+
+	// Code
+	code, pre { 
+		font-family: $proxima; 
+		font-size:13px; 
+		color: $charcoalgrey; 
+		-webkit-border-radius:3px; 
+		border-radius:3px; 
+	}
+	code { 
+		padding: 3px 4px; 
+		color: $pink; 
+		background-color: #f5f5f5; 
+		border: 1px solid $lightgrey; 
+		font-weight: bold; 
+		line-height: 24px;
+	}
+	pre { 
+		display:block; 
+		padding:10px; 
+		margin: 0 0 10px; 
+		font-size: 12px; 
+		line-height: 20px; 
+		text-align: left !important;
+		background-color: $lightgrey; 
+		border: 1px solid $grey; // fallback for IE7-8 border: 1px solid rgba(0,0,0,.15);
+		-webkit-border-radius:4px; border-radius:4px;
+	}
+
+	// Address
+	address { display: block; margin-bottom:20px; line-height:20px; font-style: normal; }
+
+
+	/* Links
+	================================================== */
+
+	a, a:visited { 
+		color: $blue; 
+		cursor: pointer;
+		text-decoration: none; 
+		outline: 0;
+		line-height: 16px; 
+		i {
+			font-size: 18px;
+		}
+		span { margin-left: 7px; }
+	}
+
+	a:hover, a:focus { color:$blue; }
+    
+    a.disabled , a[disabled] { 
+    	cursor: default; 
+    	pointer-events: none; 
+    }
+	
+	p a, p a:visited { line-height: inherit; }
+
+	
+	/* Text Highlighting
+	================================================== */
+	::-moz-selection { background: $green;; color: $white; text-shadow: none; }
+	::selection { background: $green; color: $white;; text-shadow: none; }
+
+
+	/* Lists
+	================================================== */
+
+	// Unordered and Ordered lists
+	ul, ol { padding: 0; margin: 0 0 10px 25px; }
+	ul ul,
+	ul ol,
+	ol ol,
+	ol ul { margin-bottom: 0; }
+	ul { 
+		list-style: none; 
+		&.disc { list-style: disc; }
+	}
+	ol { list-style: decimal; }
+	li { line-height:20px }
+
+
+	// Description Lists
+	dl { margin-bottom:20px; }
+	dt, dd { line-height:20px; }
+	dt { font-weight: bold; }
+	dd { margin-left:10px; }
+
+
+	/* Line break
+	================================================== */
+
+	hr { 
+		border: solid $grey;
+		border-width:1px 0 0; 
+		clear:both; 
+		margin: 0; 
+		height:0; 
+		&.small 	{ margin: 10px 0; }
+		&.medium 	{ margin: 20px 0; }
+		&.large 	{ margin: 30px 0; }
+	}

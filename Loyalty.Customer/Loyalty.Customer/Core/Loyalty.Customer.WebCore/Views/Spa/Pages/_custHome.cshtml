@@ -1,0 +1,72 @@
+﻿
+<script type="text/x-kendo-template" id="custHome">
+    <main class="custHome">
+        <!-- Enroll Now -->
+        <section class="enroll">
+
+            <article>
+                <h3>
+                    @Localize["Header.Title"]
+                </h3>
+                <p>
+                    @Localize["Header.Section"]
+                </p>                
+            </article>
+            <aside>
+                <a href="#/loyaltyTerms" class="btn-continue">@Localize["EnrollNow.Text"]</a>
+            </aside>
+
+        </section>
+        <!-- /Enroll Now -->
+        <!-- List of Rewards -->
+        <section class="rewards">
+            <div>
+                <h3>@Localize["CollectionGifts.Title"]</h3>
+                <!-- Slick Responsive Carousel -->
+                <div class="product-carousel" data-bind="source: rewardsSource" data-template="rewards-template"></div>
+                <!-- /Slick Responsive Carousel -->
+            </div>
+        </section>
+        <!-- /List of Rewards -->
+        <!-- Program Rewards Information -->
+        <section class="rewards-info">
+            <div>
+                <article class="shopping">
+                    <aside><i class="icon-shopping-bag-ln-3"></i></aside>
+                    <div class="info">
+                        <h4>@Localize["ProductRewards.Title"]</h4>
+                        <p>@Localize["EarnShopping.Text"]</p>
+                        <ul class="disc">
+                            <li>@Localize["Tier1Shop.Text"]</li>
+                            <li>@Localize["Tier2Shop.Text"]</li>
+                            <li>@Localize["Tier3Shop.Text"]</li>
+                        </ul>
+                        <sub>@Localize["ShopPoints.Text"]</sub>
+                    </div>
+                </article>
+                <article class="activity">
+                    <aside><i class="icon-connection-ln-3"></i></aside>
+                    <div class="info">
+                        <h4>@Localize["Activity.Title"]</h4>
+                        <p>@Localize["ActivityRewards.Text"]</p>
+                        <ul class="disc">
+                            <li>@Localize["ActivityTheme1.Text"]</li>
+                            <li>@Localize["ActivityTheme2.Text"]</li>
+                            <li>@Localize["ActivityTheme3.Text"]</li>
+                        </ul>
+                    </div>
+                </article>
+                <a href="#/loyaltyTerms" class="btn-continue">@Localize["EnrollNow.Text"]</a>
+            </div>
+        </section>
+        <!-- /Program Rewards Information -->
+    </main>
+
+</script>
+
+<script id="rewards-template" type="text/x-kendo-template">
+    <div class="product-item">
+        <img class="shopping" data-bind="attr: {src: image}" />
+        <span class="activity"><strong data-bind="text: name"></strong><br />@Localize["Tier.Text"] #= tier # </span><br />
+    </div>
+</script>

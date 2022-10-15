@@ -1,0 +1,281 @@
+
+    /* MyHL Header
+    ================================================== */
+
+@mixin ds-info {
+    color: $charcoalgrey;
+    font-size: 12px;
+
+    @include breakpoint($breakpoint-desktop) {
+        @include container(12);
+    }
+
+    @include breakpoint($breakpoint-desktop) { 
+        height: 40px;
+        overflow: hidden;
+    }
+
+
+    i {
+        font-size: 16px;
+    }
+
+    //Movile Nav
+    #mobile-nav-btn{ 
+        background-color: $link-blue;
+        color: $white;
+        padding: 0 10px;
+        cursor: pointer;
+    
+        i{ 
+            font-size: 20px;
+            padding: 0;
+            vertical-align: middle;
+        }
+        @include breakpoint($breakpoint-desktop) { display: none; }
+    }
+
+    .logo {
+
+        img {
+            padding-top: 10px;
+            padding-left: 13px;
+        }
+
+        @include breakpoint($breakpoint-tablet) {
+            border-bottom: none;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        border-right: 1px solid $lightgrey;
+        border-bottom: 1px solid $lightgrey;
+        overflow: hidden;
+        height: auto;
+
+        @include breakpoint($breakpoint-tablet) {
+            height: 40px;
+        }
+
+        @include breakpoint($breakpoint-desktop) {
+            height: auto;
+        }
+    }
+
+    li {
+        border-left: 1px solid $lightgrey;
+        display: table;
+        float: left;
+        line-height: 18px;
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        text-align: center;
+        height: 40px;
+
+        @include breakpoint($breakpoint-tablet) {
+            padding: 0 13px;
+        }
+
+        > i,
+        > a,
+        > span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+    #DSStats > li:first-child{ padding-left: 0; }
+
+    .user-info-details{
+        width: 100%;
+        box-sizing: border-box;
+        border-top: 1px solid $lightgrey;
+
+        @include breakpoint($breakpoint-tablet) {
+            width: 50%;
+            float: left;
+            border-top: medium none;
+            padding: 0;
+        }
+
+        @include breakpoint($breakpoint-desktop) {
+            width: 68%;
+        }
+    }
+
+    .profileData {
+        display: none;
+        overflow: hidden;
+
+        @include breakpoint($breakpoint-desktop) {
+            float: left;
+            height: 40px;
+            border-right: 1px solid $lightgrey;
+            width: 150px;
+            display: block;
+        }
+
+        > div{
+            display: table;
+            height: 40px;
+            width: 100%;
+        }
+
+        .profile-text{
+            display: table-cell;
+            vertical-align: middle;
+
+            &:before{ padding-right: 5px; }
+        }
+    }
+
+    .volumeData {
+        padding: 0;
+        border-left: 1px solid $lightgrey;
+        text-align: center;
+        overflow: hidden;
+
+        @include breakpoint($breakpoint-tablet) {
+            border: medium none;
+        }
+
+        *{
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        div.single{
+            float: left;
+            height: 40px;
+            border: medium none;
+            display: table;
+            padding-left: 0;
+            width: 100%;
+        }
+
+        div.dual{
+            > span, a{
+                height: 20px;
+                overflow: hidden;
+                width: 50%;
+                float: left;
+            }
+
+            > span{
+                width: 100%;
+                border-bottom: 1px solid $lightgrey;
+
+                + a{
+                    border-right: 1px solid $lightgrey;
+                }
+            }
+        }
+
+
+
+        .volume-text{
+            padding: 0 10px;
+        }
+
+        i,
+        .volume-text{
+            display: table-cell;
+            vertical-align: middle;
+
+            &:before{ padding-right: 5px; }
+        }
+    }
+
+    .alert-notifications {
+        padding-right: 13px;
+
+        i {
+            font-size: 24px;
+            padding: 0;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            border-radius: 10px;
+            background-color: $red;
+            padding: 0px 5px;
+            line-height: 15px;
+            color: $white;
+            font-style: normal;
+            font-size: 12px;
+        }
+
+        @include breakpoint($breakpoint-tablet) {
+            float: right;
+            padding-top: 10px;
+            padding-left: 13px;
+            height: 42px;
+            border-left: 1px solid $lightgrey;            
+        }
+        @include breakpoint($breakpoint-desktop) {
+            border-right: 1px solid $lightgrey;
+        }
+
+    }
+
+    .cart-link{
+        padding-left: 13px;
+        border-left: 1px solid $lightgrey;
+        width: 44px;
+        position: relative;
+
+        @include breakpoint($breakpoint-tablet) {
+            padding-right: 13px;
+            border-right: 1px solid $lightgrey;
+        }
+        @include breakpoint($breakpoint-desktop) {
+            display: none;
+        }
+
+        i{ 
+            position: absolute;
+            top: 7px;
+            left: 12px;
+            font-size: 24px;
+        }
+    }
+
+    .locale-picker {
+        float: right;
+        position: relative;
+        border: none;
+        max-width: 50%;
+        padding: 0;
+        overflow: hidden;
+
+        span {
+            float: left;
+            width: 92%;
+            max-height: 40px;
+            display: block;
+            overflow: hidden;
+        }
+
+        i {
+            float: right;
+            margin: 0 10px;
+        }
+
+        @include breakpoint($breakpoint-tablet) {
+            width: 25%;
+        }
+
+        @include breakpoint($breakpoint-desktop) {
+            width: 20%;
+        }
+    }
+}

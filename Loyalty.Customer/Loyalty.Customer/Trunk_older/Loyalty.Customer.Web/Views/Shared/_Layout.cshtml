@@ -1,0 +1,74 @@
+﻿@using System.Web.Mvc.Html
+@using HL.Common.Configuration
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- header tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="author" content="Custom Development - MTS" />
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="/SharedUI/Images/favicon.ico" />
+    <!-- For iPhone 4 with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/SharedUI/Images/mobile/h_apple-touch-icon.png" />
+    <!-- For first-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/SharedUI/Images/mobile/m_apple-touch-icon.png" />
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="/SharedUI/Images/mobile/l_apple-touch-icon-precomposed.png" />
+    <!-- For nokia devices: -->
+    <link rel="shortcut icon" href="/SharedUI/Images/mobile/l_apple-touch-icon.png" />
+
+    <title>goHerbalife.com | @Page.Title</title>
+
+    <!-- Styles
+          ================================================== -->
+    <!--[if gt IE 9]> -->
+    <link rel="stylesheet" type="text/css" href="/LoyaltyCustomer/css/bundle/site.css" />
+    <!-- <![endif]-->
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="/LoyaltyCustomer/CSS/bundle/site_1.css" />
+        <link rel="stylesheet" type="text/css" href="/LoyaltyCustomer/CSS/bundle/site_2.css" />
+    <![endif]-->
+
+    <!-- Adobe DTM -->
+    <script type="text/javascript" src="/Scripts/dtm/satelliteLib-1.0.6.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="/SharedUI/Scripts/html5.js"></script>
+        <script src="/SharedUI/Scripts/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+    <div id="loyalty-app" class="container body-content">
+        @RenderBody()
+    </div>
+   
+    @*Jquery from CDN*@
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script>
+            if (!window.jQuery) {
+                // fallback to local jQuery
+                document.write(decodeURIComponent('%3Cscript src="/Scripts/jquery/jquery-1.10.2.min.js" %3E%3C/script%3E'));
+            }
+            if (!window.jQuery || !window.jQuery.migrateWarnings) {
+                document.write(unescape('%3Cscript src="/Scripts/jquery/jquery-migrate-1.2.1.min.js" %3E%3C/script%3E'));
+            }
+    </script>
+
+    <script src="/Scripts/vendors/kendo/kendo.core.min-1.0.0.js"></script>
+    <script src="/Scripts/bundle/common.js"></script>
+
+    <script src="/Scripts/bundle/vertical.js"></script>
+    <script src="/Scripts/Spa/app.bundle.js"></script>
+
+</body>
+</html>

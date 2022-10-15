@@ -1,0 +1,67 @@
+﻿// =============
+// Logout / Splash Page
+// -----
+// This File contains all styles for the Splash / Login Page
+//
+//==============
+
+
+
+body {
+    background: $lightgrey;
+    position: relative; /* Required for static Slidebars to function properly. */
+    margin-top: 40px;
+    display: table;
+    height: 100%;
+    table-layout: fixed;
+    width: 100%;
+
+
+
+
+
+
+ 	.loyaltyTerms {
+			 @include m4-t8-d12-e14; 
+			
+			.terms-conditions { 
+				@include white-block();  
+                overflow: auto;
+
+				.terms {
+					width: 100%;
+					max-height: 200px;
+					overflow-y: scroll;
+					padding: $gutter;
+					background-color: $offwhite;
+					border: 1px solid $softgrey;
+					@include breakpoint($tablet) { max-height: 250px; }     
+					p { font-size: 14px; }   
+				}
+
+				.acknowledge {
+					margin-top: $gutter;
+					width: 100%;
+					@include breakpoint($desktop) { 
+						@include span(6 last);   
+					}
+					form {
+						@include form-1;
+						@include breakpoint($tablet) { @include form-2; }
+					}
+					input[type="checkbox"] {
+						@include checkbox(22px, 32px, -16px);     
+					}
+				}
+			}
+		}
+    // Extras
+    .btn-continue {
+        background-color: #0080ff;
+        color: #fff;
+        padding: 20px 40px 18px;
+        font-size: 24px;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+}

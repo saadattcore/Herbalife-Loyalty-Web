@@ -1,0 +1,64 @@
+﻿/*THIS FILE IS FOR LOADING NORMALIZE CSS FOR DEVELOPMENT PURPOSES ONLY*/
+
+/* vendors Vendors
+================================================== */
+    @import "normalize-scss/sass/normalize/import-now";
+    @import "compass-mixins/lib/compass";
+    @import "susy/sass/susy"; 
+    @import "breakpoint-sass/stylesheets/breakpoint";
+    @import "sassier-buttons/scss/sassy-buttons";
+    @import "compass-mixins/lib/animation/_core";    
+  
+      //helpers
+    @import "../SharedUI/scss/helpers/_variables";                               // Variables
+    @import "../SharedUI/scss/helpers/_mixins";                                  // Mixins ***
+    @import "../SharedUI/scss/helpers/_helpers";                                // Helpers
+
+    //base
+    @import "../SharedUI/scss/base/_fonts";                                   // Fonts
+    @import "../SharedUI/scss/base/_typography";                                 // Typography
+
+    //layout
+    @import "../SharedUI/scss/layout/_grid-static";                              // Grid Static
+    @import "../SharedUI/scss/layout/myhl/_header";                              // MyHL Header
+    @import "../SharedUI/scss/layout/myhl/_footer";                              // MyHL Footer
+
+    //aditional helpers
+    @import "../SharedUI/scss/helpers/_extends";                                 // Extends
+
+    //myhl components
+    @import "../SharedUI/scss/components/_buttons";                              // Buttons 
+    @import "../SharedUI/scss/components/_forms";                                // Forms      
+    @import "../SharedUI/scss/components/_tables"; 
+    @import "../SharedUI/scss/components/myhl/_font-icons";                      // Fonts       
+    @import "../SharedUI/scss/components/myhl/_loading-icon";                    // MyHl Loader               
+    @import "../SharedUI/scss/components/_notifications";
+    @import "../SharedUI/scss/components/myhl/_notifications-modal";
+    @import "../SharedUI/scss/components/_breadcrumb";                           // Breadcrumbs
+    @import "../SharedUI/scss/components/myhl/_locale-selector";                 // MyHL Locale Selector
+    @import "../SharedUI/scss/components/myhl/_main-nav";                        // MyHL Main Navigation
+    @import "../SharedUI/scss/components/_white-block";                          // White Block
+
+    @import "../SharedUI/scss/components/myhl/_legacy";                         // MyHL Legacy (Consolidation File)
+    
+
+    //Kendo
+    @import "../SharedUI/scss/vendors/_kendo-common";
+    @import "../SharedUI/scss/vendors/_kendo-herbalife";
+
+    //vendors
+    @import "components/_slick-gohl.scss";    // Slick Carousel Theme 
+    @import "components/_icons.scss";
+    @import "components/_product-carousel.scss";
+
+    // Pages and local styles    
+    @import "pages/_loyaltyIntro.scss";
+    @import "pages/_loyaltyTerms.scss";
+    @import "pages/_dashboard.scss";
+
+   
+
+
+
+
+

@@ -1,0 +1,10 @@
+*.user 
+*.suo 
+bin 
+obj 
+ENV 
+\packages 
+\.vs 
+\.nuget 
+!\.nuget\nuget.config 
+!*.sln.DotSettings 

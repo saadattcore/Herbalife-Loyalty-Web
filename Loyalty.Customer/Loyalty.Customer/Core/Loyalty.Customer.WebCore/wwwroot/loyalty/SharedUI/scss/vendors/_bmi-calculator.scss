@@ -1,0 +1,70 @@
+
+    /* BMI Calculator
+    ================================================== */
+
+    form#bmi {
+        label { color: $white; }
+        @include form-4;
+        @include span(4);
+        @include breakpoint($tablet) { @include span(4 of 8); }
+        @include breakpoint($desktop) { @include span(4 of 12); }
+        @include breakpoint($ext-desktop) { @include span(4 of 16); }
+
+        p { 
+            color: #343434 !important;
+            strong { 
+                color: #7C65AA !important;  
+                font-weight: bold; 
+            }
+        } 
+    }
+
+    
+    #bmi-results {
+        margin-top: 20px; 
+        @include span(4);
+        @include breakpoint($tablet) { @include span(4 of 8 last); margin-top: -5px; }
+        @include breakpoint($desktop) { @include span(8 of 12 last); }
+        @include breakpoint($ext-desktop) { @include span(12 of 16 last); }
+
+        h3 { 
+            text-align: center;
+            background-color: $darkgrey;
+            border-radius: 5px;
+            padding: 10px;
+            display: none;
+            color: $white;
+            font-size: 18px;
+            @include breakpoint($desktop) { font-size: 24px; }
+        }
+
+        table#bmi-table { 
+            color: $charcoalgrey;
+            width: 100%;
+            margin-bottom: 30px;
+            
+            tbody tr { 
+                background-color: $white; 
+                &:hover { background-color: $white !important; }
+            }
+            td { 
+                border: #ccc 1px solid; 
+                border-width: 0 1px 1px 0; 
+                padding: 5px; 
+                text-align: center; 
+                &.first { border-width: 0 1px 1px; }
+                &.last { border-width: 0 1px 1px 0; }
+                &.highlight { 
+                    background-color: $lightblue; 
+                    color: $black; 
+                }
+            }
+            th { color: $white; border-bottom: 1px solid $grey; }
+        }
+
+        #bmi-link { display: none; text-align: center; text-decoration: underline; }
+    }
+
+        
+
+    

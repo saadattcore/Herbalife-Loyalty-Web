@@ -1,0 +1,13 @@
+	
+	/* MyHL Loading Icon
+    ================================================== */
+
+	.loading-icon {
+        background: url(#{$images_path}/ajax-loader.gif) no-repeat center center;
+        display: inline-block;
+        min-width: 40px;
+        min-height: 40px;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+    }

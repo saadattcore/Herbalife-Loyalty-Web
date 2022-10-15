@@ -1,0 +1,432 @@
+﻿/********* Action Buttons ***************/
+.bottomActBtns {
+	margin: 20px 0;
+	text-align: right;
+}
+/* #Buttons
+================================================== */
+
+/* Base styles
+// -------------------------------------------------- */
+
+.icnLeft, .icnRight {
+	position: absolute;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 100%;
+	top: 0;
+}
+.icnRight {
+	right: 0;
+}
+.icnLeft {
+	left: 0;
+}
+
+.neutral, 
+.forward,
+.backward,
+.linkBtn,
+[class^="btn"]{
+	cursor: pointer;
+	font-size: 12px;
+	position: relative;
+    display:inline-block; 
+	outline: 0;
+}
+
+/* Core */
+.neutral, a.neutral,
+.forward, a.forward,
+.backward, a.backward,
+[class^="btn"], a[class^="btn"]{ 
+		padding:7px 10px;  
+		color:#515151;
+		line-height:14px; 
+		font-weight:600; 
+		text-decoration:none; 
+		text-shadow:0 1px rgba(255, 255, 255, .75); 
+		text-align:center; 
+		border:1px solid #e6e6e6; 
+		-webkit-border-radius:2px; 
+		border-radius:2px; 
+		background-color: #ccc; /* Old browsers */
+    	background-image: -moz-linear-gradient(top,  #f0f0f0 0%, #e6e6e6 100%); /* FF3.6+ */
+    	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(100%,#e6e6e6)); /* Chrome,Safari4+ */
+    	background-image: -webkit-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%); /* Chrome10+,Safari5.1+ */
+    	background-image: -o-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%); /* Opera 11.10+ */
+    	background-image: -ms-linear-gradient(top,  #f0f0f0 0%,#e6e6e6 100%); /* IE10+ */
+    	background-image: linear-gradient(to bottom,  #f0f0f0 0%,#e6e6e6 100%); /* W3C */
+    	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#e6e6e6',GradientType=0 ); /* IE6-9 */
+    	background-repeat:no-repeat;
+        margin: 3px;		 
+		}
+
+/* Hover state */
+.neutral:hover,
+.forward:hover,
+.backward:hover,
+[class^="btn"]:hover{ 
+		background-color: #e3e3e3; 
+		background-position: 0 -15px; border: 1px solid #ddd; 
+		border-bottom-color: #ccc;
+		-webkit-transition: background-position 0.1s linear;
+		-moz-transition: background-position 0.1s linear;
+		-ms-transition: background-position 0.1s linear;
+		-o-transition: background-position 0.1s linear;
+		transition: background-position 0.1s linear;
+		-webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;
+		-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+		box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05); 
+		}
+
+/* Active state */
+.neutral:active,
+.forward:active,
+.backward:active,
+[class^="btn"]:active{ 
+		color: rgba(0,0,0,.5); 
+		background-image: none; 
+		background-color:#ccc; 
+		top:1px;
+		-webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
+		-moz-box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
+		box-shadow: inset 0 2px 2px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05); 
+		}
+
+/* Disabled state */
+.backward.disabled, 
+.neutral.disabled, 
+.forward.disabled,
+[class^="btn"].disabled,
+[class^="btn"][disabled],
+.aspNetDisabled
+{ 
+		cursor: default; 
+		background-image: none; 
+		background-color:#ccc; 
+		color:rgba(0,0,0,.5);
+		-webkit-box-shadow:none;
+		-moz-box-shadow:none;
+		box-shadow:none;
+		opacity: .5;
+		filter: alpha(opacity=50);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";		
+		}
+
+.btn{
+	opacity: 1;
+	filter: none;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";	
+}
+
+/* Button Sizes
+// -------------------------------------------------- */
+
+/* Full width buttons */
+.forward.full-width, .neutral.full-width, .backward.full-width,
+[class^="btn"].full-width{ 
+        width:100%; 
+        text-align:center;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box; }
+
+
+/* Alternate buttons
+// -------------------------------------------------- */
+
+/* Provide *some* extra contrast for those who can get it */
+	.forward:active, .btnForward:active, .neutral:active, .btnSecondary:active { color:rgba(255,255,255,.75); }
+
+/* FORWARD
+// ------------------------- */
+	.forward, a.forward, .forward:hover,
+	.btnForward, a.btnForward, .btnForward:hover { color:#FFF; border:1px solid #599441; text-shadow:0 0 1px #69b93a; }
+	.forward, a.forward,
+	.btnForward, a.btnForward { border:1px solid #7AC143; background:#7AC143; filter: none; }
+	
+	.forward:hover, .forward:active, .forward.disabled, .forward[disable],
+    .btnForward:hover, .btnForward:active, .btnForward.disabled, .btnForward[disabled] {
+		background-color:#69b93a;
+		background:-moz-linear-gradient(top, #8ac94c 5%, #69b93a 100%); /* FF3.6+ */
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8ac94c), color-stop(1, #69b93a)); /* Chrome,Safari4+ */
+		background:-webkit-linear-gradient(top, #8ac94c 5%, #69b93a 100%); /* Chrome10+,Safari5.1+ */
+		background:-o-linear-gradient(top, #8ac94c 5%, #69b93a 100%); /* Opera 11.10+ */
+		background:-ms-linear-gradient(top, #8ac94c 5%, #69b93a 100%); /* IE10+ */
+		background:linear-gradient(to bottom, #8ac94c 5%, #69b93a 100%); /* W3C */
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8ac94c', endColorstr='#69b93a',GradientType=0); /* IE6-9 */
+		background-repeat:no-repeat; 
+		}
+		
+	.forward:active, .btnForward:active { background-color:#69b93a; }
+
+/* SECONDARY
+// ------------------------- */
+	.neutral, a.neutral, .neutral:hover,
+	.btnSecondary, a.btnSecondary, .btnSecondary:hover{ color:#FFF; border:1px solid #ec830c; text-shadow:0 0 1px #f99a2e; }
+	.neutral, a.neutral, .btnSecondary, a.btnSecondary { border:1px solid #FAA634; background:#FAA634; filter: none; }
+	
+	.neutral:hover, .neutral:active, .neutral.disabled, .neutral[disabled],
+    .btnSecondary:hover, .btnSecondary:active, .btnSecondary.disabled, .btnSecondary[disabled]  {
+		background-color:#f99a2e;
+		background:-moz-linear-gradient(top,  #fbb23c 0%, #f99a2e 100%); /* FF3.6+ */
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbb23c), color-stop(100%,#f99a2e)); /* Chrome,Safari4+ */
+		background:-webkit-linear-gradient(top,  #fbb23c 0%,#f99a2e 100%); /* Chrome10+,Safari5.1+ */
+		background:-o-linear-gradient(top,  #fbb23c 0%,#f99a2e 100%); /* Opera 11.10+ */
+		background:-ms-linear-gradient(top,  #fbb23c 0%,#f99a2e 100%); /* IE10+ */
+		background:linear-gradient(to bottom,  #fbb23c 0%,#f99a2e 100%); /* W3C */
+		filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbb23c', endColorstr='#f99a2e',GradientType=0 ); /* IE6-9 */
+		background-repeat:no-repeat; 
+		}
+	.neutral:active, .btnSecondary:active { background-color:rgba(255,255,255,.02); }
+
+.linkBtn.disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+/*============================================================================ 				
+$ END BUTTONS
+*/
+
+
+/*********************top menu***************************/
+#top_Nav, #top_NavKendo{ 
+    border: 1px solid #4A8c13; 
+    border-bottom: 2px #F6A722 solid; 
+    margin: 0 0 10px 0; 
+    min-height: 35px;
+    height: 38px; 
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: #65be18; /* Old browsers */
+    background: -moz-linear-gradient(top, #65be18 0%, #5cae16 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#65be18), color-stop(100%,#5cae16)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #65be18 0%,#5cae16 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #65be18 0%,#5cae16 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #65be18 0%,#5cae16 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #65be18 0%,#5cae16 100%); /* W3C */
+    position: relative;
+    z-index: 99;
+}
+
+#top_Nav li, #top_NavKendo li {
+    height: 35px;
+    zoom: 100%;
+    padding: 0;
+    list-style: none;
+    background: #65be18; /* Old browsers */
+    background: -moz-linear-gradient(top, #65be18 0%, #5cae16 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#65be18), color-stop(100%,#5cae16)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #65be18 0%,#5cae16 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #65be18 0%,#5cae16 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #65be18 0%,#5cae16 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #65be18 0%,#5cae16 100%); /* W3C */ 
+    position: relative;
+}
+
+
+
+#top_Nav > li > ul{ display: none; position: absolute; top: 23px; left: -1px;padding: 0; }
+    #top_Nav > li > ul > li > ul {
+        display: none;
+        position: absolute;
+        top: -13px;
+        left: 200px;
+        padding: 0;
+}
+
+    #top_Nav li:hover > ul, #top_Nav li.active > ul  {
+        display: block;
+    }
+
+#top_Nav > li, #top_NavKendo > li{ border-right: 1px solid #FFF; max-width: 150px; float: left; }
+    #top_Nav > li ul li, #top_NavKendo > li ul li {
+        width: 200px;
+    }
+#top_Nav > li > a, #top_NavKendo > li > a{ 
+    max-width: 140px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 11px \0/IE9; 
+    letter-spacing: 0.05em \0/IE9;
+    width: 100%;
+    padding: 0 5px;
+    text-align: center;
+    height: 35px;
+} 
+
+#top_Nav a, #top_NavKendo a{
+    background: none;
+    text-decoration: none;
+    font-size: 11px;    
+    color: #fff;
+}
+
+#top_Nav a:hover, 
+#top_NavKendo .k-state-active:hover{
+    color: #FFF;
+    background: #67bd2a; /* Old browsers */
+    background: -moz-linear-gradient(top, #67bd2a 0%, #74d52f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#67bd2a), color-stop(100%,#74d52f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #67bd2a 0%,#74d52f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #67bd2a 0%,#74d52f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #67bd2a 0%,#74d52f 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #67bd2a 0%,#74d52f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67bd2a', endColorstr='#74d52f',GradientType=0 ); /* IE6-9 */
+}
+
+#top_NavKendo > li > a .k-icon{ display: none; }
+#top_NavKendo a .k-icon{ background-position: -16px -16px; }
+
+#top_NavKendo .k-popup, #top_Nav li ul {
+border: 1px solid #4C7C2B;
+border-bottom: none;
+}
+
+#top_NavKendo .k-popup li, #top_Nav ul li{
+border-bottom: 1px solid #4C7C2B;
+border-top: 1px solid #84CD52;
+background: #73b545; /* Old browsers */
+background: -moz-linear-gradient(top, #73b545 0%, #659e3e 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#73b545), color-stop(100%,#659e3e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #73b545 0%,#659e3e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #73b545 0%,#659e3e 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #73b545 0%,#659e3e 100%); /* IE10+ */
+background: linear-gradient(to bottom, #73b545 0%,#659e3e 100%); /* W3C */
+height: auto;
+}
+
+#top_NavKendo .k-popup a, #top_Nav li ul a {
+text-align: left;
+display: block;
+padding: 10px 5px;
+min-height: 15px;
+}
+
+#top_Nav li ul a > .k-i-arrow-e, #top_NavKendo li ul a > .k-i-arrow-e {
+position: absolute;
+top: 50%;
+margin-top: -8px;
+right: 2px;
+}
+
+/*********************left menu***************************/
+#left_menu, #left_menu ul{ margin: 0; padding: 0;  list-style: none;}
+#left_menu li {
+    white-space: normal;
+    font-size: 12px;
+    border-bottom: 1px #999 dotted;
+    padding-left: 16px;
+}
+#left_menu li ul{ display: none; }
+#left_menu li:last-child{ border: none; }
+#left_menu > ul > li{ border-bottom-style: solid; text-transform: uppercase; }
+#left_menu .k-in {
+    line-height: 24px;
+    border: none;
+    border-radius: 0;   
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    margin: 0 0 0 -16px;
+    padding: 0 0 0 16px;
+}
+#left_menu a {
+    color: #666;
+    text-decoration: none;
+    width: 100%;
+    padding: 1px 5px; 
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 24px;
+}
+#left_menu .k-item > div > .k-icon{ position: relative; z-index: 100; }
+#left_menu span + .k-in a {
+    color: #1F9201;
+}
+#left_menu .k-in:hover{ background-color: #75B547; }
+#left_menu .k-in:hover a{ color: #FFF; }
+#left_menu .k-state-selected{ background-color: #999; }
+#left_menu .k-in.k-state-selected a{ color: #FFF; }
+
+/*============================================================================ 				
+$ FOOTER
+*/
+
+footer.main {
+    clear: both;
+    margin-top: 1em;
+    width: 955px;
+}
+footer.main > * {
+    display: inline-block;
+    margin-right: 3%;
+    vertical-align: middle;
+    overflow:hidden;
+
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+    footer.main p + a {
+        margin-right: 1%;
+    }
+footer .language {
+    background-color: #8CC641;
+    color: white;
+    display: block;
+    margin: 0 0 .5em;
+    padding: .5em;
+}
+
+footer .proudMember {
+   padding-top: 2em;
+    max-width: 30%;
+}
+
+footer .copyright {
+    border-left: 1px solid #387C28;
+    margin-right: 0;
+    width:55%;
+    padding-left: 3%;
+}
+
+footer small img {
+    float: left;
+    margin-right: 1em;
+    position: relative;
+    top:-1em;
+}
+
+/* Burst Icons */
+
+a[href$="accountoverview.aspx"] + div ul li:last-child a:before, a[href$="mydownline.aspx"] + div ul .rmFirst a:before {
+    background-repeat: no-repeat;
+    content: url("/Content/Global/img/icons/burst14x14.png");
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+a[href$="accountoverview.aspx"] + div ul li:last-child a, a[href$="mydownline.aspx"] + div ul .rmFirst a {
+    color: #FFFF00 !important;
+}
+a[href$="mydownline.aspx"] + div ul li:last-child a:before {
+    content: none !important;
+}
+a[href$="mydownline.aspx"] + div ul li:last-child a {
+    color: #FFFFFF !important;
+} 
+
+#top_Nav > li{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

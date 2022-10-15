@@ -1,0 +1,4 @@
+﻿Scripts/vendors/kendo/widgets/kendo.view.min.js
+Scripts/vendors/kendo/widgets/kendo.router.min.js
+Scripts/app/slick.min.js
+Scripts/app/helpers/slick-helper.js

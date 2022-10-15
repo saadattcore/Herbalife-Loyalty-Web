@@ -1,0 +1,138 @@
+
+    /* Susy Variables
+    ================================================== */
+
+    // Column Variables
+    $column: 60px;          
+    $gutter: 20px;          
+
+    // Susy Static Grid Breakpoint Variables (Media Queries)
+    $ext-nav:     1540px; 
+    $ext-desktop: 1320px;
+    $desktop:     1000px;
+    $tablet:      660px;
+    $mobile:      320px; 
+
+    
+    // Susy Fluid Grid Breakpoint Variables (Media Queries)
+    $fl-mobile: 10em;
+    $fl-tablet: 40em;
+    $fl-desktop: 70em;
+
+    // Font Variables
+    $proxima: 'Proxima Nova', 'Arial', sans-serif;
+    $amatic: 'AmaticSC-Bold', 'Arial', sans-serif;
+    $oxygen: 'Oxygen', 'Arial', sans-serif;
+    $arial: 'Arial', 'Helvetica', sans-serif;
+    $myherbalife: 'myherbalife';
+
+    // File Paths
+
+    //Prototypes
+    /*$fonts_path: "../../../../../Shared.UI.V2/Dev/Dev/SharedUI/assets/fonts";
+    $images_path: "../../../../../Shared.UI.V2/Dev/Dev/SharedUI/assets/images";*/
+
+    //SharedUI location
+    $sharedUI: "/SharedUI" !default;
+
+    //Development
+    $fonts_path: $sharedUI + "/fonts";
+    $images_path: $sharedUI + "/images";
+    
+    // Color Variables (Web)
+
+    // Brand Colors
+    $green:         #7ac143;
+    $orange:        #faa634;
+
+    // Text Colors
+    $lightblack:    #181818;
+    $lightcharcoal: #4d4d4d;
+    $blue:          #0080ff;
+    $red:           #ff0000;
+
+    // Page Subheader Colors
+    $salmon:        #f16148;
+    $darkgreen:     #387c28;
+    $purple:        #886587;
+    $darkblue:      #27709b;
+    $darkgrey:      #2e2e2e;
+
+    // More Colors
+    $brightgreen:   #87d54a; 
+    $lightgreen:    #dBf5c8;
+    $lightorange:   #fff2de;
+    $lightblue:     #c6eaff;
+    $lightred:      #ffd8d8;
+    $pink:          #f65d8c;
+    $teal:          #2ebfc2;
+
+    // Greyscale Colors
+    $black:         #000;
+    $charcoalgrey:  #515151;
+    $dimgrey:       #999999;
+    $grey:          #ccc;
+    $softgrey:      #d7d7d7;
+    $lightgrey:     #e8e8e8;
+    $offwhite:      #f3f3f3;
+    $white:         #fff; 
+
+    // HL24 Colors
+    $lightbluetwo:  #11d9d8;
+    $restore:       #9561a8;
+    $hydrate:       #01afdb;
+    $prepare:       #ea9519;
+    $prolong:       #f03a43;
+    $rebuild:       #fec421;
+    $silver:        #949599;
+
+
+    // Color Variables (Catalog)
+
+    // Other Colors
+    $cat-yellow:        #f1c514;
+    $cat-lightorange:   #f59e1d;
+    $cat-orange:        #e78025;
+    $cat-bloodorange:   #d35627;
+    $cat-red:           #ca392b;
+    $cat-peach:         #fcecd2;
+    $cat-brown:         #c49a6c;
+    $cat-lightblue:     #6ecff6;
+    $cat-turquoise:     #189cd8;
+    $cat-blue:          #2a80c3;
+    $cat-darkblue:      #315c8a;
+    $cat-navyblue:      #07304e;
+    $cat-pink:          #d94b9b;
+    $cat-purple:        #7f3f98;
+    $cat-lagoon:        #c0dad8;
+
+    // Green Colors
+    $cat-green:         #7ac143;
+    $cat-greenapple:    #c3db5e;
+    $cat-greenolive:    #98b62f;
+    $cat-greengrass:    #7db24d;
+    $cat-greenforest:   #46a941;
+    $cat-greenocean:    #00a88e;
+
+    // Greyscale Colors
+    $cat-darkestgrey:   #58585a;
+    $cat-darkgrey:      #6d6e71;
+    $cat-charcoalgrey:  #818285;
+    $cat-dimgrey:       #939598;
+    $cat-grey:          #a7a9ac;
+    $cat-softgrey:      #bcbdc0;
+    $cat-lightgrey:     #d1d2d4;
+    $cat-offwhite:      #f3f3f3;
+
+
+
+    // Social
+    $twitterblue:   #4099ff;
+    $facebookblue:  #3b5998;
+    $instagramred:  #663300;
+    
+    // Shadows
+    $text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+    $box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+
+    

@@ -1,0 +1,1661 @@
+/*****************************************************
+*                           						 *
+*          			  HELPERS          				 *
+*                           						 *
+*****************************************************/
+
+
+/* Variables
+	================================================== */
+
+// Susy Grid Breakpoint Variables (Media Queries)
+$breakpoint-ext-desktop: $ext-desktop;
+$breakpoint-desktop: $desktop;
+$breakpoint-tablet: $tablet;
+$breakpoint-mobile: $mobile;
+
+// Legacy Colors
+$herbalifegreen: $green; // Herbalife Brand Green
+$herbalifeorange: $orange; // Herbalife Brand Orange
+
+
+$link-blue: $blue;
+$link-hover-grey: $charcoalgrey;
+$link-light-grey: $lightgrey;
+
+//image background color
+$block-background-color: rgba(0,0,0,0.2);
+$block-background-color-hover: rgba(0,0,0,0.0);
+
+
+
+
+/*****************************************************
+*                           						 *
+*          			  MIXINS          				 *
+*                           						 *
+*****************************************************/
+
+/* Mixins
+	================================================== */
+
+@mixin full-width {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+%full-width.full-width, .full-width {
+    @include full-width;
+}
+
+
+
+
+/*****************************************************
+*                           						 *
+*          			    BASE          				 *
+*                           						 *
+*****************************************************/
+
+/* Legacy Typography
+	================================================== */
+
+// Consolidation of classes that do not exist in SharedUI V2
+.upper {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.myhl3Hide {
+    @extend .hide;
+}
+
+.Bold, .bold {
+    font-weight: bold;
+}
+
+.overFlowH {
+    overflow: hidden;
+}
+
+.center {
+    text-align: center;
+}
+
+.center > * {
+    text-align: start;
+}
+
+.textLeft {
+    text-align: left;
+}
+
+.textRight {
+    text-align: right;
+}
+
+//RTL Support
+[dir="rtl"] {
+    text-align: right !important;
+
+    #hrblSiteWrapper {
+        direction: rtl;
+    }
+}
+
+
+
+
+/*****************************************************
+*                           						 *
+*          			  LAYOUT          				 *
+*                           						 *
+*****************************************************/
+
+/* Legacy Wrapper
+	================================================== */
+
+#hrblSiteWrapper {
+    @include transition(left .5s ease-in-out);
+    position: relative;
+    left: 0;
+}
+
+
+/* Legacy Header
+	================================================== */
+
+//Extends ds-info class from SharedUI V2 _header.scss
+#DSInfo {
+    @include ds-info;
+}
+
+//RTL Support
+[dir="rtl"] #DSInfo {
+    direction: ltr;
+
+    li > i,
+    li > a,
+    li > span {
+        direction: rtl;
+    }
+}
+
+/* Legacy Footer
+	================================================== */
+
+//Extends myhl-footer class from SharedUI V2 _footer.scss
+.footerGlobal {
+    @extend .myhl-footer;
+}
+
+#hrblSiteWrapper > footer {
+    @extend .myhl-footer;
+}
+
+.columnCont {
+    @extend .footer-lower;
+}
+
+
+ 
+/* Language Selector
+	================================================== */
+
+//Extends .language-selector class from _myhl-language-selector.scss
+#locales {
+    @extend .locale-selector;
+}
+
+
+/* Main Navigation
+	================================================== */
+
+#main-nav {
+    @extend .myhl-nav-desktop;
+}
+
+#topNav {
+    @extend .myhl-nav-menu;
+}
+
+#rightTopNav {
+    @extend .myhl-nav-right;
+}
+
+#mobile-main-nav {
+    @extend .myhl-nav-mobile;
+}
+
+.k-ie8 .hrblMenu li > ul {
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+[dir="rtl"] #topNav ul {
+
+    li, li + li {
+        border-left: none;
+        border-right: 1px dotted $grey;
+    }
+
+    li:first-child {
+        border-right: none;
+    }
+}
+
+
+
+/*****************************************************
+*                           						 *
+*          		     COMPONENTS          			 *
+*                           						 *
+*****************************************************/
+
+/* Alerts
+	================================================== */
+
+.greenNotification, .eventNotf, .infoNotf {
+    @extend .alert-info;
+}
+
+.emergencyNotf {
+    @extend .alert-error;
+}
+
+.infoNotf {
+    @extend .alert-warning;
+}
+
+.generalNotf {
+    @extend .alert-success;
+}
+
+.notificationWrapper {
+    @include m4-t8-d12-e12;
+    //@include m4-t8-d12-e16;
+
+    ul{
+        list-style: inherit;
+    }
+
+    i {
+        color: $charcoalgrey;
+        font-size: 14px;
+        margin-left: 15px;
+    }
+}
+
+.upDownArrows {
+    cursor: pointer;
+    float: right;
+    color: $charcoalgrey;
+}
+
+#systemAlert {
+    @extend .alert-error;
+    position: relative;
+
+    div {
+        display: none;
+
+        &:first-child {
+            display: block;
+        }
+    }
+
+    p {
+        margin: auto;
+        padding: 10px 20px;
+        display: none;
+    }
+
+    span {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+
+    h5 {
+        text-indent: 20px;
+    }
+
+    i {
+        cursor: pointer;
+    }
+
+    button {
+        background: none repeat scroll 0 0 transparent;
+        border: 0 none;
+        cursor: pointer;
+        padding: 0;
+        font-size: 16px;
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+
+        &:hover {
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+        }
+    }
+}
+
+.systemNotification {
+    height: 28px;
+    overflow: hidden;
+}
+
+/* Breadcrumbs
+	================================================== */
+
+#breadcrumbContainer {
+    display: none;
+    margin-bottom: $gutter;
+
+    @include breakpoint($tablet) {
+        display: block;
+    }
+}
+
+#breadcrumb {
+    @extend .breadcrumbs;
+
+    .active a, .active a:active {
+        color: $dimgrey;
+    }
+
+    span + * {
+        margin-left: 4px;
+    }
+}
+
+
+/* Buttons
+	================================================== */
+
+// Action buttons
+.bottomActBtns {
+    margin: 20px 0;   
+    @include clearfix;
+    text-align: center;
+
+    @include breakpoint($tablet) {
+        text-align: right;
+    }
+
+    .btn, .btnForward {
+        @include btn-default;
+    }
+}
+
+.icnLeft, .icnRight {
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    top: 0;
+}
+
+.icnRight {
+    right: 0;
+}
+
+.icnLeft {
+    left: 0;
+}
+
+// Consolidated with core button styling
+.neutral, a.neutral, input.neutral,
+.backward, a.backward,
+a[class*='btn'], input[class*='btn'] {
+    @include btn-core;
+    @include btn-style($softgrey, $softgrey, $charcoalgrey, darken);
+    filter: none;
+}
+
+.btn {
+    opacity: 1;
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+    filter: none;
+}
+
+// Consolidated with primary button styling
+.forward, a.forward, input.forward, a.btnForward, input.btnForward {
+    @include btn-core;
+    @include btn-style($blue, $blue, $white, darken);
+    filter: none;
+}
+
+// Consolidated with default button styling
+.btnSecondary, a.btnSecondary, input.btnSecondary {
+    @include btn-core;
+    @include btn-style($softgrey, $softgrey, $charcoalgrey, darken);
+    filter: none;
+}
+
+.linkBtn.disabled {
+    @include btn-disabled;
+}
+
+div#hrblSiteWrapper {
+    .btn {
+        @include btn;
+    }
+
+    .btn-primary {
+        @include btn-primary;
+    }
+
+    .btn-large {
+        @include btn-large;
+    }
+
+    .btn-small {
+        @include btn-small;
+    }
+
+    .btn-full {
+        @include btn-full;
+    }
+
+    .btn-half {
+        @include btn-half;
+    }
+}
+
+/* Cookie Banner
+	================================================== */
+
+.cookiePolicyBnr {
+    @extend .alert-warning;
+    display: none;
+    position: relative;
+
+    p {
+        margin: 2px;
+        padding-right: 20px;
+        text-align: center;
+    }
+
+    .close-cookie {
+        cursor: pointer;
+        color: darken(#fab659, 4);
+        line-height: 21px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -10px;
+    }
+
+    i {
+        font-size: 16px;
+    }
+}
+
+
+/* Font Icons
+	================================================== */
+
+//Extends classes from SharedUI V2/ _font-icons.scss in MyHL
+.icon-address-book:before {
+    @extend .icon-contacts-ln-3:before;
+}
+
+.icon-add-to-cart:before {
+    @extend .icon-cart-ln-4:before;
+}
+
+.icon-alert:before {
+    @extend .icon-alert-ln-1:before;
+}
+
+.icon-chevron-left:before {
+    @extend .icon-arrow-left-ln-2:before;
+}
+
+.icon-chevron-right:before {
+    @extend .icon-arrow-right-ln-2:before;
+}
+
+.icon-award-1:before {
+    @extend .icon-award-ln-1:before;
+}
+
+.icon-bars:before, .icon-volume:before {
+    @extend .icon-signal-full-ln-1:before;
+}
+
+.icon-beauty-products:before {
+    @extend .icon-beauty-products-fl-1:before;
+}
+
+.icon-calendar:before {
+    @extend .icon-calendar-ln-1:before;
+}
+
+.icon-catalog:before {
+    @extend .icon-book-ln-7:before;
+}
+
+.icon-check-circle:before {
+    @extend .icon-chat-ln-2:before;
+}
+
+.icon-chart:before {
+    @extend .icon-pie-chart-ln-1:before;
+}
+
+.icon-chevron-down:before {
+    @extend .icon-arrow-down-1:before;
+}
+
+.icon-chevron-up:before {
+    @extend .icon-arrow-up-1:before;
+}
+
+.icon-clipboard:before {
+    @extend .icon-clipboard-ln-3:before;
+}
+
+.icon-cog:before {
+    @extend .icon-setting-gear-ln-1:before;
+}
+
+.icon-copy:before {
+    @extend .icon-file-text-ln-1:before;
+}
+
+.icon-document:before {
+    @extend .icon-file-ln-1:before;
+}
+
+.icon-dollars:before {
+    @extend .icon-bank-notes-ln-1:before;
+}
+
+.icon-down-circle:before {
+    @extend .icon-arrow-circle-ln-29:before;
+}
+
+.icon-downline-reports:before {
+    @extend .icon-hierarchy-ln-5:before;
+}
+
+.icon-email:before {
+    @extend .icon-mail-ln-2:before;
+}
+
+.icon-eye:before {
+    @extend .icon-preview-fl-1:before;
+}
+
+.icon-home:before {
+    @extend .icon-house-ln-2:before;
+}
+
+.icon-herbalife:before {
+    @extend .icon-logo-hl-stacked-fl-1:before;
+}
+
+.icon-microphone:before {
+    @extend .icon-microphone-ln-2:before;
+}
+
+.icon-minus-circle:before {
+    @extend .icon-minus-ln-3:before;
+}
+
+.icon-loading:before {
+    @extend .icon-loading-ln-1:before;
+}
+
+.icon-order-history:before {
+    @extend .icon-file-time-ln-1:before;
+}
+
+.icon-people-2:before {
+    @extend .icon-contacts-ln-1:before;
+}
+
+.icon-plus-circle:before {
+    @extend .icon-add-ln-3:before;
+}
+
+.icon-price-list:before {
+    @extend .icon-receipt-ln-3:before;
+}
+
+.icon-printer:before {
+    @extend .icon-printer-ln-1:before;
+}
+
+.icon-switch:before {
+    @extend .icon-power-ln-3:before;
+}
+
+.icon-cart:before {
+    @extend .icon-shopping-ln-1:before;
+}
+
+.icon-sitemap:before {
+    @extend .icon-hierarchy-ln-7:before;
+}
+
+.icon-sku:before {
+    @extend .icon-sku-ln-1:before;
+}
+
+.icon-tasks:before {
+    @extend .icon-clipboard-ln-1:before;
+}
+
+.icon-target:before {
+    @extend .icon-target-ln-1:before;
+}
+
+.icon-ticket-2:before {
+    @extend .icon-ticket-ln-1:before;
+}
+
+.icon-training:before {
+    @extend .icon-academic-cap-ln-1:before;
+}
+
+.icon-trophy:before {
+    @extend .icon-trophy-ln-1:before;
+}
+
+.icon-tshirt:before {
+    @extend .icon-shirt-ln-1:before;
+}
+
+.icon-user:before {
+    @extend .icon-user-ln-2:before;
+}
+
+.icon-x:before {
+    @extend .icon-delete-ln-4:before;
+}
+
+.icon-x-circle:before {
+    @extend .icon-delete-ln-5:before;
+}
+
+.icon-file-sync:before {
+    @extend .icon-file-sync-ln-1:before;
+}
+
+.icon-card:before {
+    @extend .icon-id-ln-3:before;
+}
+
+.icon-globe:before {
+    @extend .icon-globe-ln-2:before;
+}
+
+.icon-suitcase:before, .icon-suitcase-2:before {
+    @extend .icon-suitcase-ln-1:before;
+}
+
+.icon-help:before, .icon-help-circle:before {
+    @extend .icon-question-mark-ln-1:before;
+}
+
+.icon-address:before {
+    @extend .icon-direction-sign-ln-1:before;
+}
+
+.icon-apple:before {
+    @extend .icon-apple-fl-1-1:before;
+}
+
+.icon-archive:before, .icon-drawer:before, .icon-file-cabinet:before {
+    @extend .icon-drawer-ln-2:before;
+}
+
+.icon-award-2:before {
+    @extend .icon-award-ln-2:before;
+}
+
+.icon-book:before {
+    @extend .icon-book-ln-1:before;
+}
+
+.icon-broadcast:before {
+    @extend .icon-antenna-ln-2:before;
+}
+
+.icon-chat:before {
+    @extend .icon-chat-ln-6:before;
+}
+
+.icon-clock:before {
+    @extend .icon-clock-ln-3:before;
+}
+
+.icon-computer:before {
+    @extend .icon-imac-ln-1:before;
+}
+
+.icon-group:before {
+    @extend .icon-connection-ln-2:before;
+}
+
+.icon-history:before {
+    @extend .icon-return-ln-1:before;
+}
+
+.icon-inbox:before {
+    @extend .icon-inbox-ln-4:before;
+}
+
+.icon-journal:before {
+    @extend .icon-book-ln-4:before;
+}
+
+.icon-key:before {
+    @extend .icon-key-ln-1:before;
+}
+
+.icon-lab:before {
+    @extend .icon-beaker-ln-2:before;
+}
+
+.icon-network:before {
+    @extend .icon-network-ln-1:before;
+}
+
+.icon-customer-orders:before {
+    @extend .icon-outbox-ln-1:before;
+}
+
+.icon-paper:before {
+    @extend .icon-envelope-ln-1:before;
+}
+
+.icon-people:before {
+    @extend .icon-people-fl-1:before;
+}
+
+.icon-resources-1:before {
+    @extend .icon-setting-wrenches-ln-1:before;
+}
+
+.icon-resources-2:before {
+    @extend .icon-stationery-ln-1:before;
+}
+
+.icon-share:before {
+    @extend .icon-link-ln-2:before;
+}
+
+.icon-star-circle:before {
+    @extend .icon-star-ln-2:before;
+}
+
+.icon-ticket:before {
+    @extend .icon-ticket-ln-3:before;
+}
+
+.icon-business-tie:before {
+    @extend .icon-necktie-ln-1:before;
+}
+
+.icon-upload:before {
+    @extend .icon-upload-ln-1:before;
+}
+
+.icon-users:before {
+    @extend .icon-contacts-ln-2:before;
+}
+
+.icon-video:before {
+    @extend .icon-video-camera-ln-2:before;
+}
+
+/* Forms
+	================================================== */
+
+.hrblForms {
+    @extend .hl-form;
+
+    &, > * {
+        overflow: hidden;
+    }
+
+    input, label, textarea, select, p {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    input[type=checkbox], input[type=radio] {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    select {
+        width: auto;
+    }
+}
+
+.hrblFormsBtns {
+    @extend .button-set;
+}
+
+#charCounter {
+    float: left;
+    line-height: 16px;
+    margin: 10px 0;
+    padding-left: 25%;
+    width: 50%;
+
+    span:first-child {
+        background-color: $grey;       
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        color: $white;
+        font-weight: bold;
+        margin-right: 5px;
+        padding: 0 5px;
+        width: auto;
+        line-height: 16px;
+    }
+}
+
+
+/* Left Navigation
+	================================================== */
+
+#left_menu {
+    margin: 0 0 $gutter 0;
+    padding: 0;
+    list-style: none;
+
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    > li {
+        background-color: $lightgrey;
+        border-bottom: 1px solid $white;
+        color: rgb(255, 255, 255);
+        position: relative;
+        padding: 0;
+        border-radius: 2px 2px 0 0;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+    }
+
+    a {
+        color: $charcoalgrey;
+        display: inline-block;
+        line-height: 20px;
+        padding: 8px 25px 8px 12px;
+        white-space: normal;
+        width: 100%;
+    }
+
+    > li:hover,
+    .active {
+        color: $charcoalgrey;
+        background-color: $green;
+
+        a {
+            color: $white;
+        }
+    }
+
+    li span {
+        border: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+        display: block;
+    }
+}
+
+.leftMenuNew {
+    @extend #left_menu;
+}
+
+#leftMenuContainer {
+    + .col9 { /* k-content es*/
+        padding: 0 10px;
+        border: none;
+
+        h5 {
+            color: $green;
+            font-weight: bold;
+            margin: 3px 0 0;
+            float: left;
+            width: 210px;
+        }
+
+        p {
+            color: $lightcharcoal;
+            display: inline-block;
+        }
+
+        li h5 + p {
+            float: left;
+            width: 210px;
+        }
+
+        li i + a {
+            color: $green;
+            font-weight: bold;
+            margin: 3px 0 0;
+            font-size: 16px;
+        }
+    }
+}
+
+#main-left-container {
+    @include container(4);
+    margin-bottom: $gutter;
+
+    @include breakpoint($tablet) {
+        @include container(6);
+    }
+
+    @include breakpoint($desktop) {
+        @include span(4 of 8);
+    }
+
+    > span {
+        margin-bottom: 1px;
+        background-color: $white;
+        @include box-shadow(rgba($grey,.5) 0 1px 0px);
+        display: block;
+        padding: 10px 15px 10px 20px;
+
+        a {
+            float: right;
+            color: $white;
+            font-size: 18px;
+            text-shadow: 0 1px 3px darken($grey, 20%);
+
+            @include breakpoint($desktop) {
+                display: none;
+            }
+        }
+    }
+
+    .banner-box {
+        display: none;
+
+        @include breakpoint($desktop) {
+            display: block;
+            margin-bottom: $gutter;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    + section {
+        padding-top: 0;
+        @include container(4);
+
+        @include breakpoint($tablet) {
+            @include span(8);
+        }
+
+        @include breakpoint($desktop) {
+            @include span(8 last);
+            clear: none;
+        }
+
+        > h1 {
+            text-align: center;
+
+            @include breakpoint($desktop) {
+                text-align: left;
+            }
+        }
+
+        > p {
+            text-align: center;
+
+            @include breakpoint($desktop) {
+                text-align: left;
+            }
+        }
+
+        > div > div {
+            width: 100%;
+            display: block;
+            clear: both;
+            text-align: center;
+            border-bottom: 1px solid lighten($grey, 10%);
+
+            @include breakpoint($desktop) {
+                text-align: left;
+            }
+        }
+
+        .columnList {
+            overflow: hidden;
+
+            li {
+                margin-bottom: 20px;
+                padding: 20px;
+                background-color: $white;
+                display: block;
+                @include box-shadow(rgba($lightgrey, .3) 0 0 40px inset, rgba(black, .03) 0px 4px 3px);
+                @include container(4);
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+
+                @include breakpoint($tablet) {
+                    @include container(6)
+                }
+
+                &:first-child {
+                    @include breakpoint($desktop) {
+                        @include span(4 of 8);
+                    }
+                }
+
+                + li {
+                    @include breakpoint($desktop) {
+                        @include span(4 of 8 last);
+                    }
+                }
+
+                h4 {
+                    color: $blue;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    color: $darkgrey;
+                }
+            }
+        }
+    }
+}
+
+#main-side-nav {
+    display: none;
+    padding: 0;
+    list-style: none;
+    margin: 0 0 $gutter 0;
+
+    @include breakpoint($desktop) {
+        display: block;
+    }
+
+    li {
+        margin-bottom: 3px;
+        background-color: $white;
+        border-right: 2px solid $green;
+        @include box-shadow(rgba($grey,.5) 0 1px 0px);
+
+        a {
+            padding: 10px 15px 10px 20px;
+            display: block;
+        }
+
+        &.active,
+        &:hover {
+            background-color: $green;
+            color: $white;
+            border-right: 2px solid $white;
+
+            a:link, a:visited {
+                color: $white;
+            }
+        }
+    }
+}
+
+
+/* Link Box
+	================================================== */
+
+#classicLinkBox {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    background-color: $blue;
+    width: 135px;
+    padding: 10px 5px 10px 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    z-index: 3;
+    border-left: 2px solid $blue;
+    border-top: 1px solid $blue;
+    display: none;
+
+    @include breakpoint($tablet) {
+        display: block;
+    }
+
+    span.whiteBtn {
+        background-color: $white;
+        padding: 5px 15px 5px 15px;
+        display: block;
+        color: #0081ff;
+        margin-top: 7px;
+        box-shadow: 0 2px 2px $blue;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    i {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        cursor: pointer;
+
+        &:hover {
+            color: $lightgrey;
+        }
+    }
+}
+
+
+/* Menus
+	================================================== */
+
+//Extends .vert-tabs-menu class from _menus.scss
+/*#left_menu {
+		@extend .vert-tabs-menu;
+
+	    li span {
+	        border: none;
+	        margin: 0;
+	        padding: 0;
+	        box-shadow: none;
+	        background-color: transparent;
+	        display: block;
+	    }
+	}
+
+	.leftMenuNew { @extend .vert-tabs-menu; }
+
+	#leftMenuContainer {
+	    + .col9 { 
+	        padding: 0 10px;
+	        border: none;
+
+	        @include span(8 last); 
+
+	        h5 {
+	            color: $green;
+	            font-weight: bold;
+	            margin: 3px 0 0;
+	            float: left;
+	            width: 210px;
+	        }
+
+	        p {
+	            color: $lightcharcoal;
+	            display: inline-block;
+	        }
+
+	        li h5 + p {
+	            float: left;
+	            width: 210px;
+	        }
+
+	        li i + a {
+	            color: $green;
+	            font-weight: bold;
+	            margin: 3px 0 0;
+	            font-size: 16px;
+	        }
+	    }
+	}
+
+	#main-side-nav {
+	    display: none;
+	    @include myhl-side-nav;
+	    @include breakpoint($desktop) { display: block; }
+	}
+
+	.banner-box { @include myhl-side-nav-banner; }*/
+
+
+/* Modals
+	================================================== */
+
+.reveal-modal-styles {
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+}
+
+div.k-window {
+    @extend .reveal-modal-styles;
+}
+
+.hrblModal, .hrblModalSkinOnly {
+    background-color: $white;
+    border: none;
+    width: 100%;
+
+    div h2 { /* title properties read from parent */
+        color: inherit;
+        float: inherit;
+        line-height: inherit;
+        margin: inherit;
+        padding: inherit;
+        text-indent: inherit;
+    }
+
+    &.small {
+        max-width: $mobile;
+    }
+
+    &.medium {
+        max-width: $tablet;
+    }
+
+    &.large {
+        max-width: $desktop;
+    }
+
+    &.xlarge {
+        max-width: $ext-desktop;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .bottomActBtns {
+        margin-bottom: 0;
+    }
+}
+
+.hrblModal {
+
+    > div:first-child {
+        height: auto;
+        background: none;
+    }
+
+    input[type="text"],
+    select {
+        margin-bottom: 15px;
+    }
+
+    > div {
+        margin: 10px 0;
+    }
+
+    h4 {
+        display: none;
+    }
+
+    .columnCont img {
+        max-width: 100%;
+    }
+}
+
+.hrblModalSkinOnly {
+    padding: $gutter;
+    @include box-sizing(border-box);
+
+    h4 {
+        margin-bottom: $gutter;
+    }
+
+    > div:first-child {
+        margin: 0;
+        min-height: 30px;
+    }
+
+    > div:first-child h2 {
+        font-size: 14px;
+    }
+}
+
+
+/* Preloader
+	================================================== */
+
+.hrblPreLoader {
+    @extend .loading-icon;
+}
+
+.hrblPreLoaderContain {
+    text-align: center;
+    height: 100%;
+}
+
+
+/* Title Header
+	================================================== */
+
+#titleHeader {
+    color: $white;
+    padding: 0;
+    overflow: hidden;
+    min-height: 0;
+
+    > div {
+        //@include m4-t8-d12-e16;
+        @include m4-t8-d12-e12;
+        margin: 0 auto;
+        padding: 10px 0;
+        position: relative;
+        overflow: hidden;
+
+        i {
+            color: $white;
+            font-size: 40px;
+            line-height: 1;
+            display: none;
+            margin: 0 10px;
+            opacity: 0.4;
+            float: left;
+
+            @include breakpoint($tablet) {
+                display: inline-block;
+            }
+        }
+
+        h1, h2, h3 {
+            color: $white;
+            margin: 0 0 0 10px;
+            line-height: 1;
+        }
+    }
+
+    aside {
+        height: 100px;
+        position: relative;
+
+        > * {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        a.btn {
+            bottom: 5px;
+            position: absolute;
+            left: 10px;
+        }
+
+        > a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            padding: 0 10px;
+        }
+
+        div {
+            background-color: $grey;
+            background-color: rgba(255, 255, 255, 0.4);
+            color: $charcoalgrey;
+
+            h4 {
+                margin: 10px 0 0 10px;
+            }
+
+            p {
+                margin-left: 10px;
+            }
+
+            + a {
+                opacity: 1;
+                -webkit-transition: opacity 0.3s linear 0s;
+                -moz-transition: opacity 0.3s linear 0s;
+                -o-transition: opacity 0.3s linear 0s;
+                transition: opacity 0.3s linear 0s;
+            }
+
+            + a img {
+                width: 100%;
+            }
+        }
+
+        &:hover div + a {
+            opacity: 0;
+            filter: alpha(opacity=0); /* For IE8 and earlier */
+            -webkit-transition: opacity 0.3s linear 0s;
+            -moz-transition: opacity 0.3s linear 0s;
+            -o-transition: opacity 0.3s linear 0s;
+            transition: opacity 0.3s linear 0s;
+        }
+    }
+
+    + div, + section {
+        padding-top: $gutter;
+    }
+}
+
+
+/* Misc
+	================================================== */
+
+.col3 {
+    @include span(4);
+
+    @include breakpoint($tablet) {
+        @include span(3);
+    }
+}
+
+.col4,
+.third {
+    @include span(4);
+
+    @include breakpoint($tablet) {
+        @include span(8);
+    }
+
+    @include breakpoint($desktop) {
+        @include span(4 of 12);
+    }
+}
+
+.col6 {
+    @include span(4);
+
+    @include breakpoint($tablet) {
+        @include span(8);
+    }
+
+    @include breakpoint($desktop) {
+        @include span(6);
+    }
+}
+
+.col8,
+.two-thirds {
+    @include span(4);
+
+    @include breakpoint($tablet) {
+        @include span(8);
+    }
+}
+
+.col9 {
+    @include span(4);
+
+    @include breakpoint($tablet) {
+        @include span(8);
+    }
+
+    @include breakpoint($desktop) {
+        @include span(9 last);
+    }
+}
+
+// Content page sections
+.columnList {
+    letter-spacing: -4px;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+
+    > * {
+        letter-spacing: normal;
+        font-size: 14px;
+    }
+
+    > li {
+        display: inline-block;
+        margin: 0 5% 0 -1px;
+        list-style: none;
+        width: 45%;
+        vertical-align: top;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    i {
+        color: $charcoalgrey;
+        float: left;
+        font-size: 40px;
+        height: 100px;
+        margin: 2px 15px 0 0;
+        -moz-transition: all 0.2s ease 0s;
+        -webkit-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+
+    strong, strong a {
+        display: block;
+    }
+
+    h5 {
+        color: $blue;
+        font-weight: bold;
+    }
+
+    p {
+        color: $darkgrey;
+    }
+}
+
+//==========
+// GENERAL CSS
+//==========
+.serverSig {
+    background-color: $charcoalgrey;
+    color: $grey;
+    font-size: 9px;
+}
+
+#contentSite {
+    width: 970px;
+    margin: 0 auto;
+}
+
+.infoImg {
+    background: url(/Content/Global/img/icons/info_img.png) left center no-repeat;
+    padding-left: 25px;
+    min-height: 20px;
+}
+
+#header p {
+    float: right;
+    margin-top: 5px;
+}
+
+.bordered {
+    border: 1px solid $grey;
+}
+
+.scrollable {
+    height: 200px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#relStories.container {
+    min-height: 0;
+}
+
+//==========
+// HRBL SIDES
+//==========
+.sides > div {
+    overflow: hidden;
+    margin: .55em 0;
+}
+
+.sides label, .sides p, .sides span {
+    float: left;
+    margin: 0 0 0 1%;
+    width: 48%;
+}
+
+.sides label {
+    font-weight: bold;
+}
+
+.sides span, .sides label {
+    color: $charcoalgrey;
+    margin: 0 1% 0 0;
+    text-align: right;
+}
+
+//==========
+//Promo Banner
+//==========
+.squareBanner {
+    background-color: $lightgrey;
+    padding: 10px;
+    margin-top: 20px;
+
+    h4 {
+        font-weight: bold;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+//==========
+//FIXES FOR BROWN CONTENT IN GREEN COUNTRY
+//==========
+#principalContent > div {
+    float: left;
+}
+
+#principalContent, .cmsPageBound {
+    min-height: 400px;
+}
+
+#LeftNavMenuCell {
+    padding: 0 10px 10px;
+    text-align: left;
+    vertical-align: top;
+    width: 175px;
+}
+
+#ContentCell {
+    max-width: 965px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 10px;
+    width: 100%;
+}
+
+#LeftNavMenuCell + #ContentCell {
+    width: 765px;
+}
+
+//==========
+// PRINT
+//==========
+@media print {
+    footer, header,
+    .neutral, a.neutral,
+    .forward, a.forward,
+    .backward, a.backward,
+    input[class*="btn"],
+    a[class*="btn"] {
+        display: none;
+    }
+}
+
+// Added per defect 83618
+.ajax__calendar_container {
+    background: none repeat scroll 0 0 $grey;
+    cursor: default;
+    font-family: $proxima;
+    font-size: 11px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    width: 170px;
+    z-index: 100;
+}

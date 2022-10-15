@@ -1,0 +1,20 @@
+﻿@using System.Globalization
+@{
+    var locale = CultureInfo.CurrentCulture.Name;
+    var urlToShop = $"/Catalog/Home/Index/{locale}/";
+    var urlToDashboard = $"/Loyalty/Spa/Index/{locale}/#dashboard";
+}
+
+<div class="loyalty-renew">
+    <section>
+        <div>
+            <i class="icon-chat-fl-2 success"></i>
+            <h4>@Localize["Message.Title"]</h4>
+            <h2>@TempData["DistributorName"]</h2>
+            <p>@Localize["Message.Body"]</p>
+            <a href="@urlToShop" class="btn-buynow">@Localize["ShopNow.Link"]</a>
+            <br>
+            <a href="@urlToDashboard" class="btn-loyalty">@Localize["Dashboard.Link"]</a>
+        </div>
+    </section>
+</div>

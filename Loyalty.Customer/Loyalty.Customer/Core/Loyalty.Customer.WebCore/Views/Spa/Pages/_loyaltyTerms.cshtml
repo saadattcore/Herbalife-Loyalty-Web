@@ -1,0 +1,86 @@
+﻿@using System.Globalization
+@{
+    var locale = CultureInfo.CurrentCulture.Name;
+    var urlBack = $"/Loyalty/Home/Index/{locale}/";
+}
+
+<script type="text/x-kendo-template" id="loyaltyTerms">
+    <main class="loyaltyTerms">
+        <h3>@Localize["Terms.Title"]</h3>
+        <div class="terms-conditions">
+            <h4>
+                @Localize["TermsHeader.Titllte"]
+            </h4>
+            <p>
+                @Localize["TermsHeader.Document"]
+            </p>
+            <div data-bind="visible:lockActive" class="notification-warning"><strong>@Localize["Warning.Title"]</strong>@Localize["Warning.Document"]</div>
+            <div data-bind="visible:custActive" class="notification-error"><strong>@Localize["Error.Title"]</strong>@Localize["Member.Error"]</div>
+
+            <div class="terms">
+                @await Component.InvokeAsync("Content", new { requestType = ContentRequestType.Page, path = "Loyalty/Customer/LoyaltyTerms.xml" })
+            </div>
+            <div class="acknowledge">
+                @*<p>@Localize["FormDesc.Text"]</p>*@
+                <form class="hl-form">
+                    <ul>
+                        <li>
+                            <label>@Localize["FirstName.Label"]</label>
+                            <input type="text" name="firstName" required
+                                   data-bind="value: firstName"
+                                   data-required-message="@Localize["RequiredField.Msg"]" />
+                            <span class="k-invalid-msg" data-for="firstName"></span>
+                        </li>
+                        <li>
+                            <label>@Localize["LastName.Label"]</label>
+                            <input type="text" name="lastName" required
+                                   data-bind="value: lastName"
+                                   data-required-message="@Localize["RequiredField.Msg"]" />
+                            <span class="k-invalid-msg" data-for="lastName"></span>
+                        </li>
+                        <li>
+                            <label>@Localize["PhoneNumber.Label"]</label><br />
+                            <input class="two" type="tel" name="phoneNumber" required
+                                   data-bind="value: phone.number"
+                                   data-required-message="@Localize["RequiredField.Msg"]"
+                                   validationMessage="@Localize["ValidPhone.Msg"]"
+                                   pattern="\d{10}"
+                                   maxlength="10" />
+                            <select class="two" name="phoneType" required
+                                    data-bind="value: phone.type">
+                                <option value="Mobile">@Localize["PhoneType.Mobile"]</option>
+                                <option value="Home">@Localize["PhoneType.Home"]</option>
+                                <option value="Work">@Localize["PhoneType.Work"]</option>
+                            </select>
+                            <span class="k-invalid-msg" data-for="phoneNumber"></span>
+                        </li>
+                        <li>&nbsp;</li>
+                    </ul>
+                </form>
+                <input type="checkbox" id="agree" data-bind="checked: hasAccepted , visible:custActive">
+                <label for="agree">@Localize["AcceptTerms.Text"]</label>
+            </div>
+        </div>
+        <div class="button-set">
+            <a class="btn-continue" data-bind="enabled: EnableActive, visible:!custActive , events: {click: Activate}, css: {disabled: nextDisabled}"> <div id="updateLoader" class="loader button-light" data-bind="visible:isLoading"></div> @Localize["Activate.Button"]  <i class="icon-arrow-right-ln-2"></i></a>
+            <a href="@urlBack" class="back opp-side" data-bind="visible:!custActive"><i class="icon-arrow-circle-ln-27"></i>&nbsp;@Localize["GoBack.Link"]</a>
+        </div>
+    </main>
+
+    <div data-role="window"
+         data-max-width="300"
+         data-modal="true"
+         data-visible="false"
+         data-title="false"
+         data-resizable="false"
+         data-actions="['Close']"
+         data-centerWindow="true"
+         data-bind="getWidget: lockMessageModal"
+         class="hrblModalSkinOnly modalWindow">
+        <a class="close-icon" data-bind="click: CloseLockMessageModal"><i class="icon-delete-fl-5"></i></a>
+        <h4>@Localize["LockMessage.Text"]</h4>
+        <div class="button-set">
+            <a href="#" class="btnForward" data-bind="click: CloseLockMessageModal">@Localize["LockMessage.Ok"]</a>
+        </div>
+    </div>
+</script>

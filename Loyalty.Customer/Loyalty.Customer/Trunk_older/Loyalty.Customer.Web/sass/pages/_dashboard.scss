@@ -1,0 +1,247 @@
+﻿	
+	/* Customer Dashboard
+	================================================== */
+
+    #dashboard{
+
+		> section {
+			@include m4-t8-d12-e16;            
+		}
+
+        aside{
+			width: 100%;					
+			@include breakpoint($tablet) { @include container(8); }
+			@include breakpoint($desktop) { @include gallery(6 of 12); }
+			@include breakpoint($ext-desktop) { @include gallery(8 of 16); }
+
+            &.resume {
+
+                div:first-child{
+				    padding: 10px;
+				    width: 100%;
+                    text-align: center;
+					display: block;					    
+					font-weight: bold;
+					color: $white;
+					line-height: normal;
+				    @include text-shadow($text-shadow);
+
+				    @include breakpoint($tablet) { 
+					    padding: $gutter;
+					    min-height: 200px;
+					    @include span(3); 
+				    }
+				    @include breakpoint($desktop) { @include span(2); }
+				    @include breakpoint($ext-desktop) { @include span(3); }
+
+                    i:first-child{
+                        margin-bottom: 10px;
+                        display: block;
+                    }
+
+				    span:first-child,
+                    i:first-child { 
+					    font-size: 60px;
+
+					    @include breakpoint($tablet) { font-size: 100px; }
+					    @include breakpoint($desktop) { font-size: 60px; }
+					    @include breakpoint($ext-desktop) { font-size: 100px; }
+					
+                        > i {
+						    display: block;
+						    margin-bottom: 10px;
+					    }
+
+				    }
+
+				    span + span {
+					    @include breakpoint($desktop) { font-size: 16px; }
+				    }
+
+                    + div{
+                        width: 100%;
+				        text-align: left;
+				        padding: $gutter;
+
+				        @include breakpoint($tablet) { 
+					        padding: $gutter $gutter $gutter 0;
+					        @include span(5 last); 
+				        }
+				        @include breakpoint($desktop) { @include span(4 last); }
+				        @include breakpoint($ext-desktop) { @include span(5 last); }				    
+                    }
+
+                }
+
+		        &.shopping { 
+			        div:first-child { background-color: $teal; }
+			        ul li { 
+				        border-color: $teal;
+				        &.completed { background-color: $teal; } 
+				        i { color: $teal; }
+			        }
+		        }
+
+		        &.activity { 
+			        div:first-child { background-color: $pink; }
+			        ul li { 
+				        border-color: $pink;
+				        &.completed { background-color: $pink; } 
+				        i { color: $pink; }
+			        }
+		        }
+
+                &.shopping,
+                &.activity{
+                    background-color: $white;
+                    margin-bottom: $gutter;	
+                }
+
+                ul {
+					margin: 0;
+					width: 100%;
+					li {
+						display: inline-block;
+						vertical-align: top;
+                        margin: 15px 6px 0 0;
+						height: 40px;
+						padding: 8px 2px 0;
+						text-align: center;
+						border: 2px dashed;
+						@include border-radius(3px);
+
+						@include breakpoint(0 $tablet) { 
+							width: 125px;
+							&:nth-child(2n) { margin-right: 0; }
+						}
+						@include breakpoint($tablet) { width: 80px; }
+						@include breakpoint($desktop $ext-desktop) {
+							width: 130px;
+							&:nth-child(2n) { margin-right: 0; }
+						}
+						@include breakpoint($ext-desktop) { 
+							width: 82px; 
+                            &:last-child { margin-right: 0; }
+						}
+
+						&.completed {
+							border: none;
+							padding: 10px 0 0;
+							i { 
+								color: $white;
+								font-size: 19px;
+								@include text-shadow($text-shadow); 
+							}
+						}
+						i { font-size: 18px; }
+					}
+				}
+
+            }
+
+        }
+
+        .program{
+
+            > div{
+			    background-color: $white;
+			    margin-bottom: $gutter;
+			    padding: 12px 0;
+                overflow: hidden;
+                position: relative;
+
+			    &.closed {
+				    > ul { display: none; }
+			    }
+
+			    &:after {
+				    font-family: $myherbalife;
+				    position: absolute;
+				    right: 0;
+				    top: 0;
+				    width: 90px;
+				    color: $white;
+				    font-size: 20px;
+				    text-align: center;
+				    padding: 10px 0;
+				    border-bottom-left-radius: 5px;
+                    background-color: $teal; 
+			    }
+
+			    &.one:after { content: "\e2e6"; }
+			    &.two:after { content: "\e2e6\e2e6"; }
+			    &.three:after { content: "\e2e6\e2e6\e2e6"; }
+			    &.four:after { content: "\e2e6\e2e6\e2e6\e2e6"; }
+
+			    &.redeemed {
+				    padding: 11px 0;
+				    cursor: pointer;
+				    overflow: hidden;
+				    &:after { content: "\e5b4"; }
+				    > ul li a { visibility: hidden; }
+			    }
+
+			    > h5 { 
+				    margin-bottom: 0;
+				    padding: 0 90px 0 20px; 
+					    @include breakpoint($desktop) { font-size: 16px; }
+			    }
+			
+			    > ul {
+				    margin: 30px 0 0;
+				    padding: 0 10px;
+				    text-align: center;
+
+				    @include breakpoint($tablet) { 
+					    padding: 0 $gutter;
+					    @include span(8); 
+				    }
+				    @include breakpoint($desktop) { @include span(6); }
+				    @include breakpoint($ext-desktop) { @include span(8); }
+
+				    li {
+					    position: relative;
+					    cursor: pointer;
+					    margin-bottom: $gutter;
+					    padding: 10px 5px 0 5px;
+					    display: inline-block;
+					    vertical-align: top;
+					    width: 130px;
+
+					    &.selected { 
+						    border: 3px solid $green; 
+						    &:after {
+							    font-family: $myherbalife;
+							    content: "\e5b4";
+							    position: absolute;
+							    bottom: 0;
+							    right: 0;
+							    left: 0;
+							    background-color: $green;
+							    color: $white;
+							    font-size: 16px;
+							    padding: 5px 3px 0 8px;
+						    }
+						    a { visibility: hidden; }
+					    }
+
+					    img { 
+						    width: 75%; 
+						    margin-bottom: 10px;
+					    }
+					    a { 
+						    margin-top: 10px;
+						    @include btn-small; 
+					    } 
+				    }
+
+			    }
+
+            }
+
+            & + .program > div:after{
+                background-color: $pink; 
+            }
+        }
+
+    }

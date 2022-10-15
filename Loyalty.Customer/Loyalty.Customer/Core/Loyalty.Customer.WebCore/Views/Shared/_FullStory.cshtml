@@ -1,0 +1,42 @@
+﻿@inject Loyalty.Customer.Provider.Helpers.CustomerHelper _customerHelper
+@inject Microsoft.Extensions.Options.IOptions<Loyalty.Customer.Models.Configuration.GeneralSettings> generalSettings
+@using Shop.Storefront.Common.Infrastructure.StorefrontData
+
+@{    
+    var store = Context.GetStore();
+    var profile = _customerHelper.GetCustomerProfile(this.Context.Request);
+}
+
+@if (generalSettings.Value.FullStorySessionCaptureEnabled)
+{    
+    <script>
+        window['_fs_debug'] = false;
+        window['_fs_host'] = 'www.fullstory.com';
+        window['_fs_org'] = '2APBS';
+        window['_fs_namespace'] = 'FS';
+        (function (m, n, e, t, l, o, g, y) {
+            if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return; }
+            g = m[e] = function (a, b) { g.q ? g.q.push([a, b]) : g._api(a, b); }; g.q = [];
+            o = n.createElement(t); o.async = 1; o.src = 'https://' + _fs_host + '/s/fs.js';
+            y = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
+            g.identify = function (i, v) { g(l, { uid: i }); if (v) g(l, v) }; g.setUserVars = function (v) { g(l, v) };
+            g.identifyAccount = function (i, v) { o = 'account'; v = v || {}; v.acctId = i; g(o, v) };
+            g.clearUserCookie = function (c, d, i) {
+                if (!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')) {
+                    d = n.domain; while (1) {
+                        n.cookie = 'fs_uid=;domain=' + d +
+                        ';path=/;expires=' + new Date(0).toUTCString(); i = d.indexOf('.'); if (i
+                        < 0) break; d = d.slice(i + 1)
+                    }
+                }
+            };
+            @if (profile != null)
+            {
+                @Html.Raw($"FS.identify('{profile.Email}', {{ displayName: '{ profile.FirstName} {profile.LastName}', email: '{profile.Email}', CustomerID_str: '{profile.Id}',DistributorID_str: '{store?.DistributorId.ToString()}',StoreID_str: '{store?.Id.ToString()}',  Vertical_str: 'GoHL', ServerName_str: '{Environment.MachineName}'}});");
+            }
+
+
+
+        })(window, document, window['_fs_namespace'], 'script', 'user');
+    </script>
+}

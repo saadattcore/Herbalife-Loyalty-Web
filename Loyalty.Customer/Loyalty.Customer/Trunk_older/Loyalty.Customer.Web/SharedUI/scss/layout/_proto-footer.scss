@@ -1,0 +1,29 @@
+
+    /* Prototype Footer
+    ================================================== */
+
+    footer {
+        &.proto {
+            display: table-row;
+            height: 1px;
+            width: 100%;
+            background-color: $charcoalgrey;
+            color: $grey;
+            font-size: 12px;
+            .footertext {
+                float: left;
+                margin: 18px 20px;
+            }
+            .country {
+                float: right;
+                margin: 15px 20px;
+            }
+            a {
+                font-size: 12px;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }

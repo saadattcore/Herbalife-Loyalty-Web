@@ -1,0 +1,44 @@
+﻿
+body {
+    background: $lightgrey;
+    position: relative; /* Required for static Slidebars to function properly. */
+
+ 	.loyalty-renew {
+	    > section { 
+			padding: 10px;
+			@include breakpoint($tablet) { padding: 30px 0; } 
+			> div {
+				text-align: center; 
+				@include white-block;
+				@include m4-t8-d8;
+				@include breakpoint($tablet) { padding: 40px; }
+				> i {
+					display: block;
+					margin-bottom: 10px; 
+					font-size: 40px;
+					@include breakpoint($tablet) { 
+						margin-bottom: 15px;
+						font-size: 100px; 
+					}
+					&.success { color: $green; }
+					&.warning { color: $orange; }
+					&.error { color: lighten($red, 20); }
+				}
+				> a {
+					@include btn-full;
+					@include breakpoint($tablet) { @include btn-default; }
+
+					&.btn-buynow { 
+						margin-bottom: 15px;
+                        background-color: #0080ff;
+                        color: #fff;
+						@include breakpoint($tablet) { 
+							@include btn-large; 
+							min-width: 240px;  
+						}
+					}
+				}
+			}
+		}
+    }
+}

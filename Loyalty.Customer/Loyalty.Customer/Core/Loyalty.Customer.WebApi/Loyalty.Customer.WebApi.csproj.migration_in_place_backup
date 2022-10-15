@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <AssemblyName>Loyalty.Customer.WebApi</AssemblyName>
+    <PackageId>Loyalty.Customer.WebApi</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Loyalty.Customer.Models\Loyalty.Customer.Models.csproj" />
+    <ProjectReference Include="..\Loyalty.Customer.Provider\Loyalty.Customer.Provider.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HL.Loyalty.Models" Version="1.0.0.59" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.WebApiCompatShim" Version="1.1.2" />
+    <PackageReference Include="Shop.Storefront.Common.Infrastructure" Version="1.0.12" />
+    <PackageReference Include="Shop.Storefront.Common.Localization" Version="1.0.0.4" />
+    <PackageReference Include="System.Interactive.Async" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>

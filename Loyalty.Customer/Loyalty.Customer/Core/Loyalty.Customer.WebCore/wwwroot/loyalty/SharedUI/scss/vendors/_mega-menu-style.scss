@@ -1,0 +1,1077 @@
+
+	
+	/* Mega Menu (Style)
+	================================================== */
+
+		
+	/* -------------------------------- 
+
+	Main Components 
+
+	-------------------------------- */
+
+	
+.cd-dropdown-wrapper {
+	display: inline-block;
+	position: relative;
+	height: 40px;
+	width: 100%;
+	@include font-smoothing;
+}
+
+.cd-dropdown-trigger {
+	display: inline;
+	position: relative;
+	//padding: 0 36px 0 0;
+	background-color: transparent;
+	text-transform: uppercase;
+	font-weight: bold; 
+	span {
+		display: none;
+		@include breakpoint($tablet) { display: inline; margin-left: 0; }
+	}
+
+	.no-touch &:hover {
+		background-color: lighten($color-1, 5%);
+	}
+
+	&::before, &::after {
+		/* this is the arrow inside the dropdown trigger*/
+		display: none;
+		content: '';
+		position: absolute;
+		top: 50%;
+		margin-top: -1px;
+		height: 2px;
+		width: 9px;
+		background: $color-1;
+		@include backface-visibility(hidden);
+		
+		@include transition(width .3s, transform .3s);			
+	}
+
+	&::before {
+		right: 22px;
+		@include transform(rotate(45deg));
+	}
+
+	&::after {
+		right: 17px;
+		@include transform(rotate(-45deg));
+	}
+
+	@include breakpoint($desktop) {
+		font-size: 14px;
+
+		&.dropdown-is-active {
+			background-color: transparent;
+
+			.no-touch &:hover {
+				background-color: lighten($color-2, 5%);
+			}
+
+			&::before, &::after {
+				/* transform the arrow into a 'X' */
+				width: 14px;
+			}
+
+			&::before {
+				/* transform the arrow into a 'X' */
+				@include transform(translateX(5px) rotate(-45deg));
+			}
+
+			&::after {
+				/* transform the arrow into a 'X' */
+				@include transform(rotate(45deg));
+			}
+		}
+	}
+}
+
+.cd-dropdown h2, 
+.cd-dropdown .account-mobile, 
+.cd-dropdown-content a, 
+.cd-dropdown-content ul a {
+	height: 60px;
+	line-height: 60px;
+
+	@include breakpoint($tablet) {
+		height: 60px;
+		line-height: 60px;
+	}
+
+	@include breakpoint($desktop) {
+		height: 46px;
+		line-height: 46px;
+	}
+}
+
+.cd-dropdown h2, 
+.cd-dropdown .account-mobile, 
+.cd-dropdown-content a, 
+.cd-dropdown-content ul a {
+	//padding: 0 0 0 50px;
+	padding: 0 13px;
+}
+.cd-dropdown-content .cd-divider {
+	padding: 5px 12px;
+	@include breakpoint($desktop) { padding: 15px 6px 14px; } 
+}
+
+.cd-dropdown {
+	position: fixed;
+	z-index: 5;
+	top: 0; 
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $color-1;
+	color: $color-3;
+	visibility: hidden;
+	
+	/* Force Hardware Acceleration */
+	@include backface-visibility(hidden);
+	@include transform(translateZ(0));
+
+	@include transform(translateY(-100%));
+	@include transition(transform .5s 0s, visibility 0s .5s);
+
+	h2 {
+		/* dropdown title - mobile version only */
+		position: relative;
+		z-index: 5;
+		color: $color-3;
+		background-color: $color-1;
+		border-bottom: 1px solid tint($color-1, 8%);
+	}
+	> a.logo {
+		display: block;
+	    top: 0;
+	    left: 0;
+	    position: absolute;
+	    width: 100%;
+	    padding: 22px 12px 10px;
+	    border-bottom: 1px solid tint($color-1, 10%);
+	    background-color: $color-1;
+	    z-index: 5;
+    	img {
+        	width: 110px;
+        	height: 23px;
+        }
+        @include breakpoint($desktop) { display: none; }
+    }
+
+	.cd-close {
+		/* 'X' close icon - mobile version only */
+		position: absolute;
+		z-index: 5;
+		right: 5px; 
+		top: 6px;
+		height: 50px;
+		width: 50px;
+
+		/* image replacement */
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
+		color: transparent;
+
+		&::after,
+		&::before {
+			/* this is the 'X' icon */
+			content: '';
+			position: absolute;
+			@include center;
+			height: 20px;
+			width: 2px;
+			background-color: $color-3;
+		}
+
+		&::after {
+			@include transform(translateX(-50%) translateY(-50%) rotate(45deg));
+		}
+
+		&::before {
+			@include transform(translateX(-50%) translateY(-50%) rotate(-45deg));
+		}
+
+	}
+
+	&.dropdown-is-active {
+		visibility: visible;
+		@include transform(translateY(0));
+		@include transition(transform .5s 0s, visibility 0s 0s, width 0.3s 0s);
+	}
+
+	@include breakpoint($tablet) {
+
+		.cd-close {
+			top: 5px;
+		}
+	}
+
+	@include breakpoint($desktop) {
+		/* reset style*/
+		//height: auto;
+		top: 50px; 
+		width: 48px;
+		visibility: visible;
+		@include transform(translateX(0));
+		background-color: $color-1;
+		color: $color-3;
+		box-shadow: 0 4px 12px rgba(#000, .1);
+		//opacity: 0;
+		//@include transform(translateX(-100%));
+		@include transition(opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s, width 0.3s 0s);
+
+		.open-to-left & {
+			/* use the .open-to-left class if you want to open the dropdown on the left */
+			right: 0;
+			left: auto;
+		}
+
+		h2, .cd-close, .account-mobile {
+			/* on desktop - hide title and 'X' */
+			display: none;
+		}
+
+		&.dropdown-is-active {
+			z-index: 5;
+			width: 240px;
+			transition: width ease 0.3;
+			//opacity: 1;
+			//@include transform(translateX(0));
+			//@include transition(opacity 0.3s 0s, visibility 0.3s 0s, transform 0.3s 0s);
+			.has-children > a, .go-back a {
+				&::before, &::after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.cd-dropdown-content, .cd-dropdown-content ul {
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-top: 60px;
+	@include transition(transform 0.3s);
+	@include breakpoint($tablet) { overflow-y: hidden; }
+
+	a {
+		display: block;
+		color: $color-3;
+
+		/* truncate text with ellipsis if too long */
+		overflow: hidden;
+		//text-overflow: ellipsis;
+		//white-space: nowrap;
+		border-top-width: 1px;
+		border-bottom-width: 0;
+		border-left-width: 0;
+		border-right-width: 0;
+		border-color: tint($color-1, 8%);
+		border-style: solid;
+
+		i { font-size: 22px; margin-right: 15px; }
+	}
+	
+
+	/* // Root Categories
+	> li {
+
+		&:before {
+			font-family: $myherbalife;
+			font-size: 22px;
+			color: $white;
+			content:'';
+			display: block;
+			position: absolute;
+			left: 13px;
+			top: 16px;
+			width: 22px;
+			height: 22px;
+		}
+
+		&.root { position: relative; }
+
+		// Root categories icons
+		&.shop:before { content: "\e19c"; }
+		&.bizworks:before { content: "\e18a"; }
+		&.events:before { content: "\e084"; }
+		&.customers:before { content: "\e03b"; }
+		&.office:before { content: "\e062"; }
+		&.essentials:before { content: "R"; }
+		&.learning:before { content: "\e5af"; }
+		&.casa:before { content: "\e24b"; }
+	}
+	*/
+
+	li:first-of-type > a {
+		border-top-width: 0;
+	}
+
+	li:last-of-type > a {
+		border-bottom-width: 1px;
+	}
+
+	.cd-divider {
+		//padding-top: 5px;
+		//padding-bottom: 5px;
+		background-color: shade($color-1, 30%);
+		font-size: 12px;
+		font-weight: bold;
+		letter-spacing: 1px;
+		color: tint($color-1, 30%);
+		text-transform: uppercase;
+		@include breakpoint($desktop) { display: none; }
+	}
+
+	.cd-divider + li > a {
+		border-top-width: 0;
+	}
+
+	a, .cd-search, .cd-divider {
+		/* Force Hardware Acceleration */
+		@include transform(translateZ(0));
+		@include backface-visibility(hidden);
+
+		@include transition(opacity .3s, transform .3s);
+	}
+
+	&.is-hidden {
+		/* push the secondary dropdown items to the right */
+		@include transform(translateX(100%));
+	}
+
+	&.is-hidden > li > a,
+	&.is-hidden > li > .cd-search,
+	&.is-hidden > .cd-divider, 
+	&.move-out > li > a,
+	&.move-out > li > .cd-search,
+	&.move-out > .cd-divider {
+		/* lower down the dropdown items opacity - when secondary dropdown slides in or for dropdown items hidden on the right */
+		opacity: 0;
+	}
+
+	&.move-out > li > a,
+	&.move-out > li > .cd-search,
+	&.move-out > .cd-divider {
+		/* push the dropdown items to the left when secondary dropdown slides in */
+		@include transform(translateX(-100%));
+	}
+
+	.dropdown-is-active & {
+		-webkit-overflow-scrolling: touch;
+	}
+
+	@include breakpoint($tablet) {
+		padding-top: 60px;
+
+		a {
+			font-size: 16px;
+		}
+	}
+
+	@include breakpoint($desktop) {
+		padding-top: 0;
+		overflow: visible;
+		top: 0;
+
+		a {
+			color: $color-3;
+			height: 50px;
+			line-height: 50px;
+			font-size: 16px;
+			border-color: tint($color-1, 8%);
+			&:hover { color: $color-2; }
+		}
+
+		.cd-divider {
+			//background-color: transparent;
+			//color: darken($color-3, 30%);
+			color: $color-3;
+			border-top: 1px solid darken($color-1, 8%);
+		}
+
+		.cd-divider + li > a {
+			border-top-width: 1px;
+		}
+
+		&.is-hidden > li > a,
+		&.is-hidden > li > .cd-search,
+		&.is-hidden > .cd-divider, 
+		&.move-out > li > a,
+		&.move-out > li > .cd-search,
+		&.move-out > .cd-divider {
+			/* reset mobile style */
+			opacity: 1;
+		}
+	}
+}
+
+.cd-dropdown-content {	
+
+	.cd-secondary-dropdown, .cd-dropdown-gallery, .cd-dropdown-icons  {
+		> .see-all {
+			a { 
+				text-align: center;
+				background-color: $blue; 
+			}
+		}
+	}
+
+	.see-all a {
+		/* different style for the See all links */
+		color: $color-3;
+		font-weight: bold;
+	}
+
+	// Added new menu style for links only
+	.cd-dropdown-gallery .cd-dropdown-item, .cd-dropdown-icons .cd-dropdown-item, .cd-dropdown-links .cd-dropdown-item {
+		/* items with picture (or icon) and title */
+		height: 60px;
+		line-height: 60px;
+
+		h3 {
+			/* truncate text with ellipsis if too long */
+			//overflow: hidden;
+			//text-overflow: ellipsis;
+			//white-space: nowrap;
+			color: $color-3;
+			font-size: 14px;
+			line-height: 60px;
+			font-weight: normal;
+		}
+	}
+
+	.cd-dropdown-gallery .cd-dropdown-item {
+		padding-left: 90px;
+	}
+
+	.cd-dropdown-gallery img {
+		position: absolute;
+		display: block;
+		height: 40px;
+		width: auto;
+		left: 20px;
+		top: 50%;
+		margin-top: -20px;
+	}
+
+	.cd-dropdown-icons .cd-dropdown-item {
+		padding-left: 60px;
+		position: relative;
+
+		p {
+			color: $color-3;
+			font-size: 14px;
+			/* hide description on small devices */
+			display: none;
+		}
+
+		&::before {
+			/* item icon */
+			font-family: $myherbalife;
+			font-size: 22px;
+			color: $white;
+			content:'';
+			display: block;
+			position: absolute;
+			left: 20px;
+			top: 0;
+			width: 22px;
+			height: 22px;
+			//background-repeat: no-repeat;
+			//background-position: center center;
+			//background-size: 40px 40px;
+		}
+
+		// Distributor Nav
+
+		// Events
+		&.my-progress:before { content: "."; }
+		&.downline-progress:before { content: "\e18a"; }
+		&.manage-events:before { content: "\e0fd"; }
+		&.tickets:before { content: "\e234"; }
+		&.sale:before { content: "\e070"; }
+
+		// My Office
+		&.overview::before { content: "\e131"; }
+		&.my-volume::before { content: "\e00f"; }
+		&.customer-form::before { content: "\e548"; }
+		&.checks::before { content: "\e11d"; }
+		&.documents::before { content: "\e0b4"; }
+		&.calendar::before { content: "\e107"; }
+		&.tasks::before { content: "\e0aa"; }
+
+		// Customers
+		&.leads::before { content: "\e043"; }
+		&.contacts::before { content: "\e03c"; }
+		&.email-marketing::before { content: "\e021"; }
+		&.customer-orders:before { content: "\e06d"; }
+		&.abandoned-carts::before { content: "\e52b"; }
+		&.follow-up::before { content: "\e000"; }
+		&.order-processing::before { content: "\e121"; }
+		&.goherbalife::before { content: "\e14f"; }
+		&.coaching::before { content: "]"; }
+		&.receipts::before { content: "\e06c"; }
+
+		// Business Essentials
+		&.products::before { content: "\e173"; } 
+		&.build::before { content: "\e19f"; }
+		&.brand::before { content: "\e534"; }
+		&.resources::before { content: "\e09b"; }
+		&.recognition::before { content: "T"; }
+		&.events::before { content: "\e084"; }
+
+		// Other
+		&.learning-center::before { content: "\e5af"; }
+		&.casa-herbalife::before { content: "\e24b"; }
+
+
+		// Member Nav
+
+		// Blog
+		&.nutrition::before { content: "\e1ec"; }
+		&.fitness::before { content: "\e19a"; }
+		&.personal-care::before { content: "\e224"; }
+
+		// Learn
+		&.shake::before { content: "\e53c"; }
+		&.boosts::before { content: "\e59b"; }
+		&.meals::before { content: "\e203"; }
+		&.recipes::before { content: "\e1a8"; }
+
+
+
+		/* Original Icons
+		&.item-1::before {
+			background-image: url('../images/icons/nucleo-icon-1.svg');
+		}
+
+		&.item-2::before {
+			background-image: url('../images/icons/nucleo-icon-2.svg');
+		}
+
+		&.item-3::before {
+			background-image: url('../images/icons/nucleo-icon-3.svg');
+		}
+
+		&.item-4::before {
+			background-image: url('../images/icons/nucleo-icon-4.svg');
+		}
+
+		&.item-5::before {
+			background-image: url('../images/icons/nucleo-icon-5.svg');
+		}
+
+		&.item-6::before {
+			background-image: url('../images/icons/nucleo-icon-6.svg');
+		}
+
+		&.item-7::before {
+			background-image: url('../images/icons/nucleo-icon-7.svg');
+		}
+
+		&.item-8::before {
+			background-image: url('../images/icons/nucleo-icon-8.svg');
+		}
+
+		&.item-9::before {
+			background-image: url('../images/icons/nucleo-icon-9.svg');
+		}
+
+		&.item-10::before {
+			background-image: url('../images/icons/nucleo-icon-10.svg');
+		}
+
+		&.item-11::before {
+			background-image: url('../images/icons/nucleo-icon-11.svg');
+		}
+
+		&.item-12::before {
+			background-image: url('../images/icons/nucleo-icon-12.svg');
+		}
+		Original Icons */
+	}
+
+	@include breakpoint($desktop) {
+		/* reset mobile style */
+		position: static;
+		height: 100%;
+		width: 100%;
+
+		> li:last-of-type a {
+			border-bottom: none;
+		}
+
+		.no-touch & > li:not(.has-children) a:hover {
+			color: $color-2;
+		}
+
+		&.move-out > li > a,
+		&.move-out > li > .cd-search,
+		&.move-out > .cd-divider {
+			/* reset mobile style */
+			@include transform(translateX(0));
+			opacity: 1;
+		}
+		
+		// Added new menu style for links only
+		.cd-secondary-dropdown, .cd-dropdown-gallery, .cd-dropdown-icons, .cd-dropdown-links  {
+			@include clearfix;
+			@include transform(translateX(0));
+			left: 100%;
+			height: auto;
+			background-color: $color-1;
+			box-shadow: 0 2px 14px rgba(#000, .1);
+			
+			.open-to-left & {
+				/* use the .open-to-left class if you want to open the dropdown on the left */
+				left: auto;
+				right: 100%;
+			}
+
+			&.is-hidden {
+				/* reset mobile style */
+				@include transform(translateX(0));
+			}
+
+			&.fade-in {
+				/* animate secondary dropdown items when hovering over of of the .cd-dropdown-content list items */
+				@include animation(cd-fade-in .2s);
+			}
+
+			&.fade-out {
+				/* animate secondary dropdown items when hovering over of of the .cd-dropdown-content list items */
+				@include animation(cd-fade-out .2s);
+			}
+
+			> .go-back {
+				display: none;
+			}
+
+			> .see-all {
+				position: absolute;
+				bottom: 20px;
+				height: 45px;
+				text-align: center;
+
+				a {
+					margin: 0;
+					height: 100%;
+					line-height: 45px;
+					background-color: $blue;
+					@include border-radius(3px);
+					pointer-events: auto;
+					@include transition(color .2s, background-color .2s);
+					&:hover { 
+						color: $color-3;
+						background-color: lighten($blue,4); 
+					}
+
+					.no-touch &:hover {
+						color: $color-3;
+						background-color: $color-1;
+					}
+				}
+			}
+
+			.cd-dropdown-item, a {
+				border: none;
+			}
+		}
+		.cd-dropdown-icons {
+			padding: 20px 0;
+		}
+		
+		.cd-dropdown-gallery {
+			padding: 20px 30px 100px;
+
+			> .see-all {
+				width: calc(100% - 60px);
+			}
+		}
+
+		// Added new menu style for links only
+		.cd-dropdown-links > li {
+			padding: 0 20px;
+			margin: 5px 0;
+			&:hover {
+				background: darken($color-1, 8%);
+			}
+		}
+
+		.cd-dropdown-icons > li, .cd-secondary-dropdown > li {
+			@include column(0.5);
+			margin: 0 0 20px;
+		}
+
+		.cd-dropdown-icons > li.see-all {
+			width: 100%;
+			margin-bottom: 0; 
+			padding: 0 30px;
+		}
+
+		.cd-secondary-dropdown {
+			overflow: hidden;
+			width: 600px; 
+			&.has-landing { padding-bottom: 65px; }
+			&.single { 
+				width: 300px; 
+				li.has-children { width: 100%; }
+			}
+
+			&::before {
+				/* this is the separation line in the middle of the .cd-secondary-dropdown element */
+				position: absolute;
+				content: '';
+				bottom: 85px;
+				left: 15px;
+				height: 1px;
+				width: 520px;
+				border-color: tint($color-1, 8%);
+			}
+
+			> li > a {
+				color: $color-3;
+				font-size: 16px;
+				font-weight: bold;
+				margin-bottom: 10px;
+				line-height: 30px;
+				height: 30px;
+				pointer-events: none;
+
+				&::after, &::before {
+					/* hide the arrow */
+					display: none;
+				}
+
+				&:hover { color: $color-2; }
+			}
+
+			&.move-out > li > a {
+				/* reset mobile style */
+				@include transform(translateX(0));
+			}
+
+			> li {
+				margin: 20px 0;
+				border-right-width: 1px;
+			    border-left-width: 1px;
+				border-top-width: 0;
+			    border-bottom-width: 0;
+				border-color: tint($color-1, 8%);
+				border-style: solid;
+				padding: 0 30px;
+				height: auto;
+			}
+
+			> li:nth-of-type(2n) {
+				border-right-width: 0; 
+			}
+
+			> li > ul {
+				/* reset mobile style */
+				@include transform(translate(0));
+				position: relative;
+				height: auto;
+
+				&.large { min-height: 260px; }
+
+				> .go-back {
+					display: none;
+				}
+			}
+
+			a {
+				line-height: 25px;
+				height: 25px;
+				font-size: 14px;
+				padding-left: 0;
+
+				.no-touch &:hover {
+					color: $color-2;
+				}
+			}
+
+			ul {
+				top: 0;
+				padding-bottom: 25px;
+				overflow: hidden;
+				height: auto;
+			}
+
+			.go-back a {
+				padding-left: 20px;
+				color: transparent;
+
+				.no-touch &:hover {
+					color: transparent;
+				}
+
+				&::before, &::after {
+					left: 0
+				}
+			}
+
+			.see-all {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+
+		.cd-dropdown-gallery {
+			width: 600px;
+			padding-bottom: 100px;
+
+			> li {
+				@include column(0.48);
+				margin-right: 4%;
+
+				&:nth-of-type(2n) {
+					margin-right: 0;
+				}
+			}	
+
+			.cd-dropdown-item {
+				padding: 0;
+				height: auto;
+				line-height: normal;
+				color: $color-3;
+				margin-bottom: 2em;
+			}
+
+			> li:nth-last-of-type(2) a,
+			> li:last-of-type a {
+				margin-bottom: 0;
+			}
+
+			img {
+				position: static;
+				height: auto;
+				width: 100%;
+				margin: 0 0 0.6em;
+			}
+
+			h3 { font-weight: bold; }
+		}
+
+		.cd-dropdown-icons {
+			width: 600px;
+			&.has-landing { padding-bottom: 65px; }
+
+			.cd-dropdown-item {
+				height: 60px;
+				line-height: 1.2;
+				padding: 20px 10px 0 75px;
+
+				&:hover {
+					background: darken($color-1, 8%);
+				}
+
+				h3 {
+					line-height: 18px;
+					color: $color-3;
+					font-weight: bold;
+					margin-bottom: 2px;
+					font-size: 14px;
+				}
+
+				p {
+					display: block;
+					font-size: 12px;
+					line-height: 14px;
+					color: $color-3;
+					margin-bottom: 0; 
+				}
+
+				&::before {
+					font-size: 34px;
+					left: 25px;
+					top: 50%;
+					margin-top: -22px;
+					width: 40px;
+					height: 40px;
+					color: $dimgrey;
+				}
+			}
+		}
+
+		> .has-children > ul {
+			visibility: hidden;
+		}
+
+		> .has-children > ul.is-active {
+			/* when hover over .cd-dropdown-content items - show subnavigation */
+			visibility: visible;
+		}
+
+		> .has-children > .cd-secondary-dropdown.is-active > li > ul {
+			/* if .cd-secondary-dropdown is visible - show also subnavigation */
+			visibility: visible;
+		}
+
+		> .has-children > a.is-active {
+			/* hover effect for .cd-dropdown-content items with subnavigation */
+			box-shadow: inset 4px 0 0 $color-2;
+			color: $color-2;
+			font-weight: bold;
+
+			&::before,
+			&::after {
+				background: $color-2;
+			}
+		}
+
+		.open-to-left & > .has-children > a.is-active {
+			box-shadow: inset -2px 0 0 $color-2;
+		}
+	}
+}
+
+@include keyframes(cd-fade-in) {
+	0% {
+		opacity: 0;
+		visibility: visible;
+	}
+
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@include keyframes(cd-fade-out) {
+	0% {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	100% {
+		opacity: 0;
+		visibility: visible;
+	}
+}
+
+.cd-search input[type="search"] {
+	width: 100%;
+	height: 50px;
+	padding: 0 20px;
+	@include appearance(none);
+	background-color: tint($color-1, 8%);
+	color: $color-3;
+	border: none;
+	border-radius: 0;
+
+	@include placeholder-color($color-3);
+
+	&:focus {
+		background: $color-3;
+		color: $color-1;
+		outline: none;
+
+		@include placeholder-color(rgba($color-1, .4));
+	}
+
+	@include breakpoint($desktop) {
+		background-color: darken($color-3, 8%);
+
+		@include placeholder-color(darken($color-3, 30%));
+	}
+}
+
+//.see-all a,
+.has-children > a, .go-back a {
+	position: relative;
+
+	&::before, &::after {
+		/* arrow icon in CSS - for element with nested unordered lists */
+		content: '';
+		position: absolute;
+		top: 50%;
+		margin-top: -1px;
+		display: inline-block;
+		height: 2px;
+		width: 10px;
+		background: $color-3;
+		@include backface-visibility(hidden);
+	}
+
+	&::before {
+		@include transform(rotate(45deg));
+	}
+
+	&::after {
+		@include transform(rotate(-45deg));
+	}
+
+	@include breakpoint($desktop) {
+
+		&::before, &::after {
+			background: darken($color-3, 30%);
+			opacity: 0;
+		}
+	}
+}
+
+//.see-all a,
+.has-children > a {
+	padding-right: 35px;
+
+	&::before, &::after {
+		/* arrow goes on the right side - children navigation */
+		right: 20px;
+		@include transform-origin(9px 50%);
+	}
+}
+
+@include breakpoint($desktop) {
+	
+	.open-to-left .cd-dropdown-content > .has-children > a {
+		padding-left: 40px;
+		padding-right: 20px;
+
+		&::before, &::after {
+			right: auto;
+			left: 20px;
+			@include transform-origin(1px 50%);
+		}
+	}
+}
+
+.cd-dropdown-content .go-back a {
+	padding-left: 40px;
+
+	&::before, &::after {
+		/* arrow goes on the left side - go back button */
+		left: 20px;
+		@include transform-origin(1px 50%);
+	}
+}
+
+.cd-main-content {
+	background-color: darken($color-3, 10%);
+	min-height: calc(100vh - 100px);
+	padding: 2em 5%;
+	line-height: 2;
+}
+
+.no-js .cd-dropdown-wrapper:hover .cd-dropdown {
+	visibility: visible;
+	opacity: 1;
+	@include transform(translateY(0));
+}
+
+.no-js .cd-dropdown-wrapper .cd-close {
+	display: none;
+}

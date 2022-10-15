@@ -1,0 +1,46 @@
+
+/* Style Guide Header
+================================================== */
+
+    header {
+        background:rgba(0,0,0,.8);       
+        position: fixed;
+        z-index: 3;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 50px;
+        color: $white;
+        nav.logo {
+            float:left;
+            width: 150px;
+            background: url(../images/hl_logo.png) no-repeat;
+            height: 23px;
+            margin: 13px 0;
+        }
+    }
+
+
+    #subheader { 
+        background:$darkblue; 
+        color:$white;
+        padding: 70px 0 20px 0;  
+        h1, h2, h3, h4 { 
+            text-shadow: 0 1px 0 rgba(0,0,0,.4); 
+            color:$white;
+            font-family: $proxima; 
+        }
+        h4 {
+            margin-top: -10px;
+        }
+        i {
+            position: absolute;
+            font-size: 200px;
+            left: 10%;
+            /* top: -20px; */
+            color: rgb(255,255,255);
+            color: rgba(255,255,255,.4);
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+            filter: alpha(opacity=40);
+        }
+    }

@@ -1,0 +1,141 @@
+
+    /* Notifications
+    ================================================== */
+
+    // Alerts (Global)
+    @mixin alert($bgcolor:$lightgrey, $txtcolor:$charcoalgrey, $weight:normal, $shadow:none) {
+        background-color: $bgcolor;
+        color: $txtcolor;
+        padding: 6px 30px 5px $gutter;
+        font-size: 14px;
+        font-weight: $weight;
+        line-height: 18px;
+        text-align: left;
+        height: auto;
+        width: 100%;
+        position: relative;
+        @include text-shadow($shadow);
+        a { 
+            display: block;
+            color: $txtcolor; 
+            padding: 2px 0;
+        }
+        i {
+            font-size: 18px;
+            margin-right: 2px;
+        }
+        label { 
+            text-decoration: underline; 
+            cursor: pointer;
+            color: $txtcolor;
+            font-weight: $weight;
+        }
+        &.close {
+            &:after {
+                content: "\e3d8";
+                font-family: $myherbalife;
+                position: absolute;
+                top: 6px;
+                right: 10px;
+                color: $txtcolor;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    // Success alert
+    .alert-success { 
+        @include alert($lightgreen); 
+        border-top: 1px solid $brightgreen;
+        border-bottom: 1px solid $brightgreen;
+    }
+
+    // Warning alert
+    .alert-warning { 
+        @include alert($lightorange); 
+        border-top: 1px solid #fab659;
+        border-bottom: 1px solid #fab659;
+    }
+
+    // Error alert
+    .alert-error { 
+        @include alert(#ffd8d8); 
+        border-top: 1px solid #ffacac;
+        border-bottom: 1px solid #ffacac;
+    }
+
+    // Information alert
+    .alert-info { 
+        @include alert($lightgrey); 
+        border-top: 1px solid $grey;
+        border-bottom: 1px solid $grey;
+    }
+    
+    // Maintenance alert
+    .alert-maintenance { @include alert($red, $white, bold, $text-shadow); }
+
+    // End of Month alert
+    .alert-eom { @include alert($orange, $white, bold, $text-shadow); }
+
+    // Promotion alert
+    .alert-promotion { 
+        @include alert($green, $white, bold); 
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+
+    // Notifications (Page)
+    @mixin notification($bdrcolor:$grey, $bgcolor:$lightgrey, $txtcolor:$charcoalgrey, $weight:normal, $shadow:none) {
+        background-color: $bgcolor;
+        border: 1px solid $bdrcolor;
+        color: $txtcolor;
+        padding: 5px 7px;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        font-size: 14px;
+        margin-bottom: 5px;
+        position: relative;
+        i {
+            font-size: 18px;
+            margin-right: 2px;
+        }
+        &.close {
+            &:after {
+                content: "\e3da";
+                font-family: $myherbalife;
+                position: absolute;
+                top: 6px;
+                right: 10px;
+                color: $bdrcolor;
+            }
+        }
+    }
+
+    // Success notificaiton
+    .notification-success {
+        @include notification($brightgreen, $lightgreen, $charcoalgrey);
+    }
+
+    // Warning notificaiton
+    .notification-warning {
+        @include notification(#fab659, $lightorange, $charcoalgrey);
+    }
+
+    // Error notificaiton
+    .notification-error {
+        @include notification(#ffacac, #ffd8d8, $charcoalgrey);
+    }
+
+    // Information notificaiton
+    .notification-info {
+        @include notification($grey, $lightgrey, $charcoalgrey);
+    }
+
+    .notification-set { 
+        margin-bottom: $gutter; 
+        > div:last-child { margin-bottom: 0; }
+    }
+
+

@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loyalty.Customer.Web", "Loyalty.Customer.Web\Loyalty.Customer.Web.csproj", "{2689C899-6D54-442C-B0AF-388AFE6112D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loyalty.Customer.Test", "Loyalty.Customer.Test\Loyalty.Customer.Test.csproj", "{2B07667A-F216-4B92-A949-2BE1D346DA53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loyalty.Customer.WebApi", "Loyalty.Customer.WebApi\Loyalty.Customer.WebApi.csproj", "{41834208-87D1-4C5C-854F-1E018E54DF92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loyalty.Customer.Providers", "Loyalty.Customer.Providers\Loyalty.Customer.Providers.csproj", "{EA8CD9B9-49D8-4641-84B5-C76DC4526944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loyalty.Customer.AcceptanceTest", "Loyalty.Customer.AcceptanceTest\Loyalty.Customer.AcceptanceTest.csproj", "{858C723C-8225-426F-BCAF-EAE4B1CB266A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2689C899-6D54-442C-B0AF-388AFE6112D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2689C899-6D54-442C-B0AF-388AFE6112D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2689C899-6D54-442C-B0AF-388AFE6112D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2689C899-6D54-442C-B0AF-388AFE6112D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B07667A-F216-4B92-A949-2BE1D346DA53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B07667A-F216-4B92-A949-2BE1D346DA53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B07667A-F216-4B92-A949-2BE1D346DA53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B07667A-F216-4B92-A949-2BE1D346DA53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41834208-87D1-4C5C-854F-1E018E54DF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41834208-87D1-4C5C-854F-1E018E54DF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41834208-87D1-4C5C-854F-1E018E54DF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41834208-87D1-4C5C-854F-1E018E54DF92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8CD9B9-49D8-4641-84B5-C76DC4526944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8CD9B9-49D8-4641-84B5-C76DC4526944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8CD9B9-49D8-4641-84B5-C76DC4526944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8CD9B9-49D8-4641-84B5-C76DC4526944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858C723C-8225-426F-BCAF-EAE4B1CB266A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858C723C-8225-426F-BCAF-EAE4B1CB266A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858C723C-8225-426F-BCAF-EAE4B1CB266A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858C723C-8225-426F-BCAF-EAE4B1CB266A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8080/tfs/enterpriseapplications
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Loyalty.Customer.Web\\Loyalty.Customer.Web.csproj
+		SccProjectName1 = Loyalty.Customer.Web
+		SccLocalPath1 = Loyalty.Customer.Web
+		SccProjectUniqueName2 = Loyalty.Customer.Test\\Loyalty.Customer.Test.csproj
+		SccProjectName2 = Loyalty.Customer.Test
+		SccLocalPath2 = Loyalty.Customer.Test
+		SccProjectUniqueName3 = Loyalty.Customer.Providers\\Loyalty.Customer.Providers.csproj
+		SccProjectName3 = Loyalty.Customer.Providers
+		SccLocalPath3 = Loyalty.Customer.Providers
+		SccProjectUniqueName4 = Loyalty.Customer.WebApi\\Loyalty.Customer.WebApi.csproj
+		SccProjectName4 = Loyalty.Customer.WebApi
+		SccLocalPath4 = Loyalty.Customer.WebApi
+		SccProjectUniqueName5 = Loyalty.Customer.AcceptanceTest\\Loyalty.Customer.AcceptanceTest.csproj
+		SccProjectName5 = Loyalty.Customer.AcceptanceTest
+		SccLocalPath5 = Loyalty.Customer.AcceptanceTest
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,65 @@
+    
+    /* MyHL Side Nav
+    ================================================== */
+
+    @mixin myhl-side-nav {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: none;
+            margin-bottom: 3px;
+            background-color: $white;
+            &:first-child { 
+                display: block;
+            }
+            @include breakpoint($desktop) { display: block; }
+            @include box-shadow(rgba($grey,.5) 0 1px 0px);
+            a {
+                display: block;
+                border-right: 2px solid $green;
+                padding: 12px 20px;
+                &.active, &:hover {
+                    display: block;
+                    background-color: $green;
+                    border-right: none;
+                    color: $white;
+                }
+            }
+            #dropdown-toggle {
+                float: right;
+                cursor: pointer;
+                @include breakpoint($desktop) { display: none; }
+                i {
+                    color: $blue;
+                    font-size: 18px;
+                    text-shadow: 0px 1px 3px darken($grey, 20%);
+                }
+            }
+        }
+    }
+
+    @mixin myhl-side-nav-banner {
+        display: none;
+        @include breakpoint($desktop) {
+            display: block;
+            margin-bottom: $gutter;
+        }
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+

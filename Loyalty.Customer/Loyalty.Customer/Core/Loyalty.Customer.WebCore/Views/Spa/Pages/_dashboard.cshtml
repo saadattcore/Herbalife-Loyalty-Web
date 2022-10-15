@@ -1,0 +1,389 @@
+﻿@using System.Globalization
+
+@{
+    var locale = CultureInfo.CurrentCulture.Name;
+}
+
+<script type="text/x-kendo-template" id="dashboard-rewards-template">
+    #for (var i = 0; i < rewards.length; i++) {#
+    <li class="#= (redeemed == 1 && rewards[i].redeemed == 1) || (redeemed == 0 && rewards[i].selected == 1) ? 'selected' : '' #">
+        <img src="#= rewards[i].image #" />
+        <span>#= rewards[i].name #</span>
+        <a class="btn-select"
+           data-sku="#= rewards[i].sku #"
+           data-tier="#= rewards[i].tier #"
+           data-category="#= rewards[i].categoryCode #">
+            @Localize["PreSelect.Label"]
+        </a>
+        <a class="btnForward"
+           data-sku="#= rewards[i].sku #"
+           data-tier="#= rewards[i].tier #"
+           data-category="#= rewards[i].categoryCode #">
+            #if (rewards[i].categoryCode != 'Activity') {#
+            @Localize["SelectItem.Label"]
+            #} else {#
+            @Localize["RedeemNow.Label"]
+            #}#
+        </a>
+    </li>
+    #}#
+
+</script>
+
+<script type="text/x-kendo-template" id="pending-activities-tmpl">
+    <p class="activities">
+        <span>
+            #= title #
+        </span>
+        <span>
+            #= points # @Localize["PointsAbr.Text"]
+        </span>
+    </p>
+</script>
+
+<script type="text/x-kendo-template" id="dashboard">
+    <main id="dashboard">
+        <section>
+            <ul class="breadcrumbs">
+                <li>
+                    <a href="/Catalog/Home/Index/@locale" >@Localize["Home.Text"]</a> /
+                </li>
+                <li>
+                    @Localize["LoyaltyProgram.Text"]
+                </li>
+            </ul>
+            <div class="notification-set" data-bind="visible: regresionPoints">
+                <div class="notification-info">
+                    <i class="icon-information-ln-1"></i>
+                    @Localize["RetroPoints.Text"]
+                    <br />
+                    @Localize["RetroPoints.Text2"]
+                </div>
+            </div>
+            <div class="notification-set" data-bind="visible: regresionPoints2">
+                <div class="notification-success ">
+                    <i class="icon-chat-ln-2"></i>
+                    @Localize["RetroPoints.Text3"]
+                </div>
+            </div>
+
+            <div class="intro">
+                <h3>@Localize["LoyaltyProgram.Text"]</h3>
+                <p>@Localize["RewardsOption.text"]
+                    <a data-scrollto="terms" data-bind="click: scrollTo">
+                        @Localize["TermsAndConditions.text"]
+                    </a>
+                </p>
+            </div>
+            <div class="shop">
+                <p><strong>@Localize["AllDone.Text"]</strong> <a href="/Catalog/Home/Index/@locale" class="btn-continue">@Localize["ShopForPoint.Text"]</a></p>
+            </div>
+            <div class="content">
+                <aside class="shopping resume" data-bind="visible: enableShoppingRewards, css: { single: singleShopping}">
+                    <div>
+                        <i class="loader" data-bind="invisible: dataLoaded"></i>
+                        <span data-bind="visible: hasShoppingPoints">
+                            <b data-bind="text: getShoppingPoints"></b> @Localize["PointsAbr.Text"]
+                        </span>
+                        <span data-bind="visible: hasShoppingPoints">
+                            <span data-bind="text: getShopPointsNextLevel"></span> @Localize["NeededThisMonth.Text"]
+                        </span>
+                        <i class="icon-chat-fl-1" data-bind="visible: isShoppingReached"></i>
+                        <span data-bind="visible: isShoppingReached">
+                            @Localize["GoalReached.Text"]
+                        </span>
+                        <i class="icon-crown-ln-3" data-bind="visible: isAllShopCompleted"></i>
+                        <span data-bind="visible: isAllShopCompleted">
+                            @Localize["AllCompleted.Text"]
+                        </span>
+                    </div>
+                    <div>
+                        <h4 data-bind="invisible: isAllShopCompleted">@Localize["ConsecMonths.Text"]</h4>
+                        <p data-bind="invisible: isAllShopCompleted">
+                            @Localize["ShoppingPoints.Document"]
+                            <a data-scrollto="shopping-info" data-bind="click: scrollTo">
+                                @Localize["HowToEarnShopping.Text"]
+                            </a>
+                        </p>
+                        <h4 data-bind="visible: isAllShopCompleted">@Localize["ProgramReach.Title"]</h4>
+                        <p data-bind="visible: isAllShopCompleted">
+                            @Localize["ProgramReach.Text"]
+                        </p>
+                        <ul>
+                            <li data-bind="css: {completed: shopTier0}">
+                                <span> @Localize["Month1.text"]</span>
+                            </li>
+                            <li data-bind="css: {completed: shopTier1, hideStars: notConsecutiveTier1}">
+                                <i class="icon-star-fl-9"></i>
+                                <span> @Localize["Month2.text"]</span>
+                            </li>
+                            <li data-bind="css: {completed: shopTier2, hideStars: notConsecutiveTier2}">
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <span> @Localize["Month3.text"]</span>
+                            </li>
+                            <li data-bind="css: {completed: shopTier3, hideStars: notConsecutiveTier3}">
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <span> @Localize["Month4.text"] </span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <aside class="activity resume" data-bind="visible: enableActivityRewards, css: { single: singleActivity}">
+                    <div>
+                        <i class="loader" data-bind="invisible: dataLoaded"></i>
+                        <span data-bind="visible: hasActivityPoints">
+                            <b data-bind="text: getActivityPoints"></b> @Localize["PointsAbr.Text"]
+                        </span>
+                        <span data-bind="visible: hasActivityPoints">
+                            <span data-bind="text: getActivityPointsNextLevel"></span>
+                            @Localize["NeededNextLevel.Text"]
+                        </span>
+                        <i class="icon-crown-ln-3" data-bind="visible: isAllActivityCompleted"></i>
+                        <span data-bind="visible: isAllActivityCompleted">
+                            @Localize["AllCompleted.Text"]
+                        </span>
+                    </div>
+                    <div>
+                        <h4 data-bind="invisible: isAllActivityCompleted">@Localize["ActivityAchieved.Text"]</h4>
+                        <p data-bind="invisible: isAllActivityCompleted">
+                            @Localize["SelectActivityReward.Text"]
+                            <a data-scrollto="activity-info" data-bind="click: scrollTo">
+                                @Localize["HowToEarnActivity.Text"]
+                            </a>
+                        </p>
+                        <h4 data-bind="visible: isAllActivityCompleted">@Localize["ProgramReach.Title"]</h4>
+                        <p data-bind="visible: isAllActivityCompleted">
+                            @Localize["ProgramReach.Text"]
+                        </p>
+                        <ul>
+                            <li data-bind="css: {completed: activityTier1}">
+                                <i class="icon-star-fl-9"></i>
+                                <span>@Localize["Level1.Text"]</span>
+                            </li>
+                            <li data-bind="css: {completed: activityTier2}">
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <span>@Localize["Level2.Text"]</span>
+                            </li>
+                            <li data-bind="css: {completed: activityTier3}">
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <span>@Localize["Level3.Text"]</span>
+                            </li>
+                            <li data-bind="css: {completed: activityTier4}">
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <i class="icon-star-fl-9"></i>
+                                <span>@Localize["Level4.Text"]</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            <div class="divider rewardsDiv"  data-bind="invisible: isLoading"><hr><h4>Select Rewards</h4></div>
+            <div class="content">
+
+                <aside class="program" data-bind="visible: enableShoppingRewards, css: { single: singleShopping}">
+                    <!-- Tier 1 -->
+                    <div class="one"
+                         data-bind="click: showData, css: { redeemed: redeemedShopTier1, closed: redeemedShopTier1 }"
+                         data-tier="ShopTier1">
+                        <h5 data-bind="invisible: redeemedShopTier1">
+                            @Localize["Tier1Shopping.Text"]
+                        </h5>
+                        <h5 data-bind="visible: redeemedShopTier1">
+                            @Localize["RewardRedeemed.Text"]
+                        </h5>
+                        <ul data-bind="click: onSelect, source: ShopRewardsTier1, css: {toRedeemed: selectReachedShopTier1, disabled: loadSelectShopTier1}"
+                            data-template="dashboard-rewards-template"
+                            data-role="listview"></ul>
+                        <div class="loader large" data-bind="visible: loadSelectShopTier1"></div>
+                    </div>
+
+                    <!--Tier 2 -->
+                    <div class="two" data-bind="click: showData, css: { redeemed: redeemedShopTier2, closed: redeemedShopTier2 }"
+                         data-tier="ShopTier2">
+                        <h5 data-bind="invisible: redeemedShopTier2">
+                            @Localize["Tier2Shopping.Text"]
+                        </h5>
+                        <h5 data-bind="visible: redeemedShopTier2">
+                            @Localize["RewardRedeemed.Text"]
+                        </h5>
+                        <ul data-bind="click: onSelect, source: ShopRewardsTier2, css: {toRedeemed : selectReachedShopTier2, disabled: loadSelectShopTier2 }"
+                            data-template="dashboard-rewards-template"
+                            data-role="listview"></ul>
+                        <div class="loader large" data-bind="visible: loadSelectShopTier2"></div>
+                    </div>
+
+                    <!--Tier 3 -->
+                    <div class="three" data-bind="click: showData, css: { redeemed: redeemedShopTier3, closed: redeemedShopTier3 }"
+                         data-tier="ShopTier3">
+                        <h5 data-bind="invisible: redeemedShopTier3">
+                            @Localize["Tier3Shopping.Text"]
+                        </h5>
+                        <h5 data-bind="visible: redeemedShopTier3">
+                            @Localize["RewardRedeemed.Text"]
+                        </h5>
+                        <ul data-bind="click: onSelect, source: ShopRewardsTier3, css: {toRedeemed : selectReachedShopTier3, disabled: loadSelectShopTier3 }"
+                            data-template="dashboard-rewards-template"
+                            data-role="listview"></ul>
+                        <div class="loader large" data-bind="visible: loadSelectShopTier3"></div>
+                    </div>
+                </aside>
+                <aside class="program" data-bind="visible: enableActivityRewards, css: { single: singleActivity}">
+
+                    <!-- Tier 1 -->
+                    <div class="one" data-bind="click: showData, css: { redeemed: redeemedActivityTier1, closed: redeemedActivityTier1 }"
+                         data-tier="ActivityTier1">
+                        <h5 data-bind="invisible: redeemedActivityTier1">@Localize["Tier1Activity.Text"]</h5>
+                        <h5 data-bind="visible: redeemedActivityTier1">@Localize["RewardRedeemed.Text"]</h5>
+                        <ul data-bind="click: onSelect, source: ActivityRewardsTier1, css: {toRedeemed : selectReachedActivityTier1, disabled: loadSelectActivityTier1 }"
+                            data-template="dashboard-rewards-template"
+                            data-role="listview"></ul>
+                        <div class="loader large" data-bind="visible: loadSelectActivityTier1"></div>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="two" data-bind="click: showData, css: { redeemed: redeemedActivityTier2, closed: redeemedActivityTier2 }"
+                         data-tier="ActivityTier2">
+                        <h5 data-bind="invisible: redeemedActivityTier2">@Localize["Tier2Activity.Text"]</h5>
+                        <h5 data-bind="visible: redeemedActivityTier2">@Localize["RewardRedeemed.Text"]</h5>
+                        <ul data-bind="click: onSelect, source: ActivityRewardsTier2, css: {toRedeemed : selectReachedActivityTier2, disabled: loadSelectActivityTier2 }"
+                            data-template="dashboard-rewards-template"
+                            data-role="listview"></ul>
+                        <div class="loader large" data-bind="visible: loadSelectActivityTier2"></div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="three" data-bind="click: showData, css: { redeemed: redeemedActivityTier3, closed: redeemedActivityTier3 }"
+                         data-tier="ActivityTier3">
+                        <h5 data-bind="invisible: redeemedActivityTier3">@Localize["Tier3Activity.Text"]</h5>
+                        <h5 data-bind="visible: redeemedActivityTier3">@Localize["RewardRedeemed.Text"]</h5>
+                        <ul data-bind="click: onSelect, source: ActivityRewardsTier3, css: {toRedeemed : selectReachedActivityTier3, disabled: loadSelectActivityTier3 }"
+                            data-template="dashboard-rewards-template"
+                            data-role="listview"></ul>
+                        <div class="loader large" data-bind="visible: loadSelectActivityTierTier3"></div>
+                    </div>
+
+                    <!-- Tier 4 -->
+                    <div class="four" data-bind="click: showData, css: { redeemed: redeemedActivityTier4, closed: redeemedActivityTier4 }"
+                         data-tier="ActivityTier4">
+                        <h5 data-bind="invisible: redeemedActivityTier4">@Localize["Tier4Activity.Text"]</h5>
+                        <h5 data-bind="visible: redeemedActivityTier4">@Localize["RewardRedeemed.Text"]</h5>
+                        <ul data-bind="click: onSelect, source: ActivityRewardsTier4, css: {toRedeemed : selectReachedActivityTier4, disabled: loadSelectActivityTier4 }"
+                            data-template="dashboard-rewards-template"
+                            data-role="listview"></ul>
+                        <div class="loader large" data-bind="visible: loadSelectActivityTier4"></div>
+                    </div>
+
+                </aside>
+            </div>
+            <div class="loader large main-loader" data-bind="visible: isLoading"></div>
+            <div class="notification-error" data-bind="visible: hasError">
+                <i class="icon-alert-ln-1"></i>
+                @Localize["NoDataError.Text"]
+            </div>
+        </section>
+
+        <section>
+            <article class="shopping-info" data-bind="visible: enableShoppingRewards">
+                <aside>
+                    <i class="icon-shopping-bag-ln-3"></i>
+                </aside>
+                @await Component.InvokeAsync("Content", new { requestType = ContentRequestType.Fragment, path = "Loyalty/Customer/shoppingDesc.xml" })
+            </article>
+
+            <article class="activity-info" data-bind="visible: enableActivityRewards">
+                <aside>
+                    <i class="icon-connection-ln-3"></i>
+                </aside>
+                <div>
+                    <h4>@Localize["ActivityRewards.Text"]</h4>
+                    <p>@Localize["ActivityInfo.Text"]</p>
+                    <ul>
+                        <li>@Localize["ActivityDesc1.Text"]</li>
+                        <li>@Localize["ActivityDesc2.Text"]</li>
+                        <li>@Localize["ActivityDesc3.Text"]</li>
+                    </ul>
+                    <div data-bind="source: pendingActivities" data-template="pending-activities-tmpl">
+                    </div>
+                </div>
+            </article>
+
+            @*Terms and conditions*@
+            <h4 class="terms">@Localize["TermsAndConditions.text"]</h4>
+            <a id="terms-toggle" data-bind="click: toggleTerms">@Localize["TermsAndCondDesc.Text"] <i class="icon-triangle-down-fl-1"></i></a>
+            <div data-bind="visibleWithEffect: termsVisible" data-effect="slide">
+                @await Component.InvokeAsync("Content", new { requestType = ContentRequestType.Page, path = "Loyalty/Customer/LoyaltyTerms.xml" })
+            </div>
+        </section>
+        <div class="divider">
+            <hr>
+            <div>
+                <strong>All done here?</strong><br /><a href="/Catalog/Home/Index/@locale" class="btn-continue">@Localize["ShopForPoint.Text"]</a>
+                
+            </div>
+        </div>      
+
+        <div data-role="window"
+             data-max-width="620"
+             data-modal="true"
+             data-visible="false"
+             data-title="false"
+             data-resizable="false"
+             data-actions="['Close']"
+             data-centerWindow="true"
+             data-bind="getWidget: firstTimeModal"
+             class="hrblModalSkinOnly modalWindow">
+            <a class="close-icon" data-bind="click: closeFirstTimeModal"><i class="icon-delete-fl-5"></i></a>
+            @await Component.InvokeAsync("Content", new { requestType = ContentRequestType.Fragment, path = "Loyalty/Customer/JustEnrolledModal.xml" })
+            @*<h4>@Localize["WelcomeModalTitle.Text"]</h4>
+                <p>@Localize["WelcomeModalP1.Document"]</p>
+                <img src="//edge.myherbalife.com/vmba/media/F79AD3C4-2426-4F51-BA49-325C351609D1/Web/General/Original/pre-select.jpg">
+                <p>@Localize["AnyQuestion.Text"]</p>*@
+            <div class="button-set">
+                <a href="#" class="btnForward" data-bind="click: closeFirstTimeModal">@Localize["ActionBtnModal.Text"]</a>
+            </div>
+        </div>
+
+        <div data-role="window"
+             data-max-width="380"
+             data-modal="true"
+             data-visible="false"
+             data-title="false"
+             data-resizable="false"
+             data-actions="['Close']"
+             data-centerWindow="true"
+             data-bind="getWidget: ActivityRewardModal"
+             class="hrblModalSkinOnly modalWindow">
+            <a class="close-icon" data-bind="click: closeActivityRewardModal"><i class="icon-delete-fl-5"></i></a>
+            <h4>@Localize["RedeemReward.Title"]</h4>
+            <p>@Localize["RedeemReward.Document"]</p>
+            <div class="button-set">
+                <a href="" class="btnForward" data-bind="click: redeemActivity">@Localize["Redeem.Text"]</a>
+                <a href="" class="btn opp-side" data-bind="click: closeActivityRewardModal">@Localize["Cancel.Text"]</a>
+            </div>
+        </div>
+
+        <div data-role="window"
+             data-max-width="380"
+             data-modal="true"
+             data-visible="false"
+             data-title="false"
+             data-resizable="false"
+             data-actions="['Close']"
+             data-centerWindow="true"
+             data-bind="getWidget: SelectRewardFailedModal"
+             class="hrblModalSkinOnly modalWindow center">
+            <a class="close-icon" data-bind="click: closeSelectRewardFailedModal"><i class="icon-delete-fl-5"></i></a>
+            <p>@Localize["RewardFailed.Text"]</p>
+            <a href="" class="btnForward" data-bind="click: closeSelectRewardFailedModal">@Localize["ok"]</a>
+        </div>
+
+    </main>
+</script>

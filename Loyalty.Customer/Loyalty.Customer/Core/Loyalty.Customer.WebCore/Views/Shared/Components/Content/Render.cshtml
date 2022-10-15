@@ -1,0 +1,6 @@
+﻿@model ContentProxySvc.GetContentItemResponse
+@if (Model.Status != ContentProxySvc.ServiceResponseStatusType.Success) {
+    @Model.Message
+} else {
+    @Html.Raw(Model.Value.Body)
+}

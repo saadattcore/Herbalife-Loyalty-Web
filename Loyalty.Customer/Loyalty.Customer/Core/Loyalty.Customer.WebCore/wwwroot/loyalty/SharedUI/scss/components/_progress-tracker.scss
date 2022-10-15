@@ -1,0 +1,68 @@
+	
+	/* Form Progress Bar/Steps
+    ================================================== */
+
+    ol.progress-tracker {
+	    margin: 0;
+	    padding: 0;
+	    list-style-type: none;
+	    font-size: 12px;
+	    li {
+		    display: inline-block;
+		    text-align: center;
+		    line-height: 13px;
+    		padding-bottom: 10px;
+    		@include breakpoint($tablet) { line-height: 25px; }
+
+		    &.progress-tracker-done {
+			    border-bottom: 4px solid $green;
+			    font-weight: bold;
+			    &:before {
+				    content: "";
+				    background-color: $green;
+				    height: 14px;
+				    width: 14px;
+				    line-height: 1.2em;
+				    border: none;
+				    border-radius: 50%;
+				    -webkit-border-radius: 50%;
+				    -moz-border-radius: 50%;
+				}
+			}
+			&.progress-tracker-todo {
+		    	color: $dimgrey; 
+		    	border-bottom: 4px solid $grey;
+		    	&:before {
+				    content: "";
+				    color: $grey;
+				    background-color: $grey;
+				    height: 14px;
+				    width: 14px;
+				    border: none;
+				    border-radius: 50%;
+				    -webkit-border-radius: 50%;
+				    -moz-border-radius: 50%;
+				    bottom: -30px;
+				}
+			}
+			&:after {
+			    content: "";
+			}
+			&:before {
+			    position: relative;
+			    bottom: -2.5em;
+			    float: left;
+			    left: 50%;
+			    line-height: 1em;
+			}
+		}
+	}
+
+	ol.progress-tracker[data-progress-tracker-steps="2"] li { width: 49%; }
+	ol.progress-tracker[data-progress-tracker-steps="3"] li { width: 33%; }
+	ol.progress-tracker[data-progress-tracker-steps="4"] li { width: 24%; }
+	ol.progress-tracker[data-progress-tracker-steps="5"] li { width: 19%; }
+	ol.progress-tracker[data-progress-tracker-steps="6"] li { width: 16%; }
+	ol.progress-tracker[data-progress-tracker-steps="7"] li { width: 14%; }
+	ol.progress-tracker[data-progress-tracker-steps="8"] li { width: 12%; }
+	ol.progress-tracker[data-progress-tracker-steps="9"] li { width: 11%; }

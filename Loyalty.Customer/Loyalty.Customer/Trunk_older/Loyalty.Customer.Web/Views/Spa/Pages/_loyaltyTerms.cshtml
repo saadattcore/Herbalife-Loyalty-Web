@@ -1,0 +1,46 @@
+﻿
+<script type="text/x-kendo-template" id="loyaltyTerms">
+    <main class="loyaltyTerms">
+        <h3>@this.Localize("Terms.Title")</h3>
+        <div class="terms-conditions">
+            @Html.Raw(this.Localize("Terms.Header"))
+            <div class="terms">
+                <p>@this.Localize("Terms.Document")</p>
+            </div>
+            <div class="acknowledge">
+                <form class="hl-form">
+                    <ul>
+                        <li>
+                            <label>@this.Localize("FirstName.Label")</label>
+                            <input type="text" data-bind="value: firstName">
+                        </li>
+                        <li>
+                            <label>@this.Localize("LastName.Label")</label>
+                            <input type="text" data-bind="value: lastName">
+                        </li>
+                    </ul>
+                </form>
+                <input type="checkbox" id="agree" data-bind="checked: hasAccepted">
+                <label for="agree">@this.Localize("AcceptTerms.Text")</label>
+            </div>
+        </div>
+        <div class="button-set">
+            <a class="btn-continue" data-bind="enabled: EnableActive, events: {click: Activate}">@this.Localize("Activate.Button")<i class="icon-arrow-right-ln-2"></i></a>
+             <a href="#/" class="back opp-side"><i class="icon-arrow-circle-ln-27"></i>@this.Localize("GoBack.Link")</a>
+        </div>
+    </main>
+    <br />
+    <div class="loyaltyTerms" style="background-color: white; padding: 15px;">
+        <h4>For testing pourposes, this will be remove when GoHL Api is implemented</h4>
+        <ul>
+            <li>
+                <label>Email</label>
+                <input type="text" data-bind="value: email">
+            </li>
+            <li>
+                <label>GoHLId</label>
+                <input type="text" data-bind="value: goHLId">
+            </li>
+        </ul>
+    </div>
+</script>

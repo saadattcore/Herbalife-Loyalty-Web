@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PublishProfile xmlns="http://schemas.microsoft.com/2015/05/fabrictools">
+  <ClusterConnectionParameters ConnectionEndpoint="10.110.7.4:19000" 
+                               X509Credential="true" 
+                               ServerCertThumbprint="CC678EFC6F08C2CB5D6EEF0CA11B1944944B0BCF" 
+                               FindType="FindByThumbprint" 
+                               FindValue="CC678EFC6F08C2CB5D6EEF0CA11B1944944B0BCF" 
+                               StoreLocation="LocalMachine" 
+                               StoreName="My" />
+  <ApplicationParameterFile Path="..\ApplicationParameters\Cloud.xml" />
+  <UpgradeDeployment Mode="Monitored" Enabled="false">
+    <Parameters
+      FailureAction="Rollback"
+      Force="True"
+      MaxPercentUnhealthyDeployedApplications="40"/>
+  </UpgradeDeployment>
+</PublishProfile>
